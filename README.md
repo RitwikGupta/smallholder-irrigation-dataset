@@ -71,7 +71,10 @@ smallholder-irrigation-dataset/
 3. Configure settings in `config.yaml`.
 
 ## Configuration
-All project paths, sampling parameters, and GEE download settings are specified in `config.yaml` for easy management.
+All project paths, sampling parameters, and GEE download settings are specified in `config.yaml` for easy management. 
+
+### Data paths
+Data is assumed to be stored locally, under data/ in the root repository. However, if it is stored elsewhere, this path can be specified as server_data_root in the configuration file, and if this directory can be found the data location will be updated accordingly (see utils).
 
 ## Contribution Guidelines
 If you wish to contribute, please review `CONTRIBUTING.md` for details on our code of conduct, submission process, coding standards, and coding guidelines.
