@@ -5,6 +5,7 @@ import pandas as pd
 import pickle
 from datetime import datetime
 import geopandas as gpd
+import rasterio
 
 # Helper function to find the project root
 def find_project_root(current_path):
@@ -97,6 +98,9 @@ def save_data(data, output_path, description=None, file_format=None):
     elif file_format == 'yaml':
         with open(output_path, "w") as f:
             yaml.dump(data, f)
+    elif file_format == 'tif':
+        with rasterio.open(output_path, 'w', **data.meta) as dst:
+            dst.write(data.read())
     else:
         raise ValueError(f"Unsupported file format: {file_format}")
 
