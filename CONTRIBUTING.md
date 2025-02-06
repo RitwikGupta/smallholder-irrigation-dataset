@@ -24,11 +24,11 @@ Thank you for your interest in contributing to this project! This document outli
     ```
 
 - **Required Metadata Fields:**
-  - `created_at`: Timestamp when the data was generated (ISO 8601 format).
-  - `source`: Name of the data file.
+  - `date`: Timestamp when the data was generated (ISO 8601 format).
+  - `file`: Name of the data file.
   - `description`: Brief description of the dataset.
   - `file_format`: Format of the data file.
-  - `created_by`: Relative path of the script that generated the data.
+  - `source`: Relative path of the script that generated the data.
 
 ### **3. Data Saving Protocol:**
 - Use the `save_data()` utility function to ensure data and metadata are saved consistently.

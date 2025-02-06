@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import pickle
 from datetime import datetime
+import geopandas as gpd
 
 # Helper function to find the project root
 def find_project_root(current_path):
@@ -49,7 +50,7 @@ def get_data_root():
         str: Path to the data root directory.
     """
     config = load_config()
-    local_root = os.path.join(find_project_root(os.getcwd()), 'data')
+    local_root = os.path.join(find_project_root(os.path.abspath("")), 'data')
     server_root = config.get('server_data_root', '/home/waves/data/smallholder-irrigation-dataset/data/')
 
     # Check for server environment
@@ -59,7 +60,7 @@ def get_data_root():
         return local_root
 
 # Save data with metadata
-def save_data(data, output_path, description=None, file_format='csv'):
+def save_data(data, output_path, description=None, file_format=None):
     """
     Save data to the specified output path in a flexible format, creating directories as needed,
     and optionally save metadata.
@@ -70,6 +71,7 @@ def save_data(data, output_path, description=None, file_format='csv'):
         description (str, optional): Description of the data.
         file_format (str, optional): Format to save the data (json, csv, pickle, yaml). Inferred from file extension if not provided.
     """
+    output_path = get_data_root() + "/" + output_path
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     # Infer file format from extension if not provided
@@ -78,8 +80,12 @@ def save_data(data, output_path, description=None, file_format='csv'):
 
     # Save data based on the format
     if file_format == 'json':
-        with open(output_path, "w") as f:
-            json.dump(data, f)
+        # Check if the data is a GeoDataFrame
+        if isinstance(data, gpd.GeoDataFrame):
+            data.to_file(output_path, driver='GeoJSON')  # Save as GeoJSON
+        else:
+            with open(output_path, "w") as f:
+                json.dump(data, f)
     elif file_format == 'csv':
         if isinstance(data, pd.DataFrame):
             data.to_csv(output_path, index=False)
@@ -96,11 +102,11 @@ def save_data(data, output_path, description=None, file_format='csv'):
 
     # Automatically generate metadata
     metadata = {
-        "created_at": datetime.now().isoformat(),
-        "source": os.path.basename(output_path),
+        "date": datetime.now().isoformat(),
+        "file": os.path.basename(output_path),
         "description": description,
         "file_format": file_format,
-        "created_by": os.path.relpath(__file__, start=find_project_root(os.getcwd()))  # Captures the file that created the data
+        "source": os.path.relpath(__file__, start=find_project_root(os.getcwd()))  # Captures the file that created the data
     }
 
     # Save metadata alongside the data file

@@ -64,8 +64,15 @@ smallholder-irrigation-dataset/
    ```
 2. Create a virtual environment and install dependencies:
    ```bash
-   python -m venv venv
-   source venv/bin/activate
+   python -m venv irr-venv
+   source irr-venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+   Alternatively, you can use `conda` to create a new environment and install the dependencies:
+   ```bash
+   conda create --name smallholder-irrigation python=3.8
+   conda activate smallholder-irrigation
    pip install -r requirements.txt
    ```
 3. Configure settings in `config.yaml`.

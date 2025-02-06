@@ -8,10 +8,15 @@ This document provides guidance on using **Earth Collect** to create labels base
 - **Open Foris Collect**: This software is used to create and manage the labeling design. Download and install Open Foris Collect from the [official website](https://openforis.org/solutions/collect/).
 - **Earth Collect**: Earth Collect takes in a survey created using Collect and administers it through Google Earth Pro. Download and install Earth Collect from the [official website](https://openforis.org/solutions/collect-earth/).
 
-## Creating a survey in Open Foris Collect
-To create a survey, launch Open Foris Collect. Use the Survey Designer to create a survey using the "Earth Collect" template. 
+## Setting up your Open Foris Earth Collect Survey
 
-## Modifying the bounding box sizes and sampling locations
-The survey can be exported as a `.cep` file. This file's extenstion can be changed to `.zip` and can then be unzipped and modified to follow the specifications you would like, e.g. how big you want the bounding box to be (see project_definition.properties) and the list of locations you would like to sample (see test_samples.ced). Once the survey is modified, it can be zipped back up and imported into Collect Earth (`Files > Import CEP` file and then choose `Files of Type: All Types` so it finds your `.zip` file) Wake sure that when zipping you zip the *files* together, not the folder containing all the files, otherwise Collect Earth will not be able to open it properly. 
+### Creating a survey in Open Foris Collect
+To create a survey, launch Open Foris Collect. Use the Survey Designer to create a survey using the "Earth Collect" template. Export this survey.
 
+### Modifying the bounding box sizes and sampling locations
+The survey is exported as a `.cep` file. This file's extenstion can be changed to `.zip` and can then be unzipped and modified to follow the specifications you would like, e.g. how big you want the bounding box to be (see project_definition.properties) and the list of locations you would like to sample (see test_samples.ced). Once the survey is modified, it can be zipped back up and imported into Collect Earth (`Files > Import CEP` file and then choose `Files of Type: All Types` so it finds your `.zip` file) Wake sure that when zipping you zip the *files* together, not the folder containing all the files, otherwise Collect Earth will not be able to open it properly. 
 
+This process has been automated in the script `edit_survey.py` which can be run with the following command:
+```bash
+python edit_survey.py --survey_path <path_to_survey> --output_path <output_path> --bounding_box_size <bounding_box_size> --sample_locations <sample_locations>
+```
