@@ -20,6 +20,7 @@ import pandas as pd
 import pyproj
 import matplotlib.pyplot as plt
 import geopandas as gpd
+import re
 
 def get_utm_crs(lon, lat):
     """Returns the EPSG code for the appropriate UTM zone based on longitude and latitude."""
@@ -164,7 +165,8 @@ def process_and_combine_ag_data(ag_data_loc, res):
     for file in files:
         df = resample_agriculture_data(ag_data_loc + file, res)
         df = add_country(df)
-        save_data(df, f'sampling/grid/{file.removesuffix(".tif")}.csv', description=f'Agriculture Data Resampled to {res}m Grid', file_format='csv')
+        filename, _ = os.path.splitext(file)
+        save_data(df, f'sampling/grid/{filename}.csv', description=f'Agriculture Data Resampled to {res}m Grid', file_format='csv')
 
         # Combine the data
         full_df = pd.concat([full_df, df])
