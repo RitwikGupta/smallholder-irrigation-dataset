@@ -101,6 +101,11 @@ def save_data(data, output_path, description=None, file_format=None):
     elif file_format == 'tif':
         with rasterio.open(output_path, 'w', **data.meta) as dst:
             dst.write(data.read())
+    elif file_format == 'png':
+        if hasattr(data, 'savefig'):
+            data.savefig(output_path)
+        else:
+            raise ValueError("Data must be a Matplotlib figure to save as PNG.")
     else:
         raise ValueError(f"Unsupported file format: {file_format}")
 

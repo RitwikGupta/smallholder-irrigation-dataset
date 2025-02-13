@@ -20,3 +20,12 @@ This process has been automated in the script `edit_survey.py` which can be run 
 ```bash
 python edit_survey.py --survey_path <path_to_survey> --output_path <output_path> --bounding_box_size <bounding_box_size> --sample_locations <sample_locations>
 ```
+
+# Labeling with Earth Collect in Google Earth Pro
+
+Labeling one image takes about 2 minutes. 
+
+1. Move the timelapse curser to the most recent image
+2. Move it back in time until you find an image that is in a dry season month (for Zambia, 6-10), has no clouds, and is in 2016 or later. 
+3. Label this image. 
+4. Continue this process until all eligible images have been labeled.

@@ -14,10 +14,12 @@ if project_root not in sys.path:
 from src.utils.utils import get_data_root, save_data
 
 import rasterio
+from rasterio.warp import calculate_default_transform, reproject, Resampling, transform_geom
 import numpy as np
 import pandas as pd
 import pyproj
 import matplotlib.pyplot as plt
+import geopandas as gpd
 
 def get_utm_crs(lon, lat):
     """Returns the EPSG code for the appropriate UTM zone based on longitude and latitude."""
@@ -29,6 +31,18 @@ def get_utm_crs(lon, lat):
     return pyproj.CRS.from_epsg(epsg_code)
 
 def resample_agriculture_data(src_path, res):
+    """
+    Resample the GFSAD agriculture raster dataset (orginical resolution approximately 30m) 
+    to a specified resolution (in meters) and return the lat/lon coordinates
+    of the resampled grid points with the proportion of pixels with value == 2 (cropland). 
+
+    Zero values are removed, retaining only pixels with at least some cropland.
+
+    Parameters:
+        src_path (str): Path to the source raster file.
+        res (int): Resolution in meters for the resampled raster.
+    """
+
     with rasterio.open(src_path) as src:
         print("Original CRS:", src.crs)
         print("Original Bounds:", src.bounds)
@@ -41,12 +55,12 @@ def resample_agriculture_data(src_path, res):
         binary_mask = (data == 2).astype(np.uint8)
         print("Binary mask created. Non-zero count:", np.count_nonzero(binary_mask))
 
-        # Plot original binary mask
-        plt.figure(figsize=(8, 6))
-        plt.title('Binary Mask (Value == 2)')
-        plt.imshow(binary_mask, cmap='gray')
-        plt.colorbar(label='Binary Values')
-        plt.show()
+        # # Plot original binary mask
+        # plt.figure(figsize=(8, 6))
+        # plt.title('Binary Mask (Value == 2)')
+        # plt.imshow(binary_mask, cmap='gray')
+        # plt.colorbar(label='Binary Values')
+        # plt.show()
 
         # Determine UTM CRS based on the raster's center
         center_lon = (src.bounds.left + src.bounds.right) / 2
@@ -74,12 +88,12 @@ def resample_agriculture_data(src_path, res):
             resampling=rasterio.warp.Resampling.average
         )
 
-        # Plot resampled raster
-        plt.figure(figsize=(8, 6))
-        plt.title('Resampled Raster (Proportion of Value == 2)')
-        plt.imshow(resampled_raster, cmap='viridis')
-        plt.colorbar(label='Proportion of Pixels with Value 2')
-        plt.show()
+        # # Plot resampled raster
+        # plt.figure(figsize=(8, 6))
+        # plt.title('Resampled Raster (Proportion of Value == 2)')
+        # plt.imshow(resampled_raster, cmap='viridis')
+        # plt.colorbar(label='Proportion of Pixels with Value 2')
+        # plt.show()
 
     # Extract UTM coordinates (center of each pixel)
     rows, cols = np.meshgrid(np.arange(height), np.arange(width), indexing='ij')
@@ -89,14 +103,14 @@ def resample_agriculture_data(src_path, res):
     transformer = pyproj.Transformer.from_crs(utm_crs, "EPSG:4326", always_xy=True)
     longitudes, latitudes = transformer.transform(np.array(xs).flatten(), np.array(ys).flatten())
 
-    # Debug: Plot points to verify geolocation
-    plt.figure(figsize=(8, 6))
-    plt.scatter(longitudes, latitudes, c=resampled_raster.flatten(), cmap='viridis', s=1)
-    plt.colorbar(label='Proportion of Value == 2')
-    plt.title('Reprojected Points (WGS84)')
-    plt.xlabel('Longitude')
-    plt.ylabel('Latitude')
-    plt.show()
+    # # Debug: Plot points to verify geolocation
+    # plt.figure(figsize=(8, 6))
+    # plt.scatter(longitudes, latitudes, c=resampled_raster.flatten(), cmap='viridis', s=1)
+    # plt.colorbar(label='Proportion of Value == 2')
+    # plt.title('Reprojected Points (WGS84)')
+    # plt.xlabel('Longitude')
+    # plt.ylabel('Latitude')
+    # plt.show()
 
     # Flatten values for DataFrame
     values = resampled_raster.flatten()
@@ -105,21 +119,65 @@ def resample_agriculture_data(src_path, res):
     df = pd.DataFrame({
         'latitude': latitudes,
         'longitude': longitudes,
-        'value': values
+        'agriculture': values
     })
 
-    # Optional: Filter out zero values if needed
-    df = df[df['value'] > 0]
+    # Filter out zero values
+    df = df[df['agriculture'] > 0]
 
     return df
 
+def add_country(df):
+    """
+    Given a DataFrame with lat/lon coordinates, add a column with the country name.
+    """
+
+    # Load country boundaries
+    world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+    # Create a GeoDataFrame from the DataFrame
+    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.longitude, df.latitude))
+
+    # Perform a spatial join
+    gdf = gpd.sjoin(gdf, world, how='left', op='within')
+
+    # rename the 'name' column to 'country'
+    gdf.rename(columns={'name': 'country'}, inplace=True)
+
+    # Only keep latitude, longitude, agriculture, and country columns
+    gdf = gdf[['latitude', 'longitude', 'agriculture', 'country']]
+
+    return pd.DataFrame(gdf)
+
+def process_and_combine_ag_data(ag_data_loc, res):
+    """
+    Process the agricultural data and combine with country information.
+    """
+
+    # Get a list of all tif files at ag_data_loc
+    files = [f for f in os.listdir(ag_data_loc) if f.endswith('.tif')]
+
+    # Initialize an empty DataFrame
+    full_df = pd.DataFrame()
+
+    # for each file, resample the data and add country information. 
+    for file in files:
+        df = resample_agriculture_data(ag_data_loc + file, res)
+        df = add_country(df)
+        save_data(df, f'sampling/grid/{file.removesuffix(".tif")}.csv', description=f'Agriculture Data Resampled to {res}m Grid', file_format='csv')
+
+        # Combine the data
+        full_df = pd.concat([full_df, df])
+
+    return full_df
+    
+
 if __name__ == '__main__':
-    # File path
-    file = "GFSAD30AFCE_2015_S20E20_001_2017261090100.tif" # zambia
-    ag_data_loc = get_data_root() + '/sampling/raw/GFSAD/GFSAD30AFCE_001-20250206_011249/' + file
-    df = resample_agriculture_data(ag_data_loc, 1000) # 1km resolution
+
+    ag_data_loc = get_data_root() + '/sampling/raw/GFSAD/GFSAD30AFCE_001-20250206_011249/'
+    df = process_and_combine_ag_data(ag_data_loc, 1000) # 1km resolution
 
     # Save the data
-    save_data(df, 'sampling/grid/agriculture_grid_S20E20.csv', description='Agriculture Data S20E20 Resampled to 1km Grid', file_format='csv')
+    save_data(df, 'sampling/grid/combined/agriculture_grid.csv', description='Agriculture Data Resampled to 1km Grid', file_format='csv')
 
 

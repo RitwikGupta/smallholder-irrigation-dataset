@@ -9,11 +9,7 @@ if project_root not in sys.path:
 # Now import the module
 from src.utils.utils import get_data_root, save_data
 
-import rasterio
-import numpy as np
 import pandas as pd
-import pyproj
-import matplotlib.pyplot as plt
 
 def sample_grid(grid, num_samples, ag_thresh=0):
     """
@@ -33,11 +29,11 @@ def sample_grid(grid, num_samples, ag_thresh=0):
 
     # Sample the grid without replacement
     samples = grid.sample(num_samples)
-    samples = samples[samples['value'] > ag_thresh]
+    samples = samples[samples['agriculture'] > ag_thresh]
 
     # Format the grid to be used with Collect
-    # Remove the 'value' column
-    samples = samples.drop(columns=['value'])
+    # Remove columns that are not 'latitude' or 'longitude'
+    samples = samples.loc[:, ['latitude', 'longitude']]
 
     # Rename columns
     samples = samples.rename(columns={'latitude': 'YCoordinate', 'longitude': 'XCoordinate'})
