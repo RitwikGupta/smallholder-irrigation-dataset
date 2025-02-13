@@ -6,6 +6,7 @@ import pickle
 from datetime import datetime
 import geopandas as gpd
 import rasterio
+import inspect
 
 # Helper function to find the project root
 def find_project_root(current_path):
@@ -110,12 +111,17 @@ def save_data(data, output_path, description=None, file_format=None):
         raise ValueError(f"Unsupported file format: {file_format}")
 
     # Automatically generate metadata
+
+    # Automatically determine the **calling script** instead of utils.py
+    caller_frame = inspect.stack()[1]  # Get the frame of the function that called save_data()
+    caller_script = os.path.abspath(caller_frame.filename)
+
     metadata = {
         "date": datetime.now().isoformat(),
         "file": os.path.basename(output_path),
         "description": description,
         "file_format": file_format,
-        "source": os.path.relpath(__file__, start=find_project_root(os.getcwd()))  # Captures the file that created the data
+        "source": os.path.relpath(caller_script, start=find_project_root(os.getcwd()))  # Captures the file that created the data
     }
 
     # Save metadata alongside the data file
