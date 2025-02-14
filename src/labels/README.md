@@ -28,10 +28,12 @@ Once the survey is ready with all the correct specificiations and locations that
 ### Labeling guidelines
 Labeling one image takes about 2 minutes. 
 
-1. Move the timelapse curser to the most recent image
-2. Move it back in time until you find an image that is in a dry season month (for Zambia, 6-10), has no clouds, and is in 2016 or later. 
-3. Label this image. 
-4. Continue this process until all eligible images have been labeled.
+1. Click on the id of the first location you want to label in the left hand sidebar.
+2. Move the timelapse curser to the most recent image. It is important to do this for every new location, otherwise the time listed will be incorrect. 
+3. Move it back in time until you find an image that is in a dry season month (for Zambia, 6-10), has no clouds, and is in 2016 or later. If there are no such images, submit the empty survey and move on. 
+4. If you find a valid image, click on the area being labeled to pull up the survey. Fill out "Year 1". If there are parts of the area suspected to have smallholder irrigation, label them using the pin function in Google Earth Pro. Name these using your initials, followed by an id number (make sure each within the same area has a unique name). Report the name of the pin as well as the latitude and longitude in your survey. 
+5. Continue this process until all eligible images have been labeled, filling out as many of the "Year" tabs in the survey as is necessary. If there are places where smallholder irrigation is suspected that have already been pinned for a previous year, you can omit including the latitude and longitude and simply report the unique name of the pin, since you already gave its coordinates in the survey under a previous year. 
+6. Submit the survey and move on to the next area to be labeled. 
 
 ### Exporting Labels
-Once you have labeled the locations in your survey, use the "Export Collected Data" button in the Collect Earth Launcher to retrieve your labels. 
+Once you have labeled the locations in your survey, use the "Export Collected Data" button in the Collect Earth Launcher to retrieve your labels. If you have also placed pin locations for areas likely to represent smallholder irrigation, you can also export these as a `.kml` file as a redundancy. 
