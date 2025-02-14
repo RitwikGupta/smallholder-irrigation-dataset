@@ -172,14 +172,26 @@ def process_and_combine_ag_data(ag_data_loc, res):
         full_df = pd.concat([full_df, df])
 
     return full_df
+
+def add_id(df):
+    """
+    Add a unique ID to the DataFrame.
+    """
+
+    # Add a unique ID
+    df['id'] = ['id_' + str(i) for i in range(len(df))]
+
+    # Make ID the first column
+    df = df[['id'] + [col for col in df.columns if col != 'id']]
+
+    return df
     
 
 if __name__ == '__main__':
 
     ag_data_loc = get_data_root() + '/sampling/raw/GFSAD/GFSAD30AFCE_001-20250206_011249/'
     df = process_and_combine_ag_data(ag_data_loc, 1000) # 1km resolution
+    df = add_id(df)
 
     # Save the data
     save_data(df, 'sampling/grid/combined/agriculture_grid.csv', description='Agriculture Data Resampled to 1km Grid', file_format='csv')
-
-
