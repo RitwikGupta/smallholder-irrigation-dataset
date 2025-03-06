@@ -14,9 +14,11 @@ This document provides guidance on using **Earth Collect** to create labels base
 To create a new survey, launch Open Foris Collect. Use the Survey Designer to create a survey using the "Earth Collect" template. Export this survey.
 
 ### Modifying the bounding box sizes and sampling locations
-The survey is exported as a `.cep` file. This file's extenstion can be changed to `.zip` and can then be unzipped and modified to follow the specifications you would like, e.g. how big you want the bounding box to be (see project_definition.properties) and the list of locations you would like to sample (see test_samples.ced). For example, if you want the bounding boxes to be 1km across, the `distance_to_plot_boundaries` variable should be set to 500, since this indicates that the center point will be 500 meters to the boundary. 
+The survey is exported as a `.cep` file. This file's extenstion can be changed to `.zip` and can then be unzipped and modified to follow the specifications you would like, e.g. how big you want the bounding box to be and the list of locations you would like to sample. 
 
-Additionally, the survey will include some test locations, which are example locations that the survey can be tested on in Google Earth Pro. These can be replaced by a .csv of locations created in the sampling section of this repository such that the survey may be used to collect data over them. 
+Specifically, to change the bounding boxes to be 1km across, modify the `distance_to_plot_boundaries` variable in the `project_definition.properties` file to to 500, since this indicates that the center point will be 500 meters to the boundary. 
+
+Additionally, the survey will include some test locations, which are example locations that the survey can be tested on in Google Earth Pro (see `test_samples.ced`). You can provide your own locations, for example a `.csv` generated using the files in the `sampling` section in this repository). To do so, add the `.csv` file to the folder and modify the `csv` variable in the `project_definition.properties` to reflect the name of the new `.csv` file you added. The other one will be ignored.  
 
 Once the survey is modified, it can be zipped back up and imported into Collect Earth (`Files > Import CEP` file and then choose `Files of Type: All Types` so it finds your `.zip` file). Make sure that when zipping you zip the *files* together, not the folder containing all the files, otherwise Collect Earth will not be able to open it properly. 
 
