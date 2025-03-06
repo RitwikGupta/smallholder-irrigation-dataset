@@ -18,7 +18,7 @@ The survey is exported as a `.cep` file. This file's extenstion can be changed t
 
 Specifically, to change the bounding boxes to be 1km across, modify the `distance_to_plot_boundaries` variable in the `project_definition.properties` file to to 500, since this indicates that the center point will be 500 meters to the boundary. 
 
-Additionally, the survey will include some test locations, which are example locations that the survey can be tested on in Google Earth Pro (see `test_samples.ced`). You can provide your own locations, for example a `.csv` generated using the files in the `sampling` section in this repository). To do so, add the `.csv` file to the folder and modify the `csv` variable in the `project_definition.properties` to reflect the name of the new `.csv` file you added. The other one will be ignored.  
+Additionally, the survey will include some test locations, which are example locations that the survey can be tested on in Google Earth Pro (see `test_samples.ced`). You can provide your own locations, for example a `.csv` generated using the files in the `sampling` section in this repository). To do so, add the `.csv` file to the folder and modify the `csv` variable in the `project_definition.properties` to by replacing "test_samples.ced" with the name of the new `.csv` file you added. 
 
 Once the survey is modified, it can be zipped back up and imported into Collect Earth (`Files > Import CEP` file and then choose `Files of Type: All Types` so it finds your `.zip` file). Make sure that when zipping you zip the *files* together, not the folder containing all the files, otherwise Collect Earth will not be able to open it properly. 
 
