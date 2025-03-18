@@ -38,6 +38,7 @@ def parse_xml(file_path):
                 "operator": operator,
                 "x": x,
                 "y": y,
+                "image_number": i,
                 "year": year,
                 "month": month,
                 "day": day,
