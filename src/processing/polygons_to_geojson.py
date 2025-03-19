@@ -31,7 +31,7 @@ def parse_name(name_text):
     except Exception as e:
         raise ValueError(f"Error parsing name '{name_text}': {e}")
 
-def parse_description(desc_text):
+def parse_description(desc_text): # Note you will need to update to handle special classes (agroforestry etc.)
     """
     Parse the description text into certainty and uncertainty_explanation.
     Expects the first line to be certainty (default to 5 if empty)
@@ -163,7 +163,7 @@ def kml_to_geojson(kml_file, geojson_file):
         color_props = {"color": color, "image_number": im_num}
 
         # Merge properties
-        properties = {**props, **desc_props, **color_props}
+        properties = {"name": name_elem.text, **props, **desc_props, **color_props}
 
         # Convert the geometry
         geometry = convert_geometry(placemark)
