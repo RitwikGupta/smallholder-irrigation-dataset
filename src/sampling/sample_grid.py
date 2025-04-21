@@ -23,7 +23,9 @@ class SampleGenerator:
 
         Parameters:
             grid_path (str): Path to the full grid CSV file.
-            sample_group_name (str): Name of the sample group (used for organizing saved files).
+            sample_group_name (str): Name of the sample group (used for organizing saved files). 
+            
+        Every sample group has (or will have) a file within it that tracks all points that have already been sampled so that they are not repeated in subsequent samples. 
         """
         self.grid_path = grid_path
         self.grid = pd.read_csv(grid_path)  # Load the grid once into memory
@@ -36,7 +38,9 @@ class SampleGenerator:
         self.grid = self.grid[~self.grid['id'].isin(self.sampled_points)]
 
     def _get_sampled_points(self):
-        """Load the set of previously sampled points from file."""
+        """
+        Load the set of previously sampled points from file.
+        """
         if os.path.exists(self.sampled_points_file):
             with open(self.sampled_points_file, "r") as f:
                 sampled_points = f.read().strip().split("\n")
@@ -102,9 +106,11 @@ class SampleGenerator:
 if __name__ == '__main__':
     # Initialize the sample generator with the grid file
     grid_loc = get_data_root() + '/sampling/grid/combined/agriculture_grid.csv'
-    sampler = SampleGenerator(grid_loc, "test_group")
+    sampler = SampleGenerator(grid_loc, "random_sample")
 
     # # Generate samples
     # samples = sampler.sample(50, country="Zambia", ag_thresh=0.05)
-    # samples2 = sampler.sample(50, country="Zambia", ag_thresh=0.05)
-    sampler.sample(50, country="All", ag_thresh=0.05)
+    # sampler.sample(25, country="Zambia", ag_thresh=0.05)
+    # sampler.sample(50, country="All", ag_thresh=0.05)
+    for i in range(3):
+        sampler.sample(25, country="Zambia", ag_thresh=0.05)
