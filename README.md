@@ -71,8 +71,8 @@ smallholder-irrigation-dataset/
 
    Alternatively, you can use `conda` to create a new environment and install the dependencies:
    ```bash
-   conda create --name smallholder-irrigation python=3.8
-   conda activate smallholder-irrigation
+   conda create --name smh_irr_labels python=3.12
+   conda activate smh_irr_labels
    pip install -r requirements.txt
    ```
 3. Configure settings in `config.yaml`.

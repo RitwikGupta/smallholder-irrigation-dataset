@@ -26,6 +26,8 @@ class SampleGenerator:
             sample_group_name (str): Name of the sample group (used for organizing saved files). 
             
         Every sample group has (or will have) a file within it that tracks all points that have already been sampled so that they are not repeated in subsequent samples. 
+        
+        Samples are saved under data/sampling/samples/sample_group_name/ with the filename being the country name, ag_thresh, and the range of sampled points.
         """
         self.grid_path = grid_path
         self.grid = pd.read_csv(grid_path)  # Load the grid once into memory
