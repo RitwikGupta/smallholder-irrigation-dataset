@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 import json
+import geopandas as gpd
 
 # Define the KML namespace
 ns = {'kml': 'http://www.opengis.net/kml/2.2'}
@@ -38,18 +39,52 @@ def parse_description(desc_text): # Note you will need to update to handle speci
     and the second line to be uncertainty_explanation.
     """
     # Split lines and remove empty lines
-    lines = [line.strip() for line in desc_text.strip().splitlines() if line.strip()]
+    lines = [line.strip().lower() for line in desc_text.strip().splitlines() if line.strip()]
+
+    # If there is nothing in the description, assume certainty 5
     if not lines:
         return {"certainty": 5, "uncertainty_explanation": ""}
+    
+    # If the first line is not an integer, assume certainty 5
     try:
         certainty = int(lines[0]) if lines[0] else 5
     except ValueError:
         # If conversion fails, default to 5
         certainty = 5
-    explanation = lines[1] if len(lines) > 1 else ""
-    return {"certainty": certainty, "uncertainty_explanation": explanation}
+
+    # Add the certainty explanation. If it is absent, set to empty string.
+    # Start by assuming the explanation is on the second line
+    explanation = lines[1] if len(lines) > 1 else "" 
+    # If this line was actually special classes try the third line
+    plantation_flags = ["agroforestry", "plantation"]
+    commercial_flags = ["commercial", "commercial irrigation"]
+    if any(flag in explanation for flag in plantation_flags + commercial_flags):
+        explanation = lines[2] if len(lines) > 2 else ""
+
+    # Check for special classes on any line
+    plantation = 1 if any(plantation_flag in lines for plantation_flag in plantation_flags) else 0
+    commercial = 1 if any(commercial_flag in lines for commercial_flag in commercial_flags) else 0
+
+    return {"certainty": certainty, "uncertainty_explanation": explanation, "plantation": plantation, "commercial": commercial}
 
 def get_color_for_placemark(placemark, root):
+    """
+    Extracts the color associated with a given KML Placemark element.
+    This function navigates through the KML structure to find the color
+    defined in the corresponding Style or StyleMap for the provided Placemark.
+    It first resolves the styleUrl of the Placemark, then looks up the
+    associated StyleMap or Style element, and finally retrieves the color
+    from either the LineStyle or PolyStyle.
+    Args:
+        placemark (xml.etree.ElementTree.Element): The Placemark element from which
+            the color is to be extracted.
+        root (xml.etree.ElementTree.Element): The root element of the KML document,
+            used to search for StyleMap and Style elements.
+    Returns:
+        str or None: The color value as a string (in KML color format, e.g., "ff0000ff"),
+        or None if no color is found.
+    """
+
     # Get the styleUrl from the Placemark
     styleUrl_elem = placemark.find("kml:styleUrl", ns)
     if styleUrl_elem is None or not styleUrl_elem.text:
@@ -77,6 +112,22 @@ def get_color_for_placemark(placemark, root):
     return None
 
 def convert_color_to_im_num(color):
+    """
+    Converts a hexadecimal color code from the format 'aabbggrr' to 'bbggrr' 
+    and maps it to a corresponding integer identifier representing which number image is being mapped.
+    Parameters:
+    color (str): A hexadecimal color code in the format 'aabbggrr'.
+    Returns:
+    int: The integer identifier corresponding to the color if it matches 
+         one of the predefined colors in the mapping.
+    None: If the color does not match any of the predefined colors.
+    Notes:
+    - The function assumes the input color is in the format 'aabbggrr' 
+      and strips the first two characters to convert it to 'bbggrr'.
+    - If the color is not found in the predefined mapping, a message is 
+      printed, and the function returns None.
+    """
+
     # turn color from aabbggrr to bbggrr
     color = color[2:]
 
@@ -131,7 +182,37 @@ def convert_geometry(placemark):
     # If no supported geometry is found, return None.
     return None
 
-def kml_to_geojson(kml_file, geojson_file):
+def kml_to_geojson(kml_file):
+    """
+    Converts a KML file to a GeoJSON file and returns a GeoPandas GeoDataFrame.
+    This function parses a KML file, extracts placemark data, converts the geometries 
+    to GeoJSON format, and writes the resulting GeoJSON to a file. It also returns 
+    a GeoPandas GeoDataFrame created from the GeoJSON features.
+    Args:
+        kml_file (str): The file path to the input KML file.
+    Returns:
+        geopandas.GeoDataFrame: A GeoDataFrame containing the features from the 
+        converted GeoJSON file.
+    Notes:
+        - The function expects the KML file to have placemarks with <name>, 
+          <description>, and geometry elements.
+        - The <name> element is parsed to extract properties using the `parse_name` function.
+        - The <description> element is parsed to extract additional properties using 
+          the `parse_description` function.
+        - The color of the placemark is extracted and converted to an image number 
+          using `get_color_for_placemark` and `convert_color_to_im_num`.
+        - If a placemark lacks a supported geometry, it is skipped.
+        - The resulting GeoJSON file is saved in the same directory as the input KML file, 
+          with the same name but a `.geojson` extension.
+    Raises:
+        ValueError: If the <name> element cannot be parsed by `parse_name`.
+    Example:
+        >>> gdf = kml_to_geojson("example.kml")
+        GeoJSON written to example.geojson
+        >>> print(gdf.head())
+    """
+    
+
     tree = ET.parse(kml_file)
     root = tree.getroot()
 
@@ -159,8 +240,10 @@ def kml_to_geojson(kml_file, geojson_file):
         # Extract and convert color to image number
         color = get_color_for_placemark(placemark, root)
         if color is not None:
-            im_num = convert_color_to_im_num(color)
-        color_props = {"color": color, "image_number": im_num}
+            color_im_num = convert_color_to_im_num(color)
+        else: 
+            color_im_num = None
+        color_props = {"color": color,"color_im_num": color_im_num}
 
         # Merge properties
         properties = {"name": name_elem.text, **props, **desc_props, **color_props}
@@ -186,12 +269,21 @@ def kml_to_geojson(kml_file, geojson_file):
     }
 
     # Write the GeoJSON to a file
+    geojson_file = kml_file.replace(".kml", ".geojson")
+
     with open(geojson_file, "w") as f:
         json.dump(feature_collection, f, indent=2)
     print(f"GeoJSON written to {geojson_file}")
 
+    gdf = gpd.GeoDataFrame.from_features(feature_collection["features"])
+    return gdf
+
 # Example usage:
 if __name__ == "__main__":
-    kml_file_path = "data/labels/test/Zambia_0.05_n_1-50.kml"  # update with your actual file path
-    geojson_file_path = "data/labels/test/Zambia_0.05_n_1-50.geojson"
-    kml_to_geojson(kml_file_path, geojson_file_path)
+    # kml_file_path = "data/labels/test/Zambia_0.05_n_1-50.kml"  # update with your actual file path
+    # gdf = kml_to_geojson(kml_file_path)
+    # print(gdf)
+
+    kml = "data/labels/labeled_surveys/random_sample/DSB_1-25.kml"
+    gdf = kml_to_geojson(kml)
+    print(gdf.head)
