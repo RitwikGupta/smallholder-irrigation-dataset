@@ -3,6 +3,7 @@ import geopandas as gpd
 from shapely.ops import unary_union
 from geometries import survey_polygon
 from typing import Optional
+from shapely.validation import make_valid
 
 def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     """
@@ -101,6 +102,9 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
         # Compute percent coverage.
         survey_area = row["geometry"].area
         if not matching_polys.empty:
+            # Clean the geometries to ensure they are valid
+            matching_polys.geometry = [make_valid(geom) for geom in matching_polys.geometry]
+
             # Check that all polygons are at least partially overlapping the survey area
             # If not, list it in the report
             for poly_idx, poly in matching_polys.iterrows():
@@ -108,7 +112,7 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
                     report.append(f"Polygon {poly_idx} (internal_id {poly['internal_id']}, {poly['day']}/{poly['month']}/{poly['year']}) does not overlap the survey area.")
 
             # Calculate the overlap
-            union_all = unary_union(matching_polys.geometry.tolist())
+            union_all = unary_union(matching_polys.geometry)
             intersection_all = row["geometry"].intersection(union_all)
             percent_total = (intersection_all.area / survey_area) * 100 if survey_area > 0 else 0.0
 
@@ -164,17 +168,17 @@ if __name__ == "__main__":
     # survey_results = merge_and_check(survey, polygons)
     # print(survey_results.head())
 
-    # survey = "data/labels/labeled_surveys/random_sample/DSB_1-25.csv"
-    # survey_results = merge_and_check(survey)
-    # print(survey_results.head())
+    survey = "data/labels/labeled_surveys/random_sample/DSB_1-25.csv"
+    survey_results = merge_and_check(survey)
+    print(survey_results.head())
 
-    # survey = "data/labels/labeled_surveys/random_sample/DSB_101-125.csv"
-    # survey_results = merge_and_check(survey)
-    # print(survey_results.head())
+    survey = "data/labels/labeled_surveys/random_sample/DSB_101-125.csv"
+    survey_results = merge_and_check(survey)
+    print(survey_results.head())
 
-    # survey = "data/labels/labeled_surveys/random_sample/KL_101-125.csv"
-    # survey_results = merge_and_check(survey)
-    # print(survey_results.head())
+    survey = "data/labels/labeled_surveys/random_sample/KL_101-125.csv"
+    survey_results = merge_and_check(survey)
+    print(survey_results.head())
 
     survey = "data/labels/labeled_surveys/random_sample/KL_51-75.csv"
     survey_results = merge_and_check(survey)

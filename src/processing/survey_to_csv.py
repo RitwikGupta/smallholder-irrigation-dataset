@@ -5,7 +5,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import shutil
 
-def parse_xml(file_path):
+def parse_xml(file_path, original_location_file=None):
     """
     Parses an XML file to extract site-level and day-level irrigation data.
     Args:
@@ -13,7 +13,7 @@ def parse_xml(file_path):
     Returns:
         list[dict]: A list of dictionaries, where each dictionary contains the following keys:
             - site_id (str or None): The site ID extracted from the XML.
-            - internal_id (int): The internal ID derived from the filename (without extension).
+            - internal_id (int): The internal ID derived from the filename (without extension) or by crosswalking with id file.
             - plot_file (str or None): The plot file value from the XML.
             - operator (str or None): The operator value from the XML.
             - operator_initials (str): The initials of the operator, derived from the file path.
@@ -44,7 +44,19 @@ def parse_xml(file_path):
     operator = root.find("operator/value").text if root.find("operator/value") is not None else None
     plot_file = root.find("plot_file/value").text if root.find("plot_file/value") is not None else None
     water_source = root.find("natural_dicoloration/value").text if root.find("natural_dicoloration/value") is not None else None
-    internal_id = int(os.path.splitext(os.path.basename(file_path))[0]) # The filename without extension
+
+    if original_location_file:
+        # the original location file lists the ids in order. 
+        # We can use the index of the ids (index + 1) to get the internal id
+        
+        ids_cross = pd.read_csv(original_location_file)
+        ids_cross = ids_cross[ids_cross["id"] == site_id]
+        if ids_cross.empty:
+            raise ValueError(f"Error: {site_id} not found in original location file.")
+        else:
+            internal_id = ids_cross.index[0] + 1
+    else:
+        internal_id = int(os.path.splitext(os.path.basename(file_path))[0]) # The filename without extension
 
     records = []
     # Iterate over potential day records (assuming up to 10 as in your XML)
@@ -78,7 +90,7 @@ def parse_xml(file_path):
             })
     return records
 
-def process_xml_zip(xml_zip):
+def process_xml_zip(xml_zip, original_location_file=None):
     """
     Processes a ZIP file containing XML files, extracts the data, and converts it into a CSV file.
     Args:
@@ -104,7 +116,7 @@ def process_xml_zip(xml_zip):
     for filename in os.listdir(xml_folder):
         if filename.endswith(".xml"):
             file_path = os.path.join(xml_folder, filename)
-            all_records.extend(parse_xml(file_path))
+            all_records.extend(parse_xml(file_path, original_location_file))
 
     # Create a DataFrame and export to CSV
     df = pd.DataFrame(all_records)
@@ -121,6 +133,9 @@ if __name__ == '__main__':
     # df = process_xml_zip(xml_zip)
     # print(df.head)
 
-    xml_zip = "data/labels/labeled_surveys/random_sample/DSB_1-25.zip"
-    df = process_xml_zip(xml_zip)
-    df.head
+    # xml_zip = "data/labels/labeled_surveys/random_sample/DSB_1-25.zip"
+    # df = process_xml_zip(xml_zip, original_location_file="data/sampling/samples/random_sample/Zambia_0.05_n_1-25.csv")
+    # df.head
+
+    xml_zip = "data/labels/labeled_surveys/random_sample/KL_51-75.zip"
+    df = process_xml_zip(xml_zip, original_location_file="data/sampling/samples/random_sample/Zambia_0.05_n_51-75.csv")
