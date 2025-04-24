@@ -46,29 +46,30 @@ def parse_xml(file_path):
             })
     return records
 
-def process_xml_folder(xml_folder):
+def process_xml_zip(xml_zip):
 
-    xml_folder = xml_folder + '/1'
+    # Unzip the folder
+    xml_folder = os.path.splitext(xml_zip)[0]
+    shutil.unpack_archive(xml_zip, xml_folder)
+
+    xml_folder = xml_folder + '/1' # move into the "1" folder
 
     all_records = []
     for filename in os.listdir(xml_folder):
         if filename.endswith(".xml"):
             file_path = os.path.join(xml_folder, filename)
             all_records.extend(parse_xml(file_path))
-    return all_records
-
-if __name__ == '__main__':
-
-    xml_zip = "data/labels/test/AnnaBoser_collectedData_earthirrigation_survey_3_6_on_140325_183804_ZIP_WITH_XML.zip"
-    
-    # Unzip the folder
-    xml_folder = os.path.splitext(xml_zip)[0]
-    shutil.unpack_archive(xml_zip, xml_folder)
-    
-    all_records = process_xml_folder(xml_folder)
 
     # Create a DataFrame and export to CSV
     df = pd.DataFrame(all_records)
     output_csv = xml_folder + ".csv"
     df.to_csv(output_csv, index=False)
     print(f"CSV successfully created at: {output_csv}")
+    
+    return all_records
+
+if __name__ == '__main__':
+
+    xml_zip = "data/labels/test/AnnaBoser_collectedData_earthirrigation_survey_3_6_on_140325_183804_ZIP_WITH_XML.zip"
+    
+    all_records = process_xml_zip(xml_zip)
