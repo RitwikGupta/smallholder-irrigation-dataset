@@ -112,6 +112,12 @@ def process_xml_zip(xml_zip, original_location_file=None):
 
     xml_folder = xml_folder + '/1' # move into the "1" folder
 
+    # Automatically generate the original_location_file path based on the xml_zip name
+    if original_location_file is None:
+        group_name = xml_zip.split("/")[-2]
+        sample_range = os.path.basename(xml_zip).split("_")[-1].replace(".zip", "")
+        original_location_file = f"data/sampling/samples/{group_name}/Zambia_0.05_n_{sample_range}.csv"
+
     all_records = []
     for filename in os.listdir(xml_folder):
         if filename.endswith(".xml"):
@@ -120,7 +126,9 @@ def process_xml_zip(xml_zip, original_location_file=None):
 
     # Create a DataFrame and export to CSV
     df = pd.DataFrame(all_records)
-    output_csv = xml_zip.replace('zip', 'csv')# os.path.splitext(xml_zip)[0] + ".csv"
+    processed_folder = os.path.join(os.path.dirname(xml_zip), "processed")
+    os.makedirs(processed_folder, exist_ok=True)
+    output_csv = os.path.join(processed_folder, os.path.basename(xml_zip).replace('.zip', '.csv'))
     df.to_csv(output_csv, index=False)
     print(f"CSV successfully created at: {output_csv}")
     
@@ -138,4 +146,4 @@ if __name__ == '__main__':
     # df.head
 
     xml_zip = "data/labels/labeled_surveys/random_sample/KL_51-75.zip"
-    df = process_xml_zip(xml_zip, original_location_file="data/sampling/samples/random_sample/Zambia_0.05_n_51-75.csv")
+    df = process_xml_zip(xml_zip)

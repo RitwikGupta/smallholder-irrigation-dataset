@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import json
 import geopandas as gpd
+import os
 
 # Define the KML namespace
 ns = {'kml': 'http://www.opengis.net/kml/2.2'}
@@ -269,7 +270,9 @@ def kml_to_geojson(kml_file):
     }
 
     # Write the GeoJSON to a file
-    geojson_file = kml_file.replace(".kml", ".geojson")
+    processed_folder = os.path.join(os.path.dirname(kml_file), "processed")
+    os.makedirs(processed_folder, exist_ok=True)
+    geojson_file = os.path.join(processed_folder, os.path.basename(kml_file).replace(".kml", ".geojson"))
 
     with open(geojson_file, "w") as f:
         json.dump(feature_collection, f, indent=2)
