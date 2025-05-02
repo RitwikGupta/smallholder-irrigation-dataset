@@ -52,42 +52,51 @@ def parse_xml(file_path, original_location_file=None):
         ids_cross = pd.read_csv(original_location_file)
         ids_cross = ids_cross[ids_cross["id"] == site_id]
         if ids_cross.empty:
-            raise ValueError(f"Error: {site_id} not found in original location file.")
+            print(f"Warning: {site_id} not found in original location file. Removing this line from the output.")
+            return []
         else:
             internal_id = ids_cross.index[0] + 1
     else:
         internal_id = int(os.path.splitext(os.path.basename(file_path))[0]) # The filename without extension
 
     records = []
-    # Iterate over potential day records (assuming up to 10 as in your XML)
+    # Iterate over potential day records (assuming up to 10)
     for i in range(1, 11):
         year_elem = root.find(f"year{i}")
         month_elem = root.find(f"month{i}")
         day_elem = root.find(f"day{i}")
         irrigation_elem = root.find(f"irrigation{i}")
 
-        # Only create a row if there’s a valid year (adjust the check as needed)
         if year_elem is not None and year_elem.find("code") is not None:
             year = year_elem.find("code").text
             month = month_elem.find("code").text if (month_elem is not None and month_elem.find("code") is not None) else None
             day = day_elem.find("value").text if (day_elem is not None and day_elem.find("value") is not None) else None
             irrigation = irrigation_elem.find("code").text if (irrigation_elem is not None and irrigation_elem.find("code") is not None) else None
 
-            records.append({
-                "site_id": site_id,
-                "internal_id": internal_id, 
-                "plot_file": plot_file,
-                "operator": operator,
-                "operator_initials": operator_initials,
-                "x": x,
-                "y": y,
-                "water_source": water_source,
-                "image_number": i,
-                "year": year,
-                "month": month,
-                "day": day,
-                "irrigation": irrigation,
-            })
+            # Turn the year month and day into a date object to check its validity
+            try:
+                date = pd.to_datetime(f"{year}-{month}-{day}", format="%Y-%m-%d")
+            except ValueError:
+                date = None
+            
+            # Only create a row if the date is valid and there is an irrigation code
+            if date and irrigation:
+
+                records.append({
+                    "site_id": site_id,
+                    "internal_id": internal_id, 
+                    "plot_file": plot_file,
+                    "operator": operator,
+                    "operator_initials": operator_initials,
+                    "x": x,
+                    "y": y,
+                    "water_source": water_source,
+                    "image_number": i,
+                    "year": year,
+                    "month": month,
+                    "day": day,
+                    "irrigation": irrigation,
+                })
     return records
 
 def process_xml_zip(xml_zip, original_location_file=None):
@@ -145,5 +154,5 @@ if __name__ == '__main__':
     # df = process_xml_zip(xml_zip, original_location_file="data/sampling/samples/random_sample/Zambia_0.05_n_1-25.csv")
     # df.head
 
-    xml_zip = "data/labels/labeled_surveys/random_sample/KL_51-75.zip"
+    xml_zip = "data/labels/labeled_surveys/random_sample/JL_26-50.zip"
     df = process_xml_zip(xml_zip)

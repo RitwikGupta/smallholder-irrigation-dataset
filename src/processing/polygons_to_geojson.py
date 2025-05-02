@@ -18,11 +18,18 @@ def parse_name(name_text):
         # Expecting the date to be in the format month.day.year (e.g., "9.6.2021")
         date_parts = parts[2].split('.')
         if len(date_parts) != 3:
-            raise ValueError("Date portion does not have three parts.")
-        month, day, year = map(int, date_parts)
-        if len(str(year)) != 4:
-            print(f"Warning: internal_id {internal_id}; Year {year} does not have four digits. Adding '20' prefix.")
-            year += 2000
+            print(f"Issue parsing name '{name_text}': Date portion does not have three parts. Returning the whole thing for the month, day and year for manual fixing.")
+            month, day, year = name_text, name_text, name_text
+        else:
+            # Convert month, day, year to integers
+            month, day, year = map(int, date_parts)
+            # Check if year is 2 or 4 digits
+            if len(str(year)) != 4:
+                if len(str(year)) == 2:
+                    print(f"Warning: internal_id {internal_id}; Year '{year}' is only two digits. Adding '20' prefix.")
+                    year += 2000
+                else:
+                    print(f"Warning: internal_id {internal_id}; Year '{year}' is not 2 or four digits. Please manually fix")
         return {
             "operator_initials": operator_initials,
             "internal_id": internal_id,
@@ -31,7 +38,7 @@ def parse_name(name_text):
             "year": year
         }
     except Exception as e:
-        raise ValueError(f"Error parsing name '{name_text}': {e}")
+        raise ValueError(f"Error parsing name '{name_text}': {e}. Name properties not returned.")
 
 def parse_description(desc_text): # Note you will need to update to handle special classes (agroforestry etc.)
     """
@@ -146,7 +153,7 @@ def convert_color_to_im_num(color):
     if color in color_convert.values():
         return list(color_convert.keys())[list(color_convert.values()).index(color)]
     else:
-        print("Not one of the main colors used")
+        print("Warning: Not one of the main colors used. Returning None for the color value.")
         return None
 
 def convert_geometry(placemark):
@@ -229,7 +236,7 @@ def kml_to_geojson(kml_file):
             props = parse_name(name_elem.text.strip())
         except ValueError as e:
             print(e)
-            continue
+            props = {}
 
         # Extract and parse <description>
         desc_elem = placemark.find("kml:description", ns)
@@ -287,6 +294,6 @@ if __name__ == "__main__":
     # gdf = kml_to_geojson(kml_file_path)
     # print(gdf)
 
-    kml = "data/labels/labeled_surveys/random_sample/DSB_1-25.kml"
+    kml = "data/labels/labeled_surveys/random_sample/AB_JL_101-125.kml"
     gdf = kml_to_geojson(kml)
     print(gdf.head)

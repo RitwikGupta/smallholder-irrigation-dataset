@@ -72,15 +72,15 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     # Process each survey row
     for idx, row in survey_gdf.iterrows():
 
-        # Find polygons that match by internal_id, year, month, and day.
+        # Find polygons that match by internal_id (or site_id if the labeler accidentally used that), year, month, and day.
         condition = (
-            # (row["geometry"].intersects(polygons["geometry"])) &
-            (polygons["internal_id"] == row["internal_id"]) &
+            ((polygons["internal_id"] == row["internal_id"]) | 
+             (polygons["internal_id"] == int(row["site_id"][3:]))) &
             (polygons["year"] == row["year"]) &
             (polygons["month"] == row["month"]) &
             (polygons["day"] == row["day"])
         )
-        matching_polys = polygons[condition]
+        matching_polys = polygons[condition].copy()
 
         # Get irrigation value and perform checks.
         irrigation = int(row["irrigation"])
@@ -163,17 +163,19 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
         print(report[0])
 
     # Save the report
-    merged_folder = os.path.join(os.path.dirname(survey_path), "merged")
+    merged_folder = os.path.join(os.path.dirname(os.path.dirname(survey_path)), "merged")
     os.makedirs(merged_folder, exist_ok=True)
     report_path = os.path.join(merged_folder, os.path.basename(survey_path).replace(".csv", "_report.txt"))
     with open(report_path, "w") as f:
         for line in report:
             f.write(line + "\n")
+    print(f"Saved report at {report_path}")
 
     # Save  the updated survey results to a CSV, dropping geometry
     survey_results = survey_gdf.copy()
     results_path = os.path.join(merged_folder, os.path.basename(survey_path).replace(".csv", "_merged.csv"))
     survey_results.drop(columns="geometry").to_csv(results_path, index=False)
+    print(f"Saved merged dataset at {results_path}")
 
     # Return the survey results GeoDataFrame (with added percent coverage columns)
     return survey_gdf
@@ -187,18 +189,6 @@ if __name__ == "__main__":
     # survey_results = merge_and_check(survey, polygons)
     # print(survey_results.head())
 
-    survey = "data/labels/labeled_surveys/random_sample/DSB_1-25.csv"
-    survey_results = merge_and_check(survey)
-    print(survey_results.head())
-
-    survey = "data/labels/labeled_surveys/random_sample/DSB_101-125.csv"
-    survey_results = merge_and_check(survey)
-    print(survey_results.head())
-
-    survey = "data/labels/labeled_surveys/random_sample/KL_101-125.csv"
-    survey_results = merge_and_check(survey)
-    print(survey_results.head())
-
-    survey = "data/labels/labeled_surveys/random_sample/KL_51-75.csv"
+    survey = "data/labels/labeled_surveys/random_sample/processed/MV_76-100.csv"
     survey_results = merge_and_check(survey)
     print(survey_results.head())
