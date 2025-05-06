@@ -145,14 +145,18 @@ def process_xml_zip(xml_zip, original_location_file=None):
 
 if __name__ == '__main__':
 
-    # xml_zip = "data/labels/test/AnnaBoser_collectedData_earthirrigation_survey_3_6_on_140325_183804_ZIP_WITH_XML.zip"
+    # Example usage/test code
     
+    # xml_zip = "data/labels/labeled_surveys/random_sample/JL_26-50.zip"
     # df = process_xml_zip(xml_zip)
-    # print(df.head)
 
-    # xml_zip = "data/labels/labeled_surveys/random_sample/DSB_1-25.zip"
-    # df = process_xml_zip(xml_zip, original_location_file="data/sampling/samples/random_sample/Zambia_0.05_n_1-25.csv")
-    # df.head
+    # CLI argument parsing
+    import argparse
 
-    xml_zip = "data/labels/labeled_surveys/random_sample/JL_26-50.zip"
-    df = process_xml_zip(xml_zip)
+    parser = argparse.ArgumentParser(description="Process a survey ZIP file exported from Earth Collect into a CSV.")
+    parser.add_argument("zip_path", help="Path to the .zip file containing the XML survey export")
+
+    args = parser.parse_args()
+
+    df = process_xml_zip(args.zip_path)
+    print(f"Parsed {len(df)} records from {args.zip_path}")

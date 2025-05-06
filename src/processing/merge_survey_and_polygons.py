@@ -1,7 +1,7 @@
 import pandas as pd
 import geopandas as gpd
 from shapely.ops import unary_union
-from geometries import survey_polygon
+from utils.geometries import survey_polygon
 from typing import Optional
 from shapely.validation import make_valid
 import os
@@ -183,13 +183,25 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
 
 
 if __name__ == "__main__":
-    # Load survey and polygon data.
-    # survey = "data/labels/test/AnnaBoser_collectedData_earthirrigation_survey_3_6_on_140325_183804_ZIP_WITH_XML.csv"
-    # polygons = "data/labels/test/Zambia_0.05_n_1-50.geojson"
+    
+    # Example usage/test code
 
-    # survey_results = merge_and_check(survey, polygons)
+    # survey = "data/labels/labeled_surveys/random_sample/processed/MV_76-100.csv"
+    # survey_results = merge_and_check(survey)
     # print(survey_results.head())
 
-    survey = "data/labels/labeled_surveys/random_sample/processed/MV_76-100.csv"
-    survey_results = merge_and_check(survey)
-    print(survey_results.head())
+    # CLI argument parsing
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Merge survey data with polygon data and perform consistency checks.")
+    parser.add_argument("survey_path", type=str, help="Path to the survey CSV file.")
+    parser.add_argument("--polygons_path", type=str, help="Path to the polygons GeoJSON file (optional).")
+    args = parser.parse_args()
+    
+    survey_path = args.survey_path
+    polygons_path = args.polygons_path if args.polygons_path else None
+    
+    survey_results = merge_and_check(survey_path, polygons_path)
+    
+    print(f"Merged results have {len(survey_results)} rows.")

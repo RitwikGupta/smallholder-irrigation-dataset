@@ -192,7 +192,8 @@ def convert_geometry(placemark):
 
 def kml_to_geojson(kml_file):
     """
-    Converts a KML file to a GeoJSON file and returns a GeoPandas GeoDataFrame.
+    Converts a KML file that contains a folder of polygons exported from Google 
+    Earth Pro to a GeoJSON file and returns a GeoPandas GeoDataFrame.
     This function parses a KML file, extracts placemark data, converts the geometries 
     to GeoJSON format, and writes the resulting GeoJSON to a file. It also returns 
     a GeoPandas GeoDataFrame created from the GeoJSON features.
