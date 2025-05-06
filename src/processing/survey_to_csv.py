@@ -137,7 +137,8 @@ def process_xml_zip(xml_zip, original_location_file=None):
     df = pd.DataFrame(all_records)
     processed_folder = os.path.join(os.path.dirname(xml_zip), "processed")
     os.makedirs(processed_folder, exist_ok=True)
-    output_csv = os.path.join(processed_folder, os.path.basename(xml_zip).replace('.zip', '.csv'))
+    output_csv = xml_zip.replace("/raw/", "/processed/").replace(".zip", ".csv")
+    os.makedirs(os.path.dirname(output_csv), exist_ok=True)
     df.to_csv(output_csv, index=False)
     print(f"CSV successfully created at: {output_csv}")
     
@@ -146,8 +147,8 @@ def process_xml_zip(xml_zip, original_location_file=None):
 if __name__ == '__main__':
 
     # Example usage/test code
-    
-    # xml_zip = "data/labels/labeled_surveys/random_sample/JL_26-50.zip"
+
+    # xml_zip = "data/labels/labeled_surveys/random_sample/raw/JL_26-50.zip"
     # df = process_xml_zip(xml_zip)
 
     # CLI argument parsing

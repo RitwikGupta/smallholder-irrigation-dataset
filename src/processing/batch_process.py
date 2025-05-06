@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     # Example usage/test code 
     
-    # folder_path = "data/labels/labeled_surveys/random_sample"
+    # folder_path = "data/labels/labeled_surveys/random_sample/raw"
     # merged_result = process_and_merge_folder(folder_path)
     # print(merged_result.head())
 

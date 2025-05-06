@@ -153,7 +153,7 @@ def convert_color_to_im_num(color):
     if color in color_convert.values():
         return list(color_convert.keys())[list(color_convert.values()).index(color)]
     else:
-        print("Warning: Not one of the main colors used. Returning None for the color value.")
+        # print("Warning: Not one of the main colors used. Returning None for the color value.")
         return None
 
 def convert_geometry(placemark):
@@ -278,7 +278,7 @@ def kml_to_geojson(kml_file):
     }
 
     # Write the GeoJSON to a file
-    processed_folder = os.path.join(os.path.dirname(kml_file), "processed")
+    processed_folder = os.path.dirname(kml_file).replace("/raw/", "/processed/")
     os.makedirs(processed_folder, exist_ok=True)
     geojson_file = os.path.join(processed_folder, os.path.basename(kml_file).replace(".kml", ".geojson"))
 
@@ -291,10 +291,20 @@ def kml_to_geojson(kml_file):
 
 # Example usage:
 if __name__ == "__main__":
-    # kml_file_path = "data/labels/test/Zambia_0.05_n_1-50.kml"  # update with your actual file path
-    # gdf = kml_to_geojson(kml_file_path)
-    # print(gdf)
 
-    kml = "data/labels/labeled_surveys/random_sample/AB_JL_101-125.kml"
-    gdf = kml_to_geojson(kml)
-    print(gdf.head)
+    # Example usage/test code
+
+    # kml = "data/labels/labeled_surveys/random_sample/raw/AB_JL_101-125.kml"
+    # gdf = kml_to_geojson(kml)
+    # print(gdf.head)
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Convert KML to GeoJSON.")
+    parser.add_argument("kml_file", type=str, help="Path to the KML file to convert.")
+    args = parser.parse_args()
+    
+    kml_file = args.kml_file
+    gdf = kml_to_geojson(kml_file)
+    
+    print(f"GeoJSON written to {os.path.splitext(kml_file)[0]}.geojson")
