@@ -24,29 +24,19 @@ Generating this dataset requires four main steps. First, the area of interest an
 
 ## Repository Structure
 ```
-smallholder-irrigation-dataset/
-├── data/
-│   ├── sampling/              # AOI files, sampling grids, locations, and metadata
-│   ├── labels/                # Collect survey files and generated labels with metadata
-│   ├── features/              # Data downloaded from Google Earth Engine linked to sampling locations
-│   └── final_dataset/         # The cleaned, standardized dataset ready for analysis or publication
-├── src/
-│   ├── sampling/              # Source code for AOI generation, grid creation, and sampling workflows
-│   ├── labels/                # Source code for Collect survey creation and label management
-│   ├── features/              # Source code for automated GEE data downloads
-│   └── processing/            # Source code for data cleaning, processing, and integration
-├── utils/                     # Utility scripts for tasks like metadata generation
-├── scripts/
-│   ├── sampling/              # Scripts to execute sampling workflows
-│   ├── labels/                # Scripts to manage Collect surveys
-│   ├── features/              # Scripts for automated data downloads
-│   └── processing/            # Scripts for data cleaning and integration
-├── notebooks/                 # Jupyter notebooks for exploration, prototyping, and documentation
-├── config.yaml                # Central configuration file (paths, EPSG codes, bounding box sizes)
-├── README.md                  # Project overview, instructions, and workflow descriptions
-├── CONTRIBUTING.md            # Guidelines for contributing to the repository
+.
+├── config.yaml                # Project configuration file
+├── CONTRIBUTING.md            # Contribution guidelines
+├── LICENSE                    # License file
+├── README.md                  # (Superseded by this version)
 ├── requirements.txt           # Python dependencies
-└── tests/                     # Unit tests for critical functions
+├── notebooks/                 # Jupyter notebooks for data exploration and prototyping
+├── src/                       # Main source code folder
+│   ├── processing/            # Scripts to clean, merge, and convert survey and polygon data
+│   ├── sampling/              # Grid-based sampling code
+│   ├── labels/                # Label generation and formatting utilities
+│   ├── features/              # Placeholder for feature extraction scripts
+│   └── utils/                 # Shared utility functions (e.g., figures, geometries)
 ```
 
 ## Getting Started
