@@ -10,8 +10,8 @@ This folder contains scripts that help you convert your survey and labeling file
 Each script expects files to follow a standard directory layout:
 
 * Raw input files (e.g., `.zip` and `.kml`) should be placed in a `raw/` subfolder
-    * Generally, these should be in `data/labels/labeled_surveys/<SAMPLE-NAME>/raw/`
-    * Our surveys have thus far been drawn from the sample `random_sample` 
+    * Generally, these should be in `data/labels/labeled_surveys/<SAMPLE-GROUP-NAME>/raw/`
+    * Our surveys have thus far been drawn from the sample group `random_sample` 
 * Processed files (e.g., `.csv` and `.geojson`) are saved to a `processed/` subfolder
 * Merged outputs from survey + polygon data are saved to a `merged/` subfolder
 
@@ -109,5 +109,19 @@ These naming conventions ensure that:
 * Add a version number to the filename: `<INITIALS>_<ID-RANGE>_v2.<ext>`, `_v3`, etc.
 
   * Example: `AB_1-25_v2.kml`, `AB_1-25_v3.zip`
+
+---
+
+### 🤝 Collaboration Guidelines
+
+To help everyone work smoothly together on this project:
+
+* **Use Git branches**: Create and work from your own branch named with your initials (e.g., `jl-working`, `ab-dev`)
+* **Commit frequently**: Commit your code and data changes often with clear messages
+* **Include data**: If you add or change labeling data, commit those files too -- these are excluded from the `.gitignore`.
+* **Pull requests**: When you're ready to merge your work, open a pull request describing what you changed. Aim to do this weekly. 
+* **Communicate**: Leave comments or notes in your pull request if you hit issues, made a decision, or want feedback
+
+These habits will help keep the project organized, make collaboration easier, and ensure that we don't lose or overwrite each other's work.
 
 ---

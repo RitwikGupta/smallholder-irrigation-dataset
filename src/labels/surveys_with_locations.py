@@ -100,7 +100,17 @@ def generate_survey(template_zip_path, output_dir, sample_dir, sample_name):
 
 if __name__ == "__main__":
 
-    survey_name = "irrigation_survey_3_6_published_20250411T143124.zip" 
-    sample_group = "random_sample"
+    # Example usage/test
 
-    generate_surveys(survey_name, sample_group)
+    # survey_name = "irrigation_survey_3_6_published_20250411T143124.zip" 
+    # sample_group = "random_sample"
+
+    # generate_surveys(survey_name, sample_group)
+
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate surveys for a sample group.")
+    parser.add_argument("survey_name", type=str, help="Name of the survey template zip file.")
+    parser.add_argument("sample_group", type=str, help="Name of the sample group directory.")
+    args = parser.parse_args()
+    generate_surveys(args.survey_name, args.sample_group)
