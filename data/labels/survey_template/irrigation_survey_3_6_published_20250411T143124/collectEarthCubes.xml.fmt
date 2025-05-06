@@ -1,0 +1,413 @@
+<Schema name="irrigation_survey_3_6_published">
+  <Cube name="Collect Earth Plot" cache="true" enabled="true">
+    <Table name="plot" schema="${saikuDbSchema}"/>
+    <Dimension name="Plot - Id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Plot - Id" column="id" uniqueMembers="false" levelType="Regular" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Plot - Central Point coordinates" type="" visible="true">
+      <Hierarchy type="StandardDimension" visible="true" hasAll="true">
+        <Level name="Plot - Central Point coordinates - Latitude" column="location_y" uniqueMembers="false"/>
+        <Level name="Plot - Central Point coordinates - Longitude" column="location_x" uniqueMembers="false"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Plot - Operator" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Plot - Operator" column="operator" uniqueMembers="false" levelType="Regular" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Plot - Actively saved by user (green tick)" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Plot - Actively saved by user (green tick)" column="actively_saved" uniqueMembers="false" levelType="Regular" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Plot - Last saved on" type="" visible="true">
+      <Hierarchy type="TimeDimension" allMemberName="attrLabel" visible="true" hasAll="true">
+        <Level name="Plot - Last saved on - Year" column="actively_saved_on_year" uniqueMembers="false" levelType="TimeYears" type="Numeric"/>
+        <Level name="Plot - Last saved on - Month" column="actively_saved_on_month" uniqueMembers="false" levelType="TimeMonths" type="Numeric"/>
+        <Level name="Plot - Last saved on - Day" column="actively_saved_on_day" uniqueMembers="false" levelType="TimeDays" type="Numeric"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Plot - CSV file that contains the plot" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Plot - CSV file that contains the plot" column="plot_file" uniqueMembers="false" levelType="Regular" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year1_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month1_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day1" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" foreignKey="day1_mc_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="day_code" schema="${saikuDbSchema}"/>
+        <Level name="Day of the month" table="day_code" column="day_code_id" nameColumn="day_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Day of the month -  ID" table="day_code" column="day_code_id" nameColumn="day" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation1_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason1_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year2_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month2_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day2" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation2_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason2_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year3_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month3_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day3" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation3_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason3_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year4_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month4_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day4" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation4_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason4_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year5_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month5_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day5" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation5_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason5_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year6_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month6_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day6" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation6_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason6_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year7_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month7_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day7" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation7_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason7_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year8_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month8_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day8" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation8_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason8_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Wetland, steam/river bed, lake, reservoir, shallow groundwater, or other water source present?" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Wetland, steam/river bed, lake, reservoir, shallow groundwater, or other water source present?" column="natural_dicoloration" uniqueMembers="false" levelType="Regular" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year9_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month9_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day9" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation9_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason9_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Year" foreignKey="year10_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="year_code" schema="${saikuDbSchema}"/>
+        <Level name="Year" table="year_code" column="year_code_id" nameColumn="year_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Year -  ID" table="year_code" column="year_code_id" nameColumn="year" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Month" foreignKey="month10_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="month_code" schema="${saikuDbSchema}"/>
+        <Level name="Month" table="month_code" column="month_code_id" nameColumn="month_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Month -  ID" table="month_code" column="month_code_id" nameColumn="month" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Day of the month" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Level name="Day of the month" column="day10" uniqueMembers="false" levelType="Regular" type="Integer"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Is there any active irrigation (smallholder or commercial)?" foreignKey="irrigation10_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="certainty_code" schema="${saikuDbSchema}"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)?" table="certainty_code" column="certainty_code_id" nameColumn="certainty_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Is there any active irrigation (smallholder or commercial)? -  ID" table="certainty_code" column="certainty_code_id" nameColumn="certainty" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Dimension name="Why are you not sure? " foreignKey="uncertainty_reason10_code_id" type="StandardDimension" visible="true">
+      <Hierarchy visible="true" hasAll="true">
+        <Table name="uncertainty_reason_code" schema="${saikuDbSchema}"/>
+        <Level name="Why are you not sure? " table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason_label_en" uniqueMembers="false" levelType="Regular" type="Integer"/>
+        <Level name="Why are you not sure?  -  ID" table="uncertainty_reason_code" column="uncertainty_reason_code_id" nameColumn="uncertainty_reason" uniqueMembers="false" type="String"/>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="plot_count" column="_plot_id" datatype="Integer" aggregator="distinct count" caption="Plot Count"/>
+    <Measure name="area" column="expansion_factor" datatype="Numeric" aggregator="sum" caption="Area (HA)" formatString="###,###.00"/>
+    <Measure name="plot_weight" column="plot_weight" datatype="Numeric" aggregator="sum" caption="Plot Weight" formatString="#,###.##"/>
+    <Measure name="day1_min" column="day1" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day1_max" column="day1" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day1_avg" column="day1" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day2_min" column="day2" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day2_max" column="day2" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day2_avg" column="day2" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day3_min" column="day3" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day3_max" column="day3" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day3_avg" column="day3" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day4_min" column="day4" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day4_max" column="day4" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day4_avg" column="day4" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day5_min" column="day5" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day5_max" column="day5" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day5_avg" column="day5" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day6_min" column="day6" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day6_max" column="day6" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day6_avg" column="day6" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day7_min" column="day7" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day7_max" column="day7" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day7_avg" column="day7" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day8_min" column="day8" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day8_max" column="day8" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day8_avg" column="day8" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day9_min" column="day9" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day9_max" column="day9" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day9_avg" column="day9" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+    <Measure name="day10_min" column="day10" datatype="Numeric" aggregator="min" caption="Day of the month min" formatString="#.##"/>
+    <Measure name="day10_max" column="day10" datatype="Numeric" aggregator="max" caption="Day of the month max" formatString="#.##"/>
+    <Measure name="day10_avg" column="day10" datatype="Numeric" aggregator="avg" caption="Day of the month avg" formatString="#.##"/>
+  </Cube>
+</Schema>

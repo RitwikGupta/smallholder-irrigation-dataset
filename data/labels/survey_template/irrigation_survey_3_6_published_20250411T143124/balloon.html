@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<script type="text/javascript">
+	/**
+	 * 
+	 * Values expected ( for the "HTTP parameters" -> "Collect format"
+	 * conversion to work )
+	 * 
+	 * All inputs that have proccesable information ( hidden or otherwise) should
+	 * start with "collect_" :
+	 * 
+	 * If the input is text then it should be followed by "text_" If the input is a
+	 * code (option in combo-box for instance) then it should be followed by "code_"
+	 * If the input is a date then it should be followed by "date_" If the input is
+	 * a coordinate then it should be followed by "coord_" ( the value expected has
+	 * the format "longitude,latitude" ) If the input is an integer then it should
+	 * be followed by "integer_" If the input is a boolean then it should be
+	 * followed by "boolean_"
+	 * 
+	 * When multiple values can be sent ( in a multiple select for instance ) the
+	 * data sent in the Http parameters has to be separated using " " ( a space )
+	 * 
+	 * So, for Mongolia we expect these values : collect_text_id
+	 * collect_coord_location collect_integer_elevation collect_text_operator (
+	 * filled in the earthSurveyService store method as the operator name is fetched
+	 * through a properties file) collect_code_land_use_category
+	 * collect_code_land_use_subcategory collect_code_land_use_subdivision
+	 * collect_code_site_accessibility collect_entity_topography[X]_code_element
+	 * collect_entity_topography[X]_code_coverage collect_code_human_impact_type
+	 * collect_code_human_impact_grade collect_integer_human_impact_year
+	 * collect_date_rs_date collect_code_rs_satellite collect_code_canopy_cover
+	 * collect_code_canopy_type collect_boolean_actively_saved // Set this to true
+	 * when the user saves the data by actively clicking in submit
+	 * 
+	 * collect_real_aspect collect_real_slope collect_text_directions
+	 * collect_code_bearing collect_boolean_land_use_category_accuracy
+	 * collect_boolean_land_use_subcategory_accuracy
+	 * collect_boolean_land_use_subdivision_accuracy
+	 * 
+	 * When a value has multiple values they will be separated with "===" i.e.
+	 * collect_code_human_impact_type = "fire===logging===grazing"
+	 * 
+	 * 
+	 * 
+	 * Other inputs: earth_skip_filled
+	 * 
+	 */
+	 
+ 	/**
+ 	* STATIC CONSTANTS 
+ 	* DO NOT REMOVE THIS LINE
+ 	*/
+	var DEBUG = false; // if set to true, log messages will appear in a box in the bottom part of the balloon
+ 	var NEXT_ID = "$[next_id]";
+ 	var HOST = "$[host]";
+ 	
+ 	var SUBMIT_LABEL = "Send";
+    var NEXT_LABEL = "Next";
+    var PREVIOUS_LABEL = "Previous";
+    
+    var COLLECT_NOT_RUNNING = "The Collect Earth server is not running!";
+    var PLACEMARK_ALREADY_FILLED = "The data for this plot has already been filled";
+    
+    var PREVIEW = false;
+    
+    
+    // By default all Collect Earth surveys are defined as having at least the id attribute "id" which is stored by the balloon as collect_text_id
+    // If more id attributes are present in the survey then their names ( using the protocoal for the transmission e.g. "collect_code_year") will be specified in this list :
+    // the value of this variable should be something like ['collect_text_id'] or ['collect_text_id','collect_code_measurement']
+    var EXTRA_ID_ATTRIBUTES = ['collect_text_id'];
+    
+    
+	</script>
+	
+	<script src="earthFiles/jquery/jquery.js?v=2663023"></script>
+	<script src="earthFiles/jquery/jquery-ui.js?v=2663023"></script>
+	<script src="earthFiles/jquery/jquery.blockUI.js?v=2663023"></script>
+	<script src="earthFiles/jquery/jquery.selectBoxIt.min.js?v=2663023"></script>
+	<script src="earthFiles/jquery/jquery.steps.openforis.js?v=2663023"></script>
+	<script src="earthFiles/bootstrap/bootstrap.min.js?v=2663023"></script>
+	<script src="earthFiles/bootstrap/moment.js?v=2663023"></script>
+	<script src="earthFiles/bootstrap/bootstrap-datetimepicker.min.js?v=2663023"></script>
+
+	<script src="earthFiles/openforis/of.js?v=2663023"></script>
+	<script src="earthFiles/openforis/of-arrays.js?v=2663023"></script>
+	<script src="earthFiles/openforis/of-ui.js?v=2663023"></script>
+	<script src="earthFiles/openforis/of-ui-forms.js?v=2663023"></script>
+	<script src="earthFiles/openforis/of-ui-forms-validation.js?v=2663023"></script>
+	
+	<script src="earthFiles/js/earth_new.js?v=2663023"></script>
+	
+	<link href="earthFiles/jquery/jquery-ui.css?v=2663023" rel="stylesheet" />
+	<link href="earthFiles/jquery/jquery.selectBoxIt.css?v=2663023" rel="stylesheet" />
+	<link href="earthFiles/jquery/jquery-steps.css?v=2663023" rel="stylesheet" />
+	<link href="earthFiles/bootstrap/bootstrap.css?v=2663023" rel="stylesheet" />
+	<link href="earthFiles/bootstrap/bootstrap-datetimepicker.min.css?v=2663023" rel="stylesheet"  />
+	
+	<link href="earthFiles/css/earth.css?v=2663023" rel="stylesheet" />
+	<!--
+	
+		Handle the fonts for different languages that don't have their own glyphs opn the standard interface
+		Right now we only have Lao
+		
+		The TTF file needs to be loaded through the same URL than the balloon to avoid cross referencing issues
+		Use the two character code of the language as the name of the font  
+	-->
+	<style  type="text/css">
+	        @font-face {
+		      font-family: 'lo'; 
+			  src: url('$[host]generated/earthFiles/fonts/Phetsarath_OT.ttf');
+			}
+		
+			body {
+				font-family: "en","Trebuchet MS", "Helvetica", "Arial", "Verdana",
+					"sans-serif";
+			}
+	</style>
+</head>
+
+<body>
+
+	<div id="dialogSuccess" style="display: none">
+		<table>
+			<tr>
+				<td valign="top">
+					<span class="ui-icon ui-icon-circle-check"
+						style="float: left; margin: 0 7px 70px 0;"> </span>
+				</td>
+				<td valign="top">
+					<div id="succ_mess">
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="contentDiv" style="height:600px; width:400px;">
+		<div id="loadingPanel">
+			<span>Loading...</span>
+		</div>
+		
+		<div id="errorPanel" style="display: none">
+			<span><b>An error occurred!</b><span>
+			<br /> <br />
+			<span>Please try to open again the same plot or restart Collect Earth.</span>
+		</div>
+		
+		<div id="collectEarthNotRunningPanel" style="display: none">
+			<span>The Collect Earth server is not running!</span>
+		</div>
+		
+		<div id="scrollingDiv" style="overflow: visible; display: none; width:400px" class="earthDiv">
+			<form id="formAll" class="form-horizontal" action="$[host]save-data-expanded">
+			<!-- <form id="formAll" class="form-horizontal" action="http://127.0.0.1:8028/earth/save-data-expanded"> -->
+								
+				<input type="hidden" id="collect_coord_location" 
+					name="collect_coord_location" value="$[latitude],$[longitude]"
+					class="extra" />
+				
+				<input type="hidden" id="collect_text_plot_file" 
+					name="collect_text_plot_file" value="$[plot_file]"
+					class="extra" />
+
+				<input type="hidden" id="collect_boolean_actively_saved"
+					name="collect_boolean_actively_saved" value="false" />
+					
+<!-- DO NOT REMOVE THIS LINE - IT GENERATES THE EXTRA FIELDS FROM THE CSV-BALLOON INTEGRATION -->
+<!-- START OF EXTRA CSV DATA -->
+<input type="hidden" id="collect_text_id" name="collect_text_id" value="$[EXTRA_id]" class="extra" />
+
+<!-- END OF EXTRA CSV DATA -->
+		
+<!-- DO NOT REMOVE THIS LINE - IT GENERATES THE DYNAMIC FIELDS FROM THE SURVEY DEFINITION -->
+<!-- START OF DYNAMIC FIELDS -->
+<div class="steps">
+<h3>Image 1</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year1">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year1_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year1" name="collect_code_year1" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year1_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month1">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month1_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month1" name="collect_code_month1" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month1_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day1">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day1" name="collect_integer_day1" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_day1_mc">Day of the month</label>
+<div class="col-sm-8">
+<select class="form-control selectboxit show-menu-arrow show-tick" data-field-type="CODE_SELECT" data-width="75px" id="collect_code_day1_mc" name="collect_code_day1_mc"><option selected="true" value="">Nothing selected</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation1">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation1_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation1" name="collect_code_irrigation1" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation1_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason1">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason1_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason1" name="collect_code_uncertainty_reason1" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason1_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_boolean_natural_dicoloration">Wetland, steam/river bed, lake, reservoir, shallow groundwater, or other water source present?</label>
+<div class="col-sm-8">
+<div class="boolean-group" data-toggle="buttons-radio">
+<input class="form-control" data-field-type="BOOLEAN" id="collect_boolean_natural_dicoloration" name="collect_boolean_natural_dicoloration" type="hidden"><button class="btn btn-info" type="button" value="true">Yes</button><button class="btn btn-info" type="button" value="false">No</button>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 2</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year2">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year2_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year2" name="collect_code_year2" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year2_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month2">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month2_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month2" name="collect_code_month2" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month2_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day2">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day2" name="collect_integer_day2" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation2">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation2_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation2" name="collect_code_irrigation2" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation2_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason2">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason2_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason2" name="collect_code_uncertainty_reason2" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason2_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 3</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year3">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year3_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year3" name="collect_code_year3" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year3_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month3">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month3_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month3" name="collect_code_month3" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month3_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day3">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day3" name="collect_integer_day3" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation3">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation3_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation3" name="collect_code_irrigation3" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation3_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason3">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason3_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason3" name="collect_code_uncertainty_reason3" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason3_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 4</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year4">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year4_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year4" name="collect_code_year4" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year4_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month4">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month4_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month4" name="collect_code_month4" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month4_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day4">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day4" name="collect_integer_day4" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation4">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation4_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation4" name="collect_code_irrigation4" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation4_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason4">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason4_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason4" name="collect_code_uncertainty_reason4" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason4_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 5</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year5">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year5_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year5" name="collect_code_year5" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year5_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month5">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month5_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month5" name="collect_code_month5" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month5_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day5">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day5" name="collect_integer_day5" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation5">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation5_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation5" name="collect_code_irrigation5" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation5_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason5">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason5_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason5" name="collect_code_uncertainty_reason5" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason5_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 6</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year6">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year6_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year6" name="collect_code_year6" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year6_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month6">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month6_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month6" name="collect_code_month6" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month6_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day6">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day6" name="collect_integer_day6" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation6">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation6_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation6" name="collect_code_irrigation6" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation6_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason6">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason6_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason6" name="collect_code_uncertainty_reason6" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason6_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 7</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year7">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year7_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year7" name="collect_code_year7" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year7_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month7">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month7_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month7" name="collect_code_month7" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month7_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day7">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day7" name="collect_integer_day7" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation7">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation7_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation7" name="collect_code_irrigation7" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation7_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason7">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason7_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason7" name="collect_code_uncertainty_reason7" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason7_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 8</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year8">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year8_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year8" name="collect_code_year8" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year8_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month8">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month8_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month8" name="collect_code_month8" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month8_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day8">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day8" name="collect_integer_day8" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation8">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation8_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation8" name="collect_code_irrigation8" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation8_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason8">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason8_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason8" name="collect_code_uncertainty_reason8" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason8_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 9</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year9">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year9_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year9" name="collect_code_year9" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year9_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month9">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month9_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month9" name="collect_code_month9" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month9_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day9">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day9" name="collect_integer_day9" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation9">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation9_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation9" name="collect_code_irrigation9" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation9_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason9">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason9_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason9" name="collect_code_uncertainty_reason9" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason9_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<h3>Image 10</h3>
+<section class="step">
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_year10">Year</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_year10_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_year10" name="collect_code_year10" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_year10_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1438" type="button" value="2016">2016</button><button class="btn btn-info code-item" data-code-item-id="1439" type="button" value="2017">2017</button><button class="btn btn-info code-item" data-code-item-id="1440" type="button" value="2018">2018</button><button class="btn btn-info code-item" data-code-item-id="1441" type="button" value="2019">2019</button><button class="btn btn-info code-item" data-code-item-id="1442" type="button" value="2020">2020</button><button class="btn btn-info code-item" data-code-item-id="1443" type="button" value="2021">2021</button><button class="btn btn-info code-item" data-code-item-id="1444" type="button" value="2022">2022</button><button class="btn btn-info code-item" data-code-item-id="1445" type="button" value="2023">2023</button><button class="btn btn-info code-item" data-code-item-id="1446" type="button" value="2024">2024</button><button class="btn btn-info code-item" data-code-item-id="1447" type="button" value="2025">2025</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_month10">Month</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_month10_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_month10" name="collect_code_month10" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_month10_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1449" type="button" value="6">6</button><button class="btn btn-info code-item" data-code-item-id="1450" type="button" value="7">7</button><button class="btn btn-info code-item" data-code-item-id="1451" type="button" value="8">8</button><button class="btn btn-info code-item" data-code-item-id="1452" type="button" value="9">9</button><button class="btn btn-info code-item" data-code-item-id="1453" type="button" value="10">10</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_integer_day10">Day of the month</label>
+<div class="col-sm-8">
+<input class="form-control numeric" id="collect_integer_day10" name="collect_integer_day10" type="text" value="0">
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_irrigation10">Is there any active irrigation (smallholder or commercial)?</label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_irrigation10_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_irrigation10" name="collect_code_irrigation10" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_irrigation10_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1421" title="No" type="button" value="1">No</button><button class="btn btn-info code-item" data-code-item-id="1422" title="Probably not" type="button" value="2">Probably not</button><button class="btn btn-info code-item" data-code-item-id="1423" title="Maybe" type="button" value="3">Maybe</button><button class="btn btn-info code-item" data-code-item-id="1424" title="Probably" type="button" value="4">Probably</button><button class="btn btn-info code-item" data-code-item-id="1425" title="Yes" type="button" value="5">Yes</button>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-4" for="collect_code_uncertainty_reason10">Why are you not sure? </label>
+<div class="col-sm-8">
+<div class="code-items-group" id="collect_code_uncertainty_reason10_group">
+<input class="form-control" data-field-type="CODE_BUTTON_GROUP" id="collect_code_uncertainty_reason10" name="collect_code_uncertainty_reason10" type="hidden">
+<div class="code-items" data-toggle="buttons-radio" id="collect_code_uncertainty_reason10_group_0">
+<button class="btn btn-info code-item" data-code-item-id="1577" type="button" value="ag_signs">Unclear signs of agriculture</button><button class="btn btn-info code-item" data-code-item-id="1578" type="button" value="slight_discolor">Only slight discoloration</button><button class="btn btn-info code-item" data-code-item-id="1579" type="button" value="uneven_discolor">Uneven discoloration</button><button class="btn btn-info code-item" data-code-item-id="1580" type="button" value="natural_discolor">May naturally be discolored</button><button class="btn btn-info code-item" data-code-item-id="1581" type="button" value="fishpond">May be a fishpond</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- END OF DYNAMIC FIELDS -->
+			</form>
+		</div>
+	</div>
+</body>
+
+<script>
+	if (!PREVIEW) {
+		$.ajax({
+		  url: "http://127.0.0.1:$[local_port]/earth/ancillaryWindows?id=$[EXTRA_id]",
+		  async : 'true'
+		});
+	}
+</script>
+
+</html>

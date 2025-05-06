@@ -1,0 +1,2 @@
+Row 1 (internal_id 4, 13/10/2017): survey marked irrigation 2 (possible irrigation) but no matching polygons found.
+Polygon 6 (internal_id 2, 10/7/2023) does not overlap the survey area.

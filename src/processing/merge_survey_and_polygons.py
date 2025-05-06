@@ -172,6 +172,7 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     print(f"Saved report at {report_path}")
 
     # Save  the updated survey results to a CSV, dropping geometry
+    survey_gdf["source_file"] = os.path.basename(survey_path).replace(".csv", "")
     survey_results = survey_gdf.copy()
     results_path = os.path.join(merged_folder, os.path.basename(survey_path).replace(".csv", "_merged.csv"))
     survey_results.drop(columns="geometry").to_csv(results_path, index=False)

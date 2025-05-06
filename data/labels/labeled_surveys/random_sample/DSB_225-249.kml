@@ -1,0 +1,2251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>DSB_225-249.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin14</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl31</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin46</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin6</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin5</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin202</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin21</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin13</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin9</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin113">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin44</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin12">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin12</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin14">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin8</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin210</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin142">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin84</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin17">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin15</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin06</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin14</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin8</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin22">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin45</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin110</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin32">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin115</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin35">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin60</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin11</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin44">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin37</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin103</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin45</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin16</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl31">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin6">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff02fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin7">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin06">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff336699</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff20</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin103">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff20</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin115">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin20">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin202">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin21">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin210">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin44">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin45">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin5">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff336699</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin60">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin8">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin84">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff02fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff336699</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0000</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin01">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff02fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin110">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin12">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin13">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff20</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin14">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin15">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff336699</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin16">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin37">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff20</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin45">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff02fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin46">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin5">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin7">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0880fd</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin8">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin9">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>DSB_225-249</name>
+		<Placemark>
+			<name>DSB_22_8.8.2024</name>
+			<description>5</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.20866676858921,-9.393482375917547,0 32.20869846695194,-9.39360424351268,0 32.20878954032317,-9.393567566088031,0 32.20882066078194,-9.393540231545085,0 32.20879827575909,-9.393468795413165,0 32.20876666091166,-9.393460691237966,0 32.20866676858921,-9.393482375917547,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_22_8.8.2024</name>
+			<description>4
+Only slightly green</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.2079856581764,-9.392536776077003,0 32.20801120380799,-9.392624067064091,0 32.20811644970829,-9.392566438000362,0 32.20805366647973,-9.392496392289548,0 32.2079856581764,-9.392536776077003,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_22_8.8.2024</name>
+			<description>3
+Only slightly green
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.20916972617013,-9.397160891463992,0 32.20925693323077,-9.397388248696927,0 32.20944010897788,-9.397374897876226,0 32.20939152342763,-9.397198414890724,0 32.20936339617441,-9.397085205376552,0 32.20916972617013,-9.397160891463992,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_22_8.8.2024</name>
+			<description>1
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.20825506345195,-9.396301609073731,0 32.20834217771446,-9.396439703105182,0 32.20842244379268,-9.396417530968135,0 32.20840172737042,-9.396369984700442,0 32.20834568429977,-9.396377013015073,0 32.20833163839645,-9.396367168119697,0 32.20827654265872,-9.39630305047409,0 32.20825506345195,-9.396301609073731,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_22_9.23.2016</name>
+			<description>3
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.20932536885881,-9.394653817121977,0 32.20936107966287,-9.394691832279959,0 32.20941266713416,-9.394651807528492,0 32.20938890219362,-9.394616103860438,0 32.20932536885881,-9.394653817121977,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_22_9.23.2016</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.2153028689246,-9.396893613854385,0 32.21532693810852,-9.39697501401888,0 32.21536277462526,-9.397043666625857,0 32.2154184210881,-9.397013188925369,0 32.21537852290405,-9.396934772833388,0 32.21535507000825,-9.396877025770019,0 32.2153028689246,-9.396893613854385,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_23_9.3.2023</name>
+			<description>4
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.61017015045603,-9.224526026613063,0 32.61024911873997,-9.224676042118022,0 32.61038079536738,-9.224586092113809,0 32.61031171058767,-9.224453158950649,0 32.61017015045603,-9.224526026613063,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_25_9.16.2024</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.06248348394345,-9.107863801798825,0 32.06244294635351,-9.107874556915441,0 32.06241185850615,-9.107954662084094,0 32.06242730772949,-9.108005592283074,0 32.0624274107819,-9.108006921517104,0 32.06238749319601,-9.108090811353174,0 32.06241646450979,-9.1081078082558,0 32.0624985380859,-9.10808225638212,0 32.06250576572241,-9.108021929361309,0 32.06250196971791,-9.10802190883917,0 32.06247038050614,-9.107987182816759,0 32.06247410000089,-9.10798586851436,0 32.06250764842277,-9.10795522199699,0 32.06250700908962,-9.107868086778693,0 32.06248348394345,-9.107863801798825,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_25_9.16.2024</name>
+			<description>4
+Uneven</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.06373294434452,-9.114749505792911,0 32.06368713218433,-9.114763256290079,0 32.06366335425766,-9.114827765993532,0 32.06379142138601,-9.114930422532153,0 32.06391139130754,-9.115011253942868,0 32.06393693919046,-9.114970568119352,0 32.06391011907095,-9.114925624271303,0 32.06389506723117,-9.114889164261328,0 32.06382670522847,-9.114862713086515,0 32.06377711903658,-9.114804979106234,0 32.06374748259775,-9.11477911367421,0 32.06373294434452,-9.114749505792911,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_25_9.16.2024</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.06424064822389,-9.114729796851597,0 32.06421914254456,-9.114755009595651,0 32.06419438279153,-9.114822475964504,0 32.0642576185443,-9.114850682228678,0 32.06431245408239,-9.114777753577032,0 32.06428124581696,-9.114730852525978,0 32.06424064822389,-9.114729796851597,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_25_9.23.2016</name>
+			<description>4
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.06463484965773,-9.115289187241951,0 32.06456198898987,-9.11535157488917,0 32.06462537790565,-9.115469264009002,0 32.06466360984022,-9.115502117165933,0 32.06480761826269,-9.11545460728664,0 32.06473108674421,-9.115346433380394,0 32.06468999825847,-9.115324036872812,0 32.06463484965773,-9.115289187241951,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_20_9.8.2023</name>
+			<description>2
+May naturally be green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.85383604821715,-11.76927754229008,0 32.8539490988681,-11.76947933486238,0 32.85403432277065,-11.76944354915189,0 32.85400882736594,-11.76935623923123,0 32.85396474578048,-11.7692957913547,0 32.85406013228018,-11.76926654112691,0 32.85403574058482,-11.76921279623361,0 32.85383604821715,-11.76927754229008,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_20_9.8.2023</name>
+			<description>2
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.85456616120108,-11.76893266719471,0 32.85457227805752,-11.76919328633868,0 32.85454378193053,-11.76931566289938,0 32.85434929616228,-11.76937865668841,0 32.85437926848846,-11.76949040798056,0 32.8543883989534,-11.76949037833775,0 32.85455192013132,-11.76946717973469,0 32.85464408899542,-11.76973683785831,0 32.85477832707947,-11.76965650411346,0 32.8548339742534,-11.76952262013691,0 32.85485455300321,-11.76938393394334,0 32.8548569241821,-11.76932974795045,0 32.85471818639974,-11.76926081122032,0 32.8547330031261,-11.76914516336529,0 32.85489277080437,-11.76916818381515,0 32.85491514320024,-11.76904552063494,0 32.85456616120108,-11.76893266719471,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_20_9.8.2023</name>
+			<description>1
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.85382383785274,-11.76976238740367,0 32.85366879004616,-11.77003814042444,0 32.85393317639268,-11.77018998024901,0 32.85404394572824,-11.76993451134373,0 32.85382383785274,-11.76976238740367,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_20_9.8.2023</name>
+			<description>1
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.85262786549575,-11.77070902182875,0 32.85258103425031,-11.77082857315549,0 32.85271831340879,-11.77089020359359,0 32.85276377420301,-11.77078610330124,0 32.85262786549575,-11.77070902182875,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_20_9.8.2023</name>
+			<description>2
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							32.85527068443424,-11.76729570274549,0 32.85538238761308,-11.76746826425529,0 32.85563938273541,-11.76736403175206,0 32.85552545191657,-11.76715972590013,0 32.85527068443424,-11.76729570274549,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.30.2023</name>
+			<description>2
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15326144087639,-12.3145190003017,0 33.15323132285508,-12.31464280405055,0 33.15332431373006,-12.31466668158747,0 33.1534033479297,-12.31455356904049,0 33.15326144087639,-12.3145190003017,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.30.2023</name>
+			<description>2
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15354711951324,-12.31436007981145,0 33.15356816407985,-12.31444190431756,0 33.15378965394534,-12.3143560706227,0 33.153736990866,-12.31428086039945,0 33.15354711951324,-12.31436007981145,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.30.2023</name>
+			<description>3
+Only slightly green
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15538506999746,-12.31508102918841,0 33.15536724452263,-12.31516503578133,0 33.15576540540216,-12.3153544754383,0 33.15581290529762,-12.31526670087467,0 33.15538506999746,-12.31508102918841,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.30.2023</name>
+			<description>2
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.14963492107034,-12.32108696268316,0 33.14966352330614,-12.32114466352655,0 33.14975058592729,-12.32110779722114,0 33.14973523556261,-12.32106429915849,0 33.14963492107034,-12.32108696268316,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.19.2022</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15390814624489,-12.31480037331865,0 33.15384070559752,-12.31497788240984,0 33.15405255484135,-12.31505929499687,0 33.15409495317228,-12.31486979629655,0 33.15390814624489,-12.31480037331865,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.19.2022</name>
+			<description>3
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin6</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15074478824307,-12.32228209117904,0 33.15084574133203,-12.32255931478672,0 33.15088470889343,-12.32255557148311,0 33.15085737378132,-12.32247956721071,0 33.15091837961354,-12.32247936058237,0 33.15091253713588,-12.3224199642945,0 33.15086168228143,-12.32242578924513,0 33.15079863074188,-12.32227614405368,0 33.15074478824307,-12.32228209117904,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.22.2022</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin35</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15390955252293,-12.31479756766126,0 33.15384619731407,-12.31498131056553,0 33.15404982661189,-12.31505514614753,0 33.15409746478768,-12.31486410135536,0 33.15390955252293,-12.31479756766126,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.22.2022</name>
+			<description>2
+Only slightyl green</description>
+			<styleUrl>#msn_ylw-pushpin35</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15068683039711,-12.32178605685366,0 33.1507551645943,-12.32198583194457,0 33.15081874209325,-12.32211744882625,0 33.1509003001738,-12.3221090369843,0 33.15087896747193,-12.32196141936488,0 33.15102817086407,-12.32191479257759,0 33.15101173624893,-12.3218593642283,0 33.15086404540575,-12.32185602753868,0 33.15079779017719,-12.32180123805036,0 33.15068683039711,-12.32178605685366,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.28.2021</name>
+			<description>2
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15326804715026,-12.31452633565345,0 33.15325248233187,-12.31461978536528,0 33.15334015566774,-12.3146468539165,0 33.15337372061442,-12.31456871958899,0 33.15326804715026,-12.31452633565345,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_8.28.2021</name>
+			<description>3
+Only slightly green
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15119508186024,-12.32300029928747,0 33.15132593456671,-12.3232723903933,0 33.15144490648291,-12.3232310666211,0 33.15127593500346,-12.32298462906029,0 33.15119508186024,-12.32300029928747,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.27.2021</name>
+			<description>3
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin7</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.1501011603486,-12.32106130342772,0 33.15017823959957,-12.32118996099073,0 33.15024855581925,-12.3211613214846,0 33.15016697303163,-12.32103468416988,0 33.1501011603486,-12.32106130342772,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.14.2021</name>
+			<description>3
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin5</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.1501089053845,-12.32106826806328,0 33.1501848572486,-12.32120611312844,0 33.15024534472538,-12.32117527242892,0 33.15016880807329,-12.32104687283175,0 33.1501089053845,-12.32106826806328,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.5.2021</name>
+			<description>3
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin12</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15011092239979,-12.32106418629547,0 33.15018554726934,-12.32118905184104,0 33.1502490474907,-12.32115258769484,0 33.15016691339509,-12.32104840322559,0 33.15011092239979,-12.32106418629547,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.26.2020</name>
+			<description>3
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15328115180343,-12.31449641817227,0 33.15325124383738,-12.31462089788617,0 33.15350958876893,-12.31466452780028,0 33.15347981937734,-12.31453722994393,0 33.15328115180343,-12.31449641817227,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.26.2020</name>
+			<description>2
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15423616346925,-12.31491543745909,0 33.15418876790078,-12.31502022307862,0 33.15444648489261,-12.31511218443634,0 33.15448954805261,-12.31499599188064,0 33.15423616346925,-12.31491543745909,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.26.2020</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15441564938003,-12.31435413460309,0 33.1544010482998,-12.31440944900098,0 33.15465664158132,-12.31448512334161,0 33.15466693980394,-12.31443753753093,0 33.15441564938003,-12.31435413460309,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.30.2019</name>
+			<description>2
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15025461910656,-12.32157591253123,0 33.15038112587477,-12.32181901934151,0 33.15050963033804,-12.3217395560678,0 33.15034740860823,-12.32152728185023,0 33.15025461910656,-12.32157591253123,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_19_6.30.2019</name>
+			<description>2
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.15439568756109,-12.31445297760147,0 33.15436587493286,-12.31459850647389,0 33.15458999999351,-12.31463258027997,0 33.15459204076446,-12.31451004790969,0 33.15439568756109,-12.31445297760147,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>2
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03990651296377,-12.54068254612016,0 33.03989350057424,-12.54077137962078,0 33.03998815114493,-12.54077189482767,0 33.04000066601341,-12.5406808570397,0 33.03990651296377,-12.54068254612016,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>4
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.0395290350842,-12.54252608694179,0 33.03950212567076,-12.54257176673295,0 33.03955068498009,-12.54261097077061,0 33.0395244480321,-12.54264249879627,0 33.03966352007077,-12.54271245978895,0 33.03971675472345,-12.54262313616718,0 33.0395290350842,-12.54252608694179,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>2
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.04475467889549,-12.54276438284818,0 33.04469061753225,-12.54289818473942,0 33.04479461781396,-12.54293899482529,0 33.04483979277283,-12.54280253306768,0 33.04475467889549,-12.54276438284818,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>3
+Uneven
+Only slightly green</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03652448547183,-12.54212723977126,0 33.03652449415103,-12.54218472787307,0 33.03677217520627,-12.54214136270331,0 33.03678077223034,-12.54209208757599,0 33.03652448547183,-12.54212723977126,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03700547505695,-12.54296937202805,0 33.03696727905155,-12.54303588166746,0 33.03695219671749,-12.54321547380164,0 33.03713534832667,-12.54321369780183,0 33.03718275294852,-12.54306259145237,0 33.03717217868702,-12.54299013219538,0 33.03700547505695,-12.54296937202805,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>3
+Only slightly green
+May naturally be green</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03649859658024,-12.54897514320538,0 33.03650453698915,-12.54906267709307,0 33.03663628295718,-12.54908046840864,0 33.03663429594911,-12.54898172906953,0 33.03668916314145,-12.54898022491598,0 33.03668421614232,-12.54889997915036,0 33.03660502287514,-12.5488961062967,0 33.03659277240102,-12.54897626056245,0 33.03649859658024,-12.54897514320538,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>3
+May naturally be green</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03715125087509,-12.54946556957923,0 33.03717184215889,-12.54936320002538,0 33.03700914860296,-12.54933061214279,0 33.03700123004825,-12.54946445273766,0 33.03715125087509,-12.54946556957923,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_9.10.2023</name>
+			<description>3
+May naturally be green
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03691191976574,-12.54877587893548,0 33.03688033217442,-12.54911367838715,0 33.03711371527488,-12.54913044784526,0 33.03716509987116,-12.54903499892466,0 33.0372074134994,-12.54903564998533,0 33.03722092451061,-12.54886022373909,0 33.03719255940624,-12.54879427018693,0 33.03706063432886,-12.54876085497969,0 33.03696395095759,-12.54876404917209,0 33.03691191976574,-12.54877587893548,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_13_6.29.2023</name>
+			<description>2
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							31.88189591053025,-14.05173951770233,0 31.88184400217533,-14.05182412887302,0 31.88193877307428,-14.05187032044065,0 31.88198313467342,-14.05179091686668,0 31.88189591053025,-14.05173951770233,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.7.2023</name>
+			<description>3
+Uneven
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35957110022241,-12.76238341553324,0 28.35970456054802,-12.76253395738602,0 28.35984760003681,-12.76245142526026,0 28.35970549032439,-12.76228787853317,0 28.35957110022241,-12.76238341553324,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.7.2023</name>
+			<description>1
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35918981622299,-12.76216973493171,0 28.35926625312996,-12.76228645980071,0 28.35938812152639,-12.76218547095044,0 28.35927916116014,-12.76204606063911,0 28.35924776374146,-12.76212801390174,0 28.35918981622299,-12.76216973493171,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.7.2023</name>
+			<description>2
+Only slightly green
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35971497132864,-12.76175309563852,0 28.35985393944935,-12.76184680350642,0 28.35991515897058,-12.76171177452127,0 28.35983414630528,-12.76165401334388,0 28.35971497132864,-12.76175309563852,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.7.2023</name>
+			<description>4
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36015614444879,-12.76192481420559,0 28.36008523330649,-12.76236440916461,0 28.3602225476573,-12.76239427813896,0 28.36022696795127,-12.76243176576001,0 28.36035246001664,-12.76245226466893,0 28.36050662380437,-12.76247553529019,0 28.36081586811155,-12.76240642571907,0 28.36080330978089,-12.76230795779554,0 28.36086790988706,-12.76226565015942,0 28.36086317932944,-12.76219812545277,0 28.3607827677955,-12.76221705708855,0 28.36077498687541,-12.76211012900209,0 28.36071243235215,-12.76211863128075,0 28.36069636169013,-12.76209561978526,0 28.36059954487667,-12.76210126390749,0 28.36056462836696,-12.76194744714856,0 28.36047872050722,-12.76197713427351,0 28.36045888674396,-12.76192395072767,0 28.36036492301589,-12.76194411991499,0 28.36023988776653,-12.76196298988884,0 28.36023891501459,-12.76192459683087,0 28.36015614444879,-12.76192481420559,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.7.2023</name>
+			<description>4
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36093448324158,-12.76220642029986,0 28.36091852898897,-12.7623123141295,0 28.36096067688225,-12.76251692082058,0 28.36109758577493,-12.76247832383995,0 28.36125035079824,-12.76239848692123,0 28.36139093458467,-12.76235485105943,0 28.36129274162227,-12.76210103226777,0 28.36121849925452,-12.76212996490544,0 28.36118425865398,-12.76201939750102,0 28.3610953371355,-12.76204319195911,0 28.36112187124626,-12.76216101702675,0 28.36102089052522,-12.76217977087778,0 28.36093448324158,-12.76220642029986,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.5.2022</name>
+			<description>2
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35949818855934,-12.76261715091202,0 28.35959728814026,-12.76267513831341,0 28.35954438595245,-12.76278938960133,0 28.35972760666299,-12.76295584883961,0 28.35985621798389,-12.7628524867113,0 28.35988101997203,-12.76278287585111,0 28.3596808634757,-12.76259902289678,0 28.35958567410139,-12.76248352605422,0 28.35949818855934,-12.76261715091202,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.5.2022</name>
+			<description>4
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.360701024657,-12.76210397957176,0 28.36060252723519,-12.76211781834997,0 28.36057193257006,-12.76205448166401,0 28.3604903530144,-12.76207112564393,0 28.36047821034724,-12.76204308325265,0 28.360388781771,-12.76204390162532,0 28.36037298376056,-12.7619830571945,0 28.36024972933529,-12.76198231096679,0 28.36015630952083,-12.76193883314638,0 28.36009558180521,-12.76234075080586,0 28.36013112833401,-12.762386755351,0 28.36013263775276,-12.76238674480225,0 28.36010582223989,-12.76245463209819,0 28.36009565688651,-12.76254349725567,0 28.3601835602717,-12.76255366138488,0 28.36018933726261,-12.7625521060457,0 28.36020731010702,-12.76261950133396,0 28.36033091069019,-12.76265405399494,0 28.36044380525937,-12.7626491060622,0 28.36044105339035,-12.76258395816652,0 28.36054203924779,-12.76256547215859,0 28.36062645879738,-12.76254286543092,0 28.36071628022729,-12.76255360673882,0 28.36072920982588,-12.76248734585591,0 28.36087074715542,-12.76245430358169,0 28.36089842690201,-12.76240957153633,0 28.36086364784276,-12.76222993749491,0 28.36077278543674,-12.76223306207173,0 28.36076639383378,-12.76214447460256,0 28.360701024657,-12.76210397957176,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.5.2022</name>
+			<description>3
+Uneven
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36093216983203,-12.76222126106926,0 28.36093095091638,-12.76235388638625,0 28.36096324696637,-12.76253202012905,0 28.36111559275873,-12.76250254986263,0 28.3613737116903,-12.76234546655451,0 28.36128715174327,-12.7621181696188,0 28.36093216983203,-12.76222126106926,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_9.13.2021</name>
+			<description>3
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin22</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35949562663417,-12.7623295169877,0 28.35939679102119,-12.76242411812277,0 28.35948978052815,-12.76255221206986,0 28.35952014010548,-12.76259018784834,0 28.35934733748866,-12.76273113942821,0 28.35946300542955,-12.7628180697104,0 28.35945189378648,-12.76288525187002,0 28.35955315301754,-12.76298507571328,0 28.35962390484306,-12.76290770933456,0 28.3597003617398,-12.76291469120145,0 28.3597582111269,-12.7629790104461,0 28.35986974592605,-12.76290109190252,0 28.35989859007994,-12.76293307077391,0 28.35990621762981,-12.7629315195075,0 28.36001736409556,-12.76288973350511,0 28.3600097481381,-12.76284114313506,0 28.35997015997681,-12.76280628093763,0 28.35971010714454,-12.76258157848191,0 28.35958131471953,-12.7624296818551,0 28.35949562663417,-12.7623295169877,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_9.13.2021</name>
+			<description>3
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin22</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36014045496928,-12.76208982581756,0 28.36009345623439,-12.76235383885333,0 28.36013432217666,-12.76238560632619,0 28.36011065746749,-12.76254347977379,0 28.3601875177068,-12.7625480267503,0 28.3602335860799,-12.76264376428369,0 28.36042695908141,-12.76263158063878,0 28.36045576977106,-12.76251642880096,0 28.36065099148886,-12.76251306066331,0 28.3607313420735,-12.76245882187049,0 28.36089123675528,-12.76239993337753,0 28.36085259276107,-12.76221622358456,0 28.36079411001806,-12.76222165059683,0 28.3607804242776,-12.7621453745959,0 28.36069980649487,-12.76211377795617,0 28.36063354633783,-12.76211716914935,0 28.3605664760887,-12.76206711348231,0 28.36049967313077,-12.76206888716818,0 28.36037993356337,-12.76208583003942,0 28.36029594869577,-12.76211416359977,0 28.36014045496928,-12.76208982581756,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_9.13.2021</name>
+			<description>2
+Only slightly green
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin22</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.3609288100695,-12.76225529445572,0 28.36096879529471,-12.76256105624958,0 28.3611111457889,-12.76253250207478,0 28.36103242183796,-12.7622045426707,0 28.3609288100695,-12.76225529445572,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_10.11.2018</name>
+			<description>3
+Uneven
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin4</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36104392886763,-12.76217455264378,0 28.36088652178754,-12.76218681876311,0 28.36085882751686,-12.76212793263817,0 28.360749381846,-12.76214517973976,0 28.36070581482906,-12.76210718526246,0 28.36058056911978,-12.76207173250717,0 28.36049586969433,-12.7620632444956,0 28.36037296792337,-12.76205424543408,0 28.36024532984388,-12.76207987907849,0 28.36019145254124,-12.76233454357868,0 28.36012452430339,-12.76236785174113,0 28.36011660637607,-12.76260078150812,0 28.36016121083114,-12.76264613507712,0 28.36020517015749,-12.76277127738153,0 28.36055994962043,-12.76282513869051,0 28.36059344692702,-12.76275265658371,0 28.36067656060284,-12.76271467788313,0 28.36097954667849,-12.76267927417469,0 28.36108627925659,-12.76255072483553,0 28.36109102625444,-12.76244843309813,0 28.36117210232758,-12.76242396431062,0 28.36107470050257,-12.76220925408895,0 28.36104392886763,-12.76217455264378,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_8.19.2018</name>
+			<description>4
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36013690370334,-12.762101319743,0 28.36010367791641,-12.76236705088386,0 28.36012806564139,-12.7623781929343,0 28.36013472063159,-12.76262438052693,0 28.36020264269706,-12.76276516006206,0 28.36023903386478,-12.76289237262324,0 28.36052517310601,-12.76287400568119,0 28.36057351232092,-12.76284446563722,0 28.36063047839319,-12.76276086237156,0 28.36070963705078,-12.76271989644503,0 28.36083437176858,-12.76270438331103,0 28.36083161587369,-12.76260189784489,0 28.36082410744962,-12.76254340222656,0 28.36083052551828,-12.76249480481109,0 28.36107392422864,-12.76244785462952,0 28.36103914015151,-12.76220905967102,0 28.36090708703559,-12.76222212342785,0 28.36085673344207,-12.76216271712834,0 28.36077072054289,-12.76216841010053,0 28.36074492035089,-12.76213444652429,0 28.3606266119072,-12.76211966654166,0 28.3605562238217,-12.76207044529739,0 28.36049768539803,-12.76207851905168,0 28.360269890339,-12.76209230034062,0 28.36013690370334,-12.762101319743,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_6.14.2018</name>
+			<description>4
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin142</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36043731402625,-12.76197173248341,0 28.36037487777662,-12.76197792635615,0 28.36024297321945,-12.76198471141902,0 28.36020284487076,-12.76208592553122,0 28.3601380490934,-12.76236362921663,0 28.36010977074551,-12.76262617276588,0 28.36017121792558,-12.76264721953514,0 28.36021350737936,-12.76278558322304,0 28.36022173811211,-12.7628743225826,0 28.36036454366661,-12.7628669437045,0 28.36046142662965,-12.76286217700401,0 28.36048609398093,-12.76280738889466,0 28.3605646687927,-12.76282792870705,0 28.36061711971911,-12.76273988357859,0 28.36062336689161,-12.76257347494657,0 28.36061521166837,-12.76251971648482,0 28.36053263263052,-12.7625071368792,0 28.36052576465547,-12.76236093691477,0 28.36069765461556,-12.76233572469073,0 28.36066382215525,-12.76227316841163,0 28.36055151217761,-12.76227265075326,0 28.36057569114761,-12.76208651967701,0 28.36047301288166,-12.76207813824927,0 28.36043731402625,-12.76197173248341,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_8.18.2017</name>
+			<description>2
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin14</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.35983639911392,-12.76168430167732,0 28.3597382501783,-12.76198318068574,0 28.36010262018847,-12.76211179937858,0 28.36016088885104,-12.76182161029864,0 28.35983639911392,-12.76168430167732,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_8.18.2017</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin14</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36014369557902,-12.7620956382344,0 28.36011308347189,-12.7623646837279,0 28.36014377754679,-12.76238752628576,0 28.36014420123108,-12.76263188695945,0 28.36023837029165,-12.76278452138254,0 28.36055514822975,-12.76280957292302,0 28.36059005671321,-12.76274658567215,0 28.36067372540493,-12.76274657903547,0 28.36066267050028,-12.76252477780995,0 28.36089510479714,-12.76242983331095,0 28.3608646898329,-12.76229568475554,0 28.36072214306984,-12.76232089620727,0 28.36072177984975,-12.76226306828896,0 28.36061029882496,-12.76226494056958,0 28.36060671316697,-12.76208012003053,0 28.36051237793348,-12.76207045342015,0 28.36044058061705,-12.76199893912362,0 28.36036788456571,-12.76195953433129,0 28.36026488433816,-12.76201414280158,0 28.36023168756162,-12.76211100914128,0 28.36014369557902,-12.7620956382344,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_7.20.2017</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin44</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36013544434722,-12.76209562834622,0 28.36010733042515,-12.76235107306278,0 28.36012958798011,-12.76252806941358,0 28.36018177066654,-12.76264568286525,0 28.36020844223443,-12.76277563739965,0 28.36056264803758,-12.76280227786273,0 28.36058771674681,-12.76273922237432,0 28.36066907241331,-12.76273921303316,0 28.36067261824586,-12.76250990807116,0 28.36089735052431,-12.76241353909149,0 28.3608732998717,-12.76231204655177,0 28.36072651939864,-12.7623139313991,0 28.36069741718458,-12.76227335090957,0 28.36058671180294,-12.76226173459957,0 28.36060249429082,-12.76208429443329,0 28.36049601452815,-12.762064748146,0 28.36041567851631,-12.76198245460239,0 28.36024250839265,-12.76199576414086,0 28.36023095680388,-12.76211886388968,0 28.36013544434722,-12.76209562834622,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_6.10.2017</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin17</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.360126393257,-12.76207714865203,0 28.36010070043221,-12.76235636122015,0 28.36011919480073,-12.76254163139413,0 28.36014008462666,-12.76261900225779,0 28.36022356207539,-12.76275581544371,0 28.36063973511916,-12.76275952398267,0 28.36065931177825,-12.76252788715287,0 28.36089083349353,-12.76241101070642,0 28.36087238787936,-12.76229306477103,0 28.36071620976096,-12.7623134241608,0 28.36060273084566,-12.76223992205215,0 28.36060147457541,-12.76208896698776,0 28.36050826283758,-12.76206651534895,0 28.36044215992957,-12.76197766319474,0 28.36034186627957,-12.76195017949631,0 28.36028080944822,-12.76195622345734,0 28.36022561370252,-12.76207653481635,0 28.360126393257,-12.76207714865203,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_17_6.4.2017</name>
+			<description>4
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin32</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.36013677147688,-12.7621019838438,0 28.36011447077776,-12.76234167065403,0 28.36014056084248,-12.76237743112634,0 28.36013690988331,-12.76261808883021,0 28.36014130109185,-12.762621969989,0 28.36021852863972,-12.76276869658152,0 28.36022666871682,-12.76277054265419,0 28.36060411750482,-12.76278669816559,0 28.36064874141853,-12.76271515830791,0 28.36066053351437,-12.76252404578855,0 28.36088796559585,-12.7624367089419,0 28.36086552758874,-12.76230436876101,0 28.36074419439039,-12.76232122241233,0 28.36069304017117,-12.76227605262118,0 28.36069086976961,-12.76227604826913,0 28.36059099006976,-12.762265023497,0 28.36059063142119,-12.76209345269611,0 28.36048071974925,-12.76205885026915,0 28.3604377570684,-12.76194678719653,0 28.36043326240853,-12.76194918224522,0 28.36027263230633,-12.76196665958753,0 28.36024340228995,-12.76210141681239,0 28.36013677147688,-12.7621019838438,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_2_8.18.2018</name>
+			<description>4
+Uneven
+May naturally be green</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.22668644158336,-16.97014098941421,0 27.22645938978818,-16.97006452789289,0 27.22622502519408,-16.97010597656526,0 27.22621911369244,-16.97029643728005,0 27.22627905298003,-16.97046861866535,0 27.22652989071531,-16.9705278291991,0 27.22656870061417,-16.97031360533607,0 27.22662960625548,-16.97023013033192,0 27.22668644158336,-16.97014098941421,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_2_8.18.2018</name>
+			<description>3
+Only slightly green
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.22635370576554,-16.96783625352848,0 27.22629439926216,-16.9681293710371,0 27.22646412887921,-16.96818852494116,0 27.22653647637809,-16.968436931097,0 27.22679814471676,-16.96845788022148,0 27.22683411475949,-16.96787576861841,0 27.22635370576554,-16.96783625352848,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_2_8.18.2018</name>
+			<description>1
+May naturally be green</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.22764231800853,-16.96566087975672,0 27.22801197866648,-16.96556473596829,0 27.22798498335685,-16.96551668260114,0 27.22762911458944,-16.96557554802858,0 27.22764231800853,-16.96566087975672,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_2_8.18.2018</name>
+			<description>3
+Only slightly green
+Uneven</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.2335364287608,-16.96997932034675,0 27.23354268057857,-16.9700597966691,0 27.23359895734441,-16.97017271527468,0 27.23371337028759,-16.97030077472673,0 27.23394958234809,-16.97019712958521,0 27.23382189620131,-16.97001760600401,0 27.23378163984689,-16.96983969458863,0 27.2335364287608,-16.96997932034675,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_7_9.22.2020</name>
+			<description>4
+Uneven
+Unclear signs of ag</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.26789655765445,-15.14874355368578,0 27.26790480166752,-15.14882656005217,0 27.26800289858419,-15.14881574685108,0 27.2680353611402,-15.14877024575089,0 27.26804457339905,-15.14873500918644,0 27.26789655765445,-15.14874355368578,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_7_9.7.2017</name>
+			<description>1
+Unclear signs of ag
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.26742034706321,-15.14746353681639,0 27.267452027362,-15.1476886330571,0 27.26761497366315,-15.14769134197,0 27.26760758634815,-15.14745487867454,0 27.26742034706321,-15.14746353681639,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_10_7.27.2024</name>
+			<description>5</description>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.46063140047393,-14.64047518677289,0 27.46063820820792,-14.64053705393525,0 27.46073956590204,-14.6405395576135,0 27.46074182952819,-14.64047072229922,0 27.46063140047393,-14.64047518677289,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_8.20.2018</name>
+			<description>4
+Uneven
+May naturally be green</description>
+			<styleUrl>#msn_ylw-pushpin20</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03640076606504,-12.54897552268756,0 33.03640015524228,-12.54916506262427,0 33.0369253537768,-12.54916923386136,0 33.03717265896447,-12.54917796369678,0 33.03716217432202,-12.54903324904043,0 33.03679821524456,-12.54901297712729,0 33.03653007388121,-12.54897728135289,0 33.03640076606504,-12.54897552268756,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_8.20.2018</name>
+			<description>3
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin20</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.03659521912109,-12.54287667661337,0 33.03659818229607,-12.54295720895938,0 33.03668804457605,-12.54295015049403,0 33.03667871786527,-12.54287398622111,0 33.03659521912109,-12.54287667661337,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>DSB_18_8.20.2018</name>
+			<description>3
+Unclear signs of ag</description>
+			<styleUrl>#msn_ylw-pushpin20</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.0369938846761,-12.54297932158325,0 33.03695831235959,-12.54321710986388,0 33.03713825810221,-12.54320810192345,0 33.03718025106973,-12.54307036782846,0 33.03717339871118,-12.54298322027833,0 33.0369938846761,-12.54297932158325,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Folder>
+</Document>
+</kml>

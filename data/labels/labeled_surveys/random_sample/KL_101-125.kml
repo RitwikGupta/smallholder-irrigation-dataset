@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>polygons_101-125.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin11</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin11">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin10</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin00</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin11">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin5">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin00">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0affff</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin10">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff800080</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0701fc</color>
+		</LineStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin3">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<fill>0</fill>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>polygons_101-125</name>
+		<Placemark>
+			<name>KL_19_6.22.2021</name>
+			<description>2
+Unclear signs of agriculture</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.24083368226502,-12.31011471118935,0 33.24112545460719,-12.31005875512048,0 33.24111504744042,-12.31001684852849,0 33.2408022749147,-12.31004316515937,0 33.24083368226502,-12.31011471118935,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_19_6.22.2021</name>
+			<description>1
+Unclear signs of irrigation</description>
+			<styleUrl>#m_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.24150867484181,-12.31004668676317,0 33.24194986130323,-12.30985087659866,0 33.24194189885941,-12.30972310001041,0 33.24143964713917,-12.30995975490855,0 33.24150867484181,-12.31004668676317,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_19_6.14.2019</name>
+			<description>1
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.23918297344682,-12.31064324204031,0 33.23950468585322,-12.31057619889637,0 33.23947533141154,-12.31030532800308,0 33.23912598185893,-12.3103166965065,0 33.23918297344682,-12.31064324204031,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_19_6.4.2018</name>
+			<description>2
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin4</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							33.24008628608719,-12.31030414370917,0 33.24033652738022,-12.31027317761642,0 33.24030138024855,-12.31017220915586,0 33.24005771634714,-12.31019553323619,0 33.24008628608719,-12.31030414370917,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96501335007431,-11.16979935941603,0 29.96523417578872,-11.16996710243617,0 29.96527762349526,-11.16996967791956,0 29.96527987667306,-11.16999509440565,0 29.96533357976036,-11.17002278271411,0 29.96538282650846,-11.17002531828117,0 29.96548742639121,-11.17008179059718,0 29.96557369653342,-11.17008663840036,0 29.96563595922617,-11.1700714839256,0 29.96568973583675,-11.17006064972466,0 29.9657568997464,-11.17010727787279,0 29.9657760140345,-11.17004546059406,0 29.9657753629548,-11.16994930410798,0 29.96583703940415,-11.16999594357931,0 29.96585900573895,-11.16990259171862,0 29.96580619545476,-11.16984429872545,0 29.9658142227775,-11.16976984896616,0 29.96565375569077,-11.16980628311202,0 29.96552059271458,-11.16978035014036,0 29.96501508791436,-11.16975141191245,0 29.96501335007431,-11.16979935941603,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (but not very green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96600146819977,-11.17032410133273,0 29.96607795800962,-11.17041822299639,0 29.96605482493776,-11.17053903418393,0 29.96618973480746,-11.17056261445522,0 29.96621551580012,-11.17049732389143,0 29.9664288743278,-11.17018985755026,0 29.96610105772044,-11.17006678261223,0 29.96600146819977,-11.17032410133273,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9668910100974,-11.16917981832668,0 29.96688642448203,-11.16924173539672,0 29.96687997860501,-11.16932867115588,0 29.96682573419943,-11.16936416094312,0 29.96682572885638,-11.16946888056358,0 29.9668264715129,-11.1695579095501,0 29.96679654324355,-11.1696283580404,0 29.96671794118723,-11.16969430791477,0 29.96668379263177,-11.1696598433965,0 29.96660730385631,-11.16974874066102,0 29.96647501863901,-11.1698856309023,0 29.96641443248332,-11.16996031726434,0 29.96650191977291,-11.16998388453253,0 29.96655587939936,-11.16996032505026,0 29.96661187814146,-11.16997301702358,0 29.96664803964955,-11.16999425098803,0 29.96668648184772,-11.16999412315509,0 29.96679025320928,-11.17002534083962,0 29.96692117876036,-11.17005196850555,0 29.96698823936119,-11.17006206164156,0 29.96700077648325,-11.17002053870623,0 29.96703162187789,-11.16998865316631,0 29.96707562199157,-11.16994957235421,0 29.96709892846236,-11.16983929386278,0 29.96708655122914,-11.169766606964,0 29.96709774259929,-11.16969844506873,0 29.96716473451203,-11.16973703705857,0 29.96713155492387,-11.1698758483887,0 29.96720012496919,-11.16989367754313,0 29.96722586322128,-11.16984803235738,0 29.96725054156337,-11.16974139986188,0 29.9672848783269,-11.16969953746619,0 29.96734763835112,-11.16969705560917,0 29.96741782689698,-11.16967958002861,0 29.96742321983905,-11.16973157045171,0 29.96747320132346,-11.16970202766326,0 29.96751453721857,-11.16956665447373,0 29.96744604327941,-11.16955608473843,0 29.96734456419453,-11.16947571928204,0 29.96724572337364,-11.16944887014693,0 29.96717161758168,-11.1694105683399,0 29.96713270404415,-11.16940227655015,0 29.96714782651121,-11.16935624096399,0 29.96722825669674,-11.16928520183833,0 29.9672530549127,-11.16919702702637,0 29.9673093068656,-11.16922410404869,0 29.96732063214615,-11.16918385484007,0 29.96700155518488,-11.16902393442768,0 29.9668910100974,-11.16917981832668,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96639082132713,-11.17076768301692,0 29.96635680960665,-11.17083064541664,0 29.96631707804861,-11.17092767226554,0 29.96634414233684,-11.17104741983144,0 29.96640856830004,-11.17108509743231,0 29.96647944297641,-11.17108729526903,0 29.96659693937478,-11.17110920994677,0 29.96660567216122,-11.17083819534199,0 29.96657870515555,-11.17082817425433,0 29.96639082132713,-11.17076768301692,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9665819380302,-11.17284808127635,0 29.96673389158693,-11.17295407065918,0 29.96685776598637,-11.17308093160845,0 29.96686266966635,-11.17303949219254,0 29.96690950209285,-11.17292226801641,0 29.96693376910559,-11.17282186880239,0 29.96694439301906,-11.17270163080385,0 29.96673102952312,-11.17256520678174,0 29.96671262873899,-11.17259786484592,0 29.96655621214413,-11.17250151494208,0 29.96635844753129,-11.17270215935997,0 29.9665819380302,-11.17284808127635,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96495575242228,-11.17244546608573,0 29.96495491218165,-11.17259225966371,0 29.96505821029896,-11.17261514632291,0 29.96518598290428,-11.17261928961319,0 29.96527180931138,-11.17261515895336,0 29.96540044594673,-11.17260063280232,0 29.96545208225719,-11.1725607092792,0 29.96545540026368,-11.17248527694064,0 29.96531514375743,-11.17243655663065,0 29.96529395515472,-11.17239390618563,0 29.96506876714044,-11.17234618092921,0 29.96495575242228,-11.17244546608573,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96838992126488,-11.16984511630966,0 29.96837553875999,-11.16992666682977,0 29.96840793419763,-11.16997694425007,0 29.9684917781291,-11.16999741552631,0 29.96857657604026,-11.16997401812747,0 29.96859095742388,-11.16990273543305,0 29.96853781534828,-11.169851238487,0 29.96858524649563,-11.1696625214677,0 29.96839088428203,-11.16965924399863,0 29.96838992126488,-11.16984511630966,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96953598405187,-11.16928177232054,0 29.96941493016512,-11.16935764674864,0 29.96938336017358,-11.16944452509428,0 29.96934493592813,-11.16950901411385,0 29.96926243188567,-11.16955277030325,0 29.96919935296161,-11.16967967721841,0 29.9691455135047,-11.16981053742082,0 29.96916759186785,-11.16987678844517,0 29.96926651215929,-11.1699125918784,0 29.96945004961341,-11.16995393282266,0 29.96953006489807,-11.16995801835046,0 29.96953908287095,-11.16990022648139,0 29.96958650940697,-11.16978476961256,0 29.96961683959841,-11.16966601522554,0 29.96968190673347,-11.16955797086136,0 29.96974546385346,-11.16951706011207,0 29.96978262945461,-11.16946548647631,0 29.96972379567223,-11.16913224704622,0 29.96965159938536,-11.16912603955136,0 29.96953598405187,-11.16928177232054,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (Only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97048169523741,-11.17002272290063,0 29.97062943550004,-11.16984650225458,0 29.97049819151296,-11.16973387889959,0 29.97064364414018,-11.16947702950167,0 29.97047834518564,-11.16937296730478,0 29.97017367027967,-11.16982929528272,0 29.97048169523741,-11.17002272290063,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (Only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97040032187377,-11.17027381958538,0 29.97031191179503,-11.1703460356841,0 29.97026333492262,-11.17043343702046,0 29.97018779082281,-11.17046265074119,0 29.97019189639499,-11.17059789167027,0 29.97032554376159,-11.17062082401196,0 29.97039773655303,-11.17067311339667,0 29.97042997744627,-11.17063704427827,0 29.97051016703777,-11.17051786928391,0 29.97060825935662,-11.1704079629147,0 29.97061662908427,-11.17031168028663,0 29.97062172001051,-11.17021258838909,0 29.97045748001183,-11.17012440196686,0 29.97040032187377,-11.17027381958538,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96891793564816,-11.17045492649149,0 29.96891866217719,-11.17057136333709,0 29.96892126702129,-11.1706681305584,0 29.96893791320602,-11.17074571507498,0 29.96896470326995,-11.17080930326397,0 29.96893728827268,-11.17100236621733,0 29.96895324593477,-11.17103716764637,0 29.96902320327719,-11.17107912201603,0 29.96906702874702,-11.17105986654127,0 29.96911618684357,-11.17106148021744,0 29.96916498733185,-11.17105825804488,0 29.96919979779376,-11.17101076525426,0 29.96926285660697,-11.1709396929307,0 29.9692951177303,-11.17089968067347,0 29.96935199055675,-11.17085522652559,0 29.96938775201555,-11.17082802747557,0 29.96942751027549,-11.17080965134518,0 29.96948534999638,-11.17076870808939,0 29.96952634096436,-11.17074031543842,0 29.96954232709349,-11.17066304143206,0 29.96961521525933,-11.17055008416399,0 29.96968330251792,-11.17048704912833,0 29.96968866263489,-11.1704224360857,0 29.96962359817917,-11.17038515077208,0 29.96955706540525,-11.17036499782347,0 29.96928565207229,-11.17036240632566,0 29.96930588316269,-11.17045959860471,0 29.96916431789796,-11.17042824843832,0 29.96917626105189,-11.17033864368188,0 29.96897193856619,-11.1703161412999,0 29.96891793564816,-11.17045492649149,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97186257501084,-11.16886939979085,0 29.97173126565,-11.16891509525183,0 29.97165596169427,-11.1689506479373,0 29.97158981869117,-11.16905654437074,0 29.97151006406801,-11.16901195839912,0 29.97145031692031,-11.16906871041113,0 29.97143212273929,-11.16913527255407,0 29.97143536181894,-11.16923799107017,0 29.9714654854134,-11.16934045504993,0 29.97152679815356,-11.16935321146271,0 29.971565406951,-11.16932202248863,0 29.97161666190059,-11.16928779590066,0 29.97164879187259,-11.16936576919949,0 29.97167538392781,-11.16944715811165,0 29.97172751401418,-11.16952672151644,0 29.97182143799321,-11.16957775670859,0 29.97190352306095,-11.1695922746918,0 29.97194947362603,-11.16956561411748,0 29.97202247768484,-11.16952890203976,0 29.97207669796697,-11.16949923175332,0 29.97211904576791,-11.16944140480646,0 29.97210477152335,-11.16950902961507,0 29.97215918165563,-11.1695481940603,0 29.97225226597342,-11.16954536075037,0 29.97224940620376,-11.16947100800774,0 29.97230161860524,-11.16937923916016,0 29.97232008435667,-11.16929033209674,0 29.97215061490246,-11.16927272628554,0 29.97210431711112,-11.16918413533953,0 29.97222927694148,-11.16919153353424,0 29.9722444388663,-11.16913099595625,0 29.97224276025683,-11.16899825685311,0 29.97230794326054,-11.16896305357517,0 29.97243041325173,-11.16895921758721,0 29.97250748324294,-11.16892349816869,0 29.97251351254935,-11.16871449726231,0 29.97238193355198,-11.16871256577172,0 29.97230454765652,-11.16882675968349,0 29.97213974309005,-11.16876114216911,0 29.9719058306163,-11.16875111989237,0 29.97186257501084,-11.16886939979085,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry (Only slightly green)</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97185707048199,-11.17011359415389,0 29.97187879649104,-11.17022953311335,0 29.97197968196997,-11.17026178923867,0 29.97220693570346,-11.17028868292226,0 29.97221120133617,-11.17015914780284,0 29.97207088896293,-11.17011271580529,0 29.97203392661273,-11.17001729854868,0 29.97188222077891,-11.16994711728761,0 29.97185707048199,-11.17011359415389,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96975795715155,-11.1732836024751,0 29.96978230546692,-11.17347479187,0 29.96990052496389,-11.17359431598291,0 29.96981928896964,-11.17385469298755,0 29.96978373487139,-11.17381453589536,0 29.96972730673407,-11.17393719097411,0 29.96973797001706,-11.17407958494248,0 29.96965057181891,-11.17413344359356,0 29.9696392882116,-11.17429346495694,0 29.96972144840141,-11.17438799127683,0 29.96976868923823,-11.17450974250459,0 29.96980743603169,-11.17453358975846,0 29.96985585595206,-11.17459228440541,0 29.96976192771801,-11.1746438421006,0 29.96974845603945,-11.1747338614671,0 29.96993138875045,-11.17475358398791,0 29.96999864220736,-11.17454881919299,0 29.96990142245739,-11.17452461948263,0 29.96992746769613,-11.1744161694436,0 29.97007013764815,-11.17415306266031,0 29.97008201342986,-11.17411705953389,0 29.9701581598639,-11.1739445498665,0 29.97012248833803,-11.17390523976657,0 29.97011412140584,-11.17380847765555,0 29.9700619801335,-11.17386034917578,0 29.97002686395146,-11.1738221445454,0 29.97006712398355,-11.17377477787802,0 29.97014380670724,-11.17378469077461,0 29.97023296951567,-11.17382051458017,0 29.97029506105133,-11.17360575836311,0 29.97026083673367,-11.17359470057617,0 29.97026905212642,-11.17352812915733,0 29.97030815094785,-11.17346839452043,0 29.9702670914647,-11.17344468084144,0 29.9702777672007,-11.17337695340342,0 29.97036588501181,-11.17342231534776,0 29.97035674136634,-11.17334472508642,0 29.97033159780399,-11.17324854480848,0 29.97027605675046,-11.17326552647294,0 29.97022520372632,-11.17326612241528,0 29.97015392364309,-11.17321439463149,0 29.97008507156659,-11.17317847881179,0 29.96996616443747,-11.17318603959123,0 29.96985729341319,-11.17321272999379,0 29.96975795715155,-11.1732836024751,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9698692651678,-11.17194234245622,0 29.96993139517513,-11.17191750620315,0 29.9699476542567,-11.17195878682757,0 29.97004068671905,-11.17202336878721,0 29.97005498347004,-11.17207891784884,0 29.97011211773503,-11.17208368878992,0 29.97026574524093,-11.17199435156251,0 29.97020505017749,-11.17187031024172,0 29.97000088633532,-11.17174933968942,0 29.96989535634599,-11.17175519204883,0 29.969855656255,-11.17187282688605,0 29.9698692651678,-11.17194234245622,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96866754176443,-11.17189072260763,0 29.96884111213229,-11.17184821696423,0 29.96890852524122,-11.17163510697886,0 29.96884399514234,-11.17144192068129,0 29.96868423886249,-11.17148088847162,0 29.96854657091603,-11.17145406604003,0 29.96866754176443,-11.17189072260763,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96793396614872,-11.17296783527506,0 29.96786561152326,-11.17315246142194,0 29.96784812579945,-11.17310358402244,0 29.96768959978461,-11.1738125588357,0 29.9678081428758,-11.1738205381452,0 29.96781340391372,-11.17372573601976,0 29.96803598707712,-11.17371498989334,0 29.96820494114676,-11.17368410619462,0 29.96834429166356,-11.17368808977121,0 29.96851265633085,-11.1736727286605,0 29.96875361495323,-11.17376518826661,0 29.96881649657034,-11.17347042458389,0 29.96875560500327,-11.17337106698927,0 29.96857057085071,-11.17332030856447,0 29.96855105438189,-11.17337483901322,0 29.96847507911671,-11.17344496598766,0 29.96823400180114,-11.17336953898413,0 29.96829921620485,-11.1731679489613,0 29.96811748079983,-11.17313151439227,0 29.96827216501049,-11.17292334645128,0 29.96840752619779,-11.17293325897665,0 29.96837486556444,-11.17270893502143,0 29.96822023160583,-11.17268394938452,0 29.96793396614872,-11.17296783527506,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96884206265835,-11.17352240948003,0 29.96922258567678,-11.17358315485938,0 29.96928439623651,-11.17341918269741,0 29.96921354721079,-11.17335700321397,0 29.96925517142852,-11.17316249854742,0 29.96891359769286,-11.17317790628795,0 29.96884206265835,-11.17352240948003,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96806887716891,-11.17406039018349,0 29.96817048040148,-11.17407358724428,0 29.9681942371543,-11.17420190526701,0 29.96829958655874,-11.174252349268,0 29.96836187392025,-11.17422665320547,0 29.96835924979645,-11.17408436302657,0 29.96826238042861,-11.17398305803716,0 29.96814263442386,-11.17389346366619,0 29.96799231181224,-11.17391531539828,0 29.96797491373438,-11.17393427343515,0 29.96806887716891,-11.17406039018349,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97400652380124,-11.17417775579806,0 29.97393757679801,-11.17446941004275,0 29.9739312372385,-11.17471563199446,0 29.97406880863715,-11.17475939443358,0 29.97417377152767,-11.17474401902234,0 29.97427521143359,-11.17475995145602,0 29.97430914042764,-11.1747226842474,0 29.97425597371956,-11.17459340808241,0 29.97437465931977,-11.17458343793683,0 29.97435335305334,-11.17452516029913,0 29.97432566496584,-11.17443335502626,0 29.9744353132616,-11.17439253998339,0 29.97452977458502,-11.17443231325363,0 29.97467150474651,-11.17416560359339,0 29.97407911597811,-11.1740250489712,0 29.97400652380124,-11.17417775579806,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9739332289714,-11.17688695904427,0 29.97393107067953,-11.17686636942401,0 29.97395942133811,-11.17682179356851,0 29.9740233881741,-11.17679040382436,0 29.97409728719027,-11.17678192466501,0 29.9741356835474,-11.17677952569135,0 29.97420768899974,-11.17677896026041,0 29.97425754963324,-11.17677612976322,0 29.97431414570273,-11.17674548736707,0 29.9743747691734,-11.17673093677082,0 29.97440413445554,-11.17661414261183,0 29.97403712140095,-11.17637101443862,0 29.97394460884602,-11.17636604552249,0 29.97382888686762,-11.17643220612008,0 29.97372873120078,-11.17649999071951,0 29.97363536952551,-11.17654932282154,0 29.9739332289714,-11.17688695904427,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97396679678419,-11.1761889907784,0 29.97399869601027,-11.1762845113895,0 29.97409911991948,-11.17639944864887,0 29.97416818088596,-11.17645649559988,0 29.97425075737511,-11.17647284547473,0 29.9743304965941,-11.17647640483915,0 29.97436145232939,-11.17641153288999,0 29.97435568135389,-11.1762712366889,0 29.97433442859128,-11.17612812330777,0 29.97430047364944,-11.17598408828927,0 29.97440823771112,-11.17583750252305,0 29.97437510992752,-11.17574719501286,0 29.9741422710059,-11.17567454074133,0 29.97396679678419,-11.1761889907784,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97366784394936,-11.17621638841328,0 29.97370151832131,-11.17628640669394,0 29.97378545381782,-11.17635328383047,0 29.97383636675701,-11.17630121539917,0 29.97388324119464,-11.17624898153809,0 29.97384955504451,-11.17618769873179,0 29.97373971258316,-11.17614005602198,0 29.97368128120585,-11.17615596050958,0 29.97366784394936,-11.17621638841328,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9739397778223,-11.17740263187318,0 29.97384287834707,-11.17749366422365,0 29.97384530925559,-11.17756175787636,0 29.97381632969864,-11.17758110998109,0 29.97378879774248,-11.17765451557185,0 29.97381388690161,-11.17772866642187,0 29.97374887010029,-11.17781407048667,0 29.97375371384907,-11.17784757315086,0 29.97384215635595,-11.1779405727803,0 29.97393008918854,-11.17797684812346,0 29.97396998782374,-11.17797326385675,0 29.97402138918768,-11.17792329257764,0 29.97405703231507,-11.17787117428623,0 29.97407694541432,-11.17780042180316,0 29.97411465178803,-11.17780315942229,0 29.974135352941,-11.17773442173165,0 29.97418643460522,-11.17762646508266,0 29.9743676344338,-11.17744667172637,0 29.97409821794982,-11.17719275567827,0 29.9739397778223,-11.17740263187318,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96941297137944,-11.17521401397406,0 29.96945008873639,-11.17527364432504,0 29.9695001479603,-11.175276040983,0 29.96953824679914,-11.17532030355242,0 29.96962279239802,-11.17534160319706,0 29.96965195641131,-11.17522834843109,0 29.96957366628081,-11.17519942486793,0 29.96952639441375,-11.17509058251436,0 29.96947052518249,-11.17510066069526,0 29.96941297137944,-11.17521401397406,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96867920489901,-11.17531237091395,0 29.96854521349234,-11.17519289632244,0 29.96848627743666,-11.17521016466444,0 29.96819569049248,-11.17540189102609,0 29.96819173767416,-11.17556398969252,0 29.96851540119105,-11.17583750381358,0 29.9685834229399,-11.17583523096894,0 29.96870429081879,-11.17582896351844,0 29.96877604002722,-11.17586186892483,0 29.96881841946056,-11.17589413844902,0 29.96887274763528,-11.17590591635485,0 29.96899165555052,-11.17588907891252,0 29.96896218636309,-11.17579479037865,0 29.96897015377454,-11.17566081759672,0 29.96902172474048,-11.17559118924202,0 29.96904946130286,-11.1755034001423,0 29.96911040042753,-11.17538964933087,0 29.96921360214186,-11.17535683880481,0 29.96923685009904,-11.17529698837909,0 29.96928960676504,-11.17524774714055,0 29.96933700548649,-11.17509032659254,0 29.96936875296861,-11.1749235137694,0 29.96943251156122,-11.17489084945846,0 29.96953637983384,-11.17466829818922,0 29.96898087437711,-11.17458051034565,0 29.96867920489901,-11.17531237091395,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96951415691086,-11.17576532478356,0 29.96951692362014,-11.17581912930781,0 29.96956324525341,-11.17582576105317,0 29.96962021864957,-11.17581642425957,0 29.96967023317375,-11.175853274933,0 29.96974764940208,-11.17589105888031,0 29.9697835530956,-11.17592025073829,0 29.96971896654988,-11.17597072634729,0 29.9697625425883,-11.17600717278765,0 29.96980270902632,-11.17603573889569,0 29.97005567003769,-11.17575324121397,0 29.97002463530481,-11.17571281250144,0 29.96999175889212,-11.17568176349826,0 29.96994078552799,-11.17561442872305,0 29.9699082381434,-11.17559614697771,0 29.9698174829006,-11.17552893271417,0 29.96976805832697,-11.17551722117053,0 29.96970183956396,-11.17549381622601,0 29.96964941433939,-11.17550870705877,0 29.9696189513818,-11.17554620279522,0 29.96963665126158,-11.17559607822619,0 29.96959890931026,-11.17561571108589,0 29.96954445878718,-11.17569112601337,0 29.96951415691086,-11.17576532478356,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96771083064406,-11.17657949214177,0 29.96768806722817,-11.17668165699148,0 29.96781985773822,-11.17676064153241,0 29.96794277136074,-11.17679272457763,0 29.96811128673479,-11.17646410076104,0 29.96795195698562,-11.1763263961596,0 29.96781970366762,-11.17641415633734,0 29.96771083064406,-11.17657949214177,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96539798510548,-11.17517916841751,0 29.96554335982594,-11.17502051875802,0 29.96570551641893,-11.1749626914073,0 29.9657405647143,-11.17484462109627,0 29.9657261164439,-11.17473477558017,0 29.96556327092631,-11.17475389515609,0 29.96548275504308,-11.17471167715301,0 29.96544413448403,-11.17465345777902,0 29.96539426646338,-11.17459842165446,0 29.96527518321976,-11.17453066371925,0 29.96519882348546,-11.17472698698909,0 29.96513931376489,-11.17491106464652,0 29.96513387389543,-11.17500218039116,0 29.96539798510548,-11.17517916841751,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96741277017786,-11.17818989285691,0 29.96745977470169,-11.17825119733207,0 29.96746866567013,-11.1783761610277,0 29.96748508136046,-11.17851469278318,0 29.96751348853181,-11.1785252224281,0 29.9678920736343,-11.1784722834439,0 29.96789550725918,-11.17840478112269,0 29.96789105207524,-11.1782744207429,0 29.96785549337042,-11.17818945285781,0 29.96776218782955,-11.17811791446812,0 29.96767940510369,-11.17807855688734,0 29.96749975253729,-11.17805794133209,0 29.96736103700585,-11.17810945283441,0 29.96741277017786,-11.17818989285691,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96809519563288,-11.17712197655511,0 29.96842397136414,-11.17729287472897,0 29.96863282501867,-11.17685104567481,0 29.96824683161108,-11.17662112119298,0 29.96809519563288,-11.17712197655511,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96824435956525,-11.17620226156494,0 29.96840698179151,-11.17661497674871,0 29.9685372263623,-11.17670587903137,0 29.96861635434073,-11.17667195117225,0 29.96868204940266,-11.1765287522242,0 29.96883764730307,-11.17649130627929,0 29.96900883191797,-11.17632663186102,0 29.9690715739204,-11.17631011825339,0 29.9690574462062,-11.17620608891753,0 29.96902026406242,-11.17594036073193,0 29.96900861154651,-11.17586036764727,0 29.96860051768796,-11.17596011795929,0 29.96865154305719,-11.17607979375349,0 29.96824435956525,-11.17620226156494,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96882748560558,-11.17676634324489,0 29.96878519518789,-11.1768902808992,0 29.96868840655668,-11.1769184601922,0 29.96884026645878,-11.17702977525986,0 29.9690115342269,-11.17710431550155,0 29.96910442332328,-11.1771236420633,0 29.96941880211705,-11.17657904220057,0 29.96936474808412,-11.17645192143969,0 29.96921255806026,-11.17637516337518,0 29.9691355102431,-11.17640481888565,0 29.96914283683483,-11.17659636412306,0 29.96900042895238,-11.17664183828603,0 29.96905252305004,-11.17640350346642,0 29.96900682391282,-11.17636145251424,0 29.96885447190881,-11.17653123280617,0 29.96887200242721,-11.17664679501597,0 29.96882748560558,-11.17676634324489,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97173987938238,-11.1728755619368,0 29.97176439274682,-11.17291484383758,0 29.97195600915338,-11.17299291810293,0 29.97207470653591,-11.1729837820318,0 29.97223970449994,-11.17294798696275,0 29.97223809119901,-11.17261257454638,0 29.97174055974127,-11.17263630312373,0 29.97173987938238,-11.1728755619368,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97241434117918,-11.17652529078237,0 29.97232642801111,-11.17669963539846,0 29.9723553600154,-11.17701777769726,0 29.97262020575318,-11.17699534706887,0 29.97275642722936,-11.17682849895833,0 29.97288536150452,-11.17682794082233,0 29.97283174720922,-11.17660440190548,0 29.97254167155302,-11.17664672972909,0 29.97241434117918,-11.17652529078237,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97194704310998,-11.17694213474402,0 29.9721693089053,-11.17692022005603,0 29.97217344186252,-11.17680295088955,0 29.972225023786,-11.17667465260308,0 29.97224015053059,-11.17656556632849,0 29.97229705877367,-11.1764647536167,0 29.97228097150075,-11.17640181911578,0 29.9722043293383,-11.17639446364502,0 29.97205727327385,-11.1768251093505,0 29.97194704310998,-11.17694213474402,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97057213377659,-11.17515190886093,0 29.97095703824673,-11.17528763299222,0 29.9710217597016,-11.17502628276831,0 29.97067421719679,-11.1748671392933,0 29.97057213377659,-11.17515190886093,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97062766002885,-11.17649164118905,0 29.97068341102928,-11.17662871305919,0 29.97076765143745,-11.17662583238472,0 29.97092009376046,-11.17661046218332,0 29.97101766135011,-11.17653960458376,0 29.97092074396809,-11.17629898210627,0 29.97103121051382,-11.17628910042329,0 29.97120400536254,-11.17629314572394,0 29.97125887100382,-11.17619424543667,0 29.97124150087866,-11.17607007706568,0 29.97121692109049,-11.17595732908136,0 29.97115015529382,-11.17602144769572,0 29.97110205203896,-11.17612123663486,0 29.97106797344356,-11.17620795716421,0 29.97095447141858,-11.17625004923772,0 29.97090598528459,-11.17626397556356,0 29.97081574504581,-11.17617848205086,0 29.97070383277494,-11.17595688391759,0 29.97050255322084,-11.17639021043552,0 29.97062766002885,-11.17649164118905,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97211278249971,-11.17758089288515,0 29.97222701080956,-11.17766876510863,0 29.97249927612803,-11.17743557016867,0 29.97249367033952,-11.17737139328107,0 29.97245896055729,-11.17719416571991,0 29.97240591570706,-11.17710345722097,0 29.97236972729633,-11.17708497888882,0 29.97220496150929,-11.17723576041513,0 29.97215299072356,-11.17737982687534,0 29.97211278249971,-11.17758089288515,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96534332972114,-11.17763762584436,0 29.96547830151502,-11.17754134714651,0 29.96550154880447,-11.1774537676637,0 29.96549138836622,-11.17732375450381,0 29.9655264581957,-11.17717851796879,0 29.96556812262071,-11.17711324072461,0 29.96556042496945,-11.17705039608954,0 29.96551495138914,-11.17706741869274,0 29.96545298517729,-11.17702771406766,0 29.96537692091594,-11.17701827086785,0 29.9652477476936,-11.17701296642372,0 29.96518798268199,-11.17703016099293,0 29.96515296924042,-11.1771323478348,0 29.96509629738973,-11.17726295090739,0 29.9650759072342,-11.17737368598072,0 29.96506293542634,-11.17747202691018,0 29.96534332972114,-11.17763762584436,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96615981535964,-11.17701113130037,0 29.96610453522083,-11.17702564858725,0 29.96608776542598,-11.1770585257411,0 29.96614821654453,-11.17710552990793,0 29.96626722355377,-11.17716382509706,0 29.9663424409542,-11.1772051111758,0 29.96636444091831,-11.17722372827931,0 29.96638024124378,-11.17711191346012,0 29.96637109483823,-11.1770526799749,0 29.96635874506231,-11.17703801117714,0 29.96627788328098,-11.17701917985088,0 29.96625072236544,-11.17699672146118,0 29.96621198411179,-11.17703541637338,0 29.96615981535964,-11.17701113130037,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97243308034775,-11.17824069657428,0 29.97231680676165,-11.17830131960921,0 29.97225167347731,-11.17844534084035,0 29.97226178233634,-11.17851131232467,0 29.97239468830155,-11.17855901099127,0 29.97251728853524,-11.17852591806879,0 29.97269472015321,-11.17849190128404,0 29.97280326449293,-11.17844164044261,0 29.97281726574603,-11.17828464116818,0 29.97280122176604,-11.17815673100296,0 29.9726734753713,-11.17808031327838,0 29.97248824736899,-11.17807335221305,0 29.97243308034775,-11.17824069657428,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97133151442879,-11.17824226153073,0 29.97152847305424,-11.17841825294052,0 29.97142314744061,-11.17865539026565,0 29.97181523427411,-11.17880937568195,0 29.97192177172761,-11.17880612498964,0 29.97202889901663,-11.1787969053285,0 29.97222359032063,-11.1785666986094,0 29.97214966124777,-11.17851216685598,0 29.97199745190787,-11.17836175918147,0 29.97177619664117,-11.17820091390053,0 29.97156163684909,-11.17803203586183,0 29.97139187866884,-11.17811163942914,0 29.97133151442879,-11.17824226153073,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.97077647435401,-11.17757022735353,0 29.97088158525827,-11.17789391907453,0 29.97084463583235,-11.17794864163575,0 29.97088762889256,-11.17808187826468,0 29.97104277328624,-11.17825643880292,0 29.97110265335764,-11.17823868442537,0 29.97127932178806,-11.17815575280953,0 29.97128988591626,-11.17808936881787,0 29.97122444280229,-11.17785850470345,0 29.97113073691915,-11.17753149740037,0 29.97098905206786,-11.17741720118557,0 29.97080316752812,-11.17747036439835,0 29.97077647435401,-11.17757022735353,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96908114622777,-11.17713140168773,0 29.96909659720764,-11.17729969411611,0 29.9693905178655,-11.17727960608542,0 29.96937453238184,-11.17717410088726,0 29.96908114622777,-11.17713140168773,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96934407558751,-11.1775256942696,0 29.96936473511356,-11.1775894896822,0 29.96951169021677,-11.17760918934598,0 29.96956410296935,-11.17753374929882,0 29.96964531347884,-11.17744424721868,0 29.96955715261849,-11.1773944153794,0 29.96940329368364,-11.17739858497814,0 29.96934407558751,-11.1775256942696,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96905753753309,-11.17806651029293,0 29.96928943742422,-11.17823374069595,0 29.96951624175735,-11.17844197844343,0 29.96944131642539,-11.17868883037342,0 29.96969900292286,-11.17879444738578,0 29.96981398969446,-11.17888832750075,0 29.96992272752795,-11.17926574168289,0 29.9700400453138,-11.17926560799875,0 29.97034474293365,-11.17903340940065,0 29.97018743660697,-11.17882675196533,0 29.97012236577743,-11.17872500026546,0 29.97010618624713,-11.1786253435529,0 29.97006241379882,-11.17843242945063,0 29.96988923339773,-11.1783433900614,0 29.96983262973195,-11.17829632495508,0 29.96969231156141,-11.178254924729,0 29.96964824435646,-11.17817040506807,0 29.96968524391171,-11.17813059767076,0 29.96964060785733,-11.17807330680209,0 29.9695327192815,-11.17795547370857,0 29.96939501311958,-11.17784408541874,0 29.96952772863042,-11.17779621540797,0 29.96941944528114,-11.17766756719602,0 29.96926693845327,-11.17755348123315,0 29.96915046419034,-11.17755297987175,0 29.96903037982195,-11.17761600956839,0 29.96905753753309,-11.17806651029293,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.96838144815924,-11.17812219087762,0 29.96846780715628,-11.17790608065037,0 29.96860891893973,-11.17798041916729,0 29.96885423095198,-11.17775526142153,0 29.96881215973077,-11.17766359990259,0 29.96856565395556,-11.17759558835724,0 29.96844067040669,-11.17756307851585,0 29.96841310300177,-11.17745241482056,0 29.96837202560267,-11.17740514763025,0 29.96803527570314,-11.17738835718636,0 29.968020517631,-11.17753273882035,0 29.96797132396412,-11.17761394030668,0 29.96786534087719,-11.17766667208913,0 29.96782438732866,-11.17771477128026,0 29.96791307003436,-11.17779746714463,0 29.96783493553571,-11.17786900978212,0 29.96782534789151,-11.17795592312524,0 29.96811381363298,-11.17814420164333,0 29.96830999923039,-11.17817986720199,0 29.96838144815924,-11.17812219087762,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_20_8.11.2024</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.9653785128284,-11.17812553026067,0 29.96525364862049,-11.17832503685397,0 29.96529946324319,-11.17839281132735,0 29.96545364084169,-11.17836398536372,0 29.96556305182633,-11.17839921118692,0 29.96573278797584,-11.17834137583199,0 29.96582251057124,-11.17828231790848,0 29.96587452969041,-11.17832837120628,0 29.96588928404806,-11.17842457999885,0 29.96600012072302,-11.17845043331892,0 29.96603609917308,-11.17836510854377,0 29.96616089664158,-11.17835640303785,0 29.96623753672278,-11.17830160339182,0 29.96615760591029,-11.17813840489603,0 29.96613026472024,-11.17809958031514,0 29.96600441664986,-11.17807715603787,0 29.96591492901767,-11.17813274714401,0 29.96584216043587,-11.17814998940519,0 29.96567655381771,-11.17820499815346,0 29.9655384306426,-11.17819816052849,0 29.96547281286764,-11.17823209991357,0 29.9653785128284,-11.17812553026067,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_21_6.14.2019</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.86433472214524,-11.15307931207812,0 28.86440658626654,-11.1530828372537,0 28.8644767253753,-11.15307755106902,0 28.86462103252665,-11.15306493692219,0 28.86475074552607,-11.15302366841552,0 28.86486740331252,-11.15299638166636,0 28.86489454140382,-11.15294831556283,0 28.86481797268171,-11.15259761030237,0 28.86435593660066,-11.15275634534138,0 28.86433472214524,-11.15307931207812,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_21_6.14.2019</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.86687237226536,-11.15930936211583,0 28.86707969102798,-11.15930118250292,0 28.86709747672584,-11.15912136914316,0 28.86690946095986,-11.15909521053106,0 28.86687237226536,-11.15930936211583,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_21_6.14.2019</name>
+			<description>1
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.85863511844078,-11.15633997476873,0 28.85872344834438,-11.15634023212264,0 28.85868044199691,-11.15645250774642,0 28.85845969111452,-11.15650242928586,0 28.85857756614601,-11.15677080769763,0 28.85863524008986,-11.15680217126971,0 28.85877385714547,-11.15678176217865,0 28.85878512336195,-11.15672898569964,0 28.85884545592947,-11.15665099943114,0 28.85892367117977,-11.15656166577248,0 28.85901939117984,-11.15646984528029,0 28.85918876661475,-11.1564052220861,0 28.85929604950852,-11.15636013326154,0 28.85925720894949,-11.15628743717909,0 28.85928635616315,-11.15619150808152,0 28.85926720757108,-11.15608635922396,0 28.85865235063376,-11.15624905316954,0 28.85863511844078,-11.15633997476873,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_21_6.14.2019</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.86312075753575,-11.15243433139067,0 28.86302857744205,-11.15243365768789,0 28.86298413818298,-11.15263936142249,0 28.86300586811145,-11.15268107551144,0 28.86312119553723,-11.15269312516839,0 28.86324082129261,-11.15276890479285,0 28.86326036287804,-11.15263027198423,0 28.86321864266781,-11.15258322551042,0 28.86323268856046,-11.15245232078497,0 28.863279361315,-11.1523388133153,0 28.86311077951878,-11.15230847726629,0 28.86312075753575,-11.15243433139067,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_21_6.14.2019</name>
+			<description>2
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.85780514611368,-11.15209646822675,0 28.85795426414664,-11.15209039021373,0 28.85796142368223,-11.15216628097965,0 28.85798727017425,-11.15232422368679,0 28.85807004379299,-11.1523225885522,0 28.8581258721349,-11.15227093836211,0 28.85806510192791,-11.15209621709723,0 28.85808777508523,-11.15205625388264,0 28.85806728581195,-11.1519580295919,0 28.85811253952658,-11.15183656364192,0 28.8580416275102,-11.15186363560404,0 28.85776191260079,-11.15190744819613,0 28.85780514611368,-11.15209646822675,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.13.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69713052198589,-10.5553138567957,0 28.69697477929828,-10.55552098938364,0 28.69698680158183,-10.55566993064499,0 28.69719681612087,-10.55570935413629,0 28.69729750704249,-10.5558138247459,0 28.69745740720448,-10.55613732338791,0 28.69753102901811,-10.55626686945015,0 28.69763692388958,-10.55623263770974,0 28.6976759554059,-10.5563419597434,0 28.69781068226647,-10.55629890005618,0 28.69804929279484,-10.5562940368387,0 28.69823660195135,-10.55621880796176,0 28.69823364228769,-10.55608138135617,0 28.6981736562411,-10.55599583541249,0 28.69809586016702,-10.55601023594939,0 28.69809517417456,-10.55585165872689,0 28.69805012402914,-10.55571789215346,0 28.69800528119989,-10.55554860137677,0 28.69803066929578,-10.55537988831143,0 28.69805587935626,-10.55529943868009,0 28.69793419245974,-10.55518943994787,0 28.69784440016678,-10.55511294324257,0 28.69775263037272,-10.55522180915266,0 28.69764758334795,-10.55522899410725,0 28.69749746721099,-10.55530150401721,0 28.69713052198589,-10.5553138567957,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69376331322172,-10.5587158438598,0 28.69388249009548,-10.55892957745724,0 28.69403273816083,-10.55895522134154,0 28.69427436754271,-10.55883204170697,0 28.69438504242012,-10.55874297671545,0 28.6943611632226,-10.55860970069551,0 28.6943596980265,-10.55854984010642,0 28.69423895471357,-10.55846301801253,0 28.69376331322172,-10.5587158438598,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>3
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69793912700975,-10.56189791377143,0 28.69782888084835,-10.56194762477675,0 28.69778275121671,-10.56210944922364,0 28.69786676226635,-10.56221919577026,0 28.69817116119717,-10.56238028388684,0 28.6982583598457,-10.56238310946921,0 28.6982999808171,-10.56231349137644,0 28.69831718260184,-10.56199263452767,0 28.69802360072637,-10.56186373035092,0 28.69793912700975,-10.56189791377143,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69893624277728,-10.56235085605771,0 28.69876764720778,-10.56259378941053,0 28.69873604264779,-10.5627281870167,0 28.69877177930878,-10.56300407262114,0 28.69885789389316,-10.56311471925056,0 28.69902916345973,-10.5632303312321,0 28.69919158584425,-10.56330007769974,0 28.69934645028716,-10.56324981587387,0 28.69934821686812,-10.56324069837859,0 28.69945085433825,-10.56308565203395,0 28.69945655813258,-10.56289440016624,0 28.69945911190634,-10.56277739095283,0 28.69954127735036,-10.5625483834187,0 28.69949771309172,-10.56250747535433,0 28.69937535320406,-10.56240998534431,0 28.69922326877028,-10.56233793931421,0 28.69906537661666,-10.56241610229584,0 28.69893624277728,-10.56235085605771,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.6926357221449,-10.55593074244527,0 28.69258872522665,-10.55612129043847,0 28.6927991782012,-10.55632638003783,0 28.69290481442146,-10.556421069598,0 28.69314003141976,-10.55633735956261,0 28.69325392599162,-10.55617961200215,0 28.69322017746722,-10.55605774109237,0 28.69307962186838,-10.5558738350585,0 28.6926357221449,-10.55593074244527,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69066603609622,-10.55752107412308,0 28.69075843269407,-10.55777840938287,0 28.69079991526193,-10.5578379049289,0 28.69100199912522,-10.55778480928675,0 28.69108515026595,-10.55770398666758,0 28.69104143605747,-10.55746318321984,0 28.69098740038148,-10.55741863011505,0 28.69066603609622,-10.55752107412308,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_22_6.12.2023</name>
+			<description>4
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.69895706731885,-10.55836663507306,0 28.69875378805099,-10.55861631873149,0 28.69884030539244,-10.5589383174836,0 28.69906297874658,-10.55911227374282,0 28.69925887416878,-10.55929557564379,0 28.69954317182256,-10.559184038867,0 28.69962995394235,-10.55907539286227,0 28.69958113075794,-10.55894678775936,0 28.69970626202551,-10.55873217875579,0 28.69960311414801,-10.55865797580906,0 28.69948686752278,-10.55861140617528,0 28.69936989497721,-10.55872548104604,0 28.69928454122599,-10.5587227513576,0 28.69915557572127,-10.55853211051982,0 28.69895706731885,-10.55836663507306,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>4
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.12814923017775,-10.40445579407241,0 29.12810550683732,-10.40461748711647,0 29.12805546009387,-10.40465707448,0 29.12786728869013,-10.40478419793938,0 29.12794987745622,-10.40486579495475,0 29.12801489563576,-10.40492543322295,0 29.12791074903627,-10.40500620229386,0 29.12798233767995,-10.40505347358459,0 29.12805048980965,-10.40503771341588,0 29.12804965352319,-10.40495211111391,0 29.12813869550666,-10.40490140282775,0 29.12816463390315,-10.40481177136204,0 29.1282479355563,-10.40485445765781,0 29.12827819582455,-10.40481531308604,0 29.12832104221237,-10.4047678687761,0 29.1283559993697,-10.40477341140834,0 29.12841732122365,-10.4048242884776,0 29.12847246653561,-10.40476416416713,0 29.12852088563776,-10.40478252135439,0 29.12856401099884,-10.40473427414771,0 29.12865001693703,-10.40463799761993,0 29.12875744616293,-10.40451331570236,0 29.12874458886748,-10.4044858010707,0 29.12870441801607,-10.40437836797471,0 29.1286869144699,-10.40428098292012,0 29.12859489887967,-10.40413463547518,0 29.12818388101671,-10.40440967693907,0 29.12814923017775,-10.40445579407241,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>4
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.12931038344557,-10.40578333087729,0 29.12956560010757,-10.40554352568736,0 29.12927974443138,-10.40530948805758,0 29.1290174557826,-10.40554535383739,0 29.12931038344557,-10.40578333087729,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>1
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.12787365365369,-10.40676188282775,0 29.12796611552385,-10.40680799346144,0 29.1280240570364,-10.40670368486131,0 29.1279404524337,-10.40665755375959,0 29.12787365365369,-10.40676188282775,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.12700143973768,-10.4054387472551,0 29.12777782720891,-10.40445559835008,0 29.12778059396284,-10.40436872829134,0 29.12764093475238,-10.40430231031197,0 29.12752507107751,-10.40420742948999,0 29.12736490917389,-10.40409105452333,0 29.12722629717263,-10.40424745807019,0 29.12707030131698,-10.40439123544422,0 29.12662323413964,-10.40486222638249,0 29.12656827422154,-10.40496812248876,0 29.12700143973768,-10.4054387472551,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>3
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.13053206229887,-10.40515013419623,0 29.1305362024846,-10.405411875298,0 29.1305810656061,-10.40545978695616,0 29.13077132365104,-10.4054967298266,0 29.13087923231798,-10.40546486532731,0 29.13093154954148,-10.40535555532719,0 29.13091201308654,-10.4052491411563,0 29.13079438670397,-10.40516968530475,0 29.13087519703997,-10.40490623044599,0 29.1305756548281,-10.40481105036014,0 29.13053206229887,-10.40515013419623,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_23_6.9.2023</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							29.13393408377118,-10.40547109659457,0 29.13403942469734,-10.40568402034692,0 29.13406981469642,-10.40576323185087,0 29.13411745784219,-10.40579466656549,0 29.13430429093105,-10.40587384147809,0 29.13444344871764,-10.40592464490966,0 29.13448054633508,-10.40583949748727,0 29.1345667632637,-10.4058421476952,0 29.13469465814702,-10.4058350127443,0 29.13476786336261,-10.40573714790872,0 29.13483360533601,-10.40555699946351,0 29.13472945816037,-10.40550423391563,0 29.13468597443989,-10.40543018416275,0 29.13470481607448,-10.40535677705845,0 29.13449071498604,-10.40525923055573,0 29.13429763858973,-10.40526771537563,0 29.13400386959,-10.40516043220531,0 29.13393408377118,-10.40547109659457,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_24_7.25.2018</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							31.60670121373922,-9.202703549513945,0 31.60680426879249,-9.202651521655175,0 31.60663760156603,-9.2023801328462,0 31.606659126735,-9.202348392903787,0 31.60657948391462,-9.202232626361328,0 31.60648833402152,-9.202285455064906,0 31.60670121373922,-9.202703549513945,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_24_7.25.2018</name>
+			<description>2
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin1</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							31.60689345453482,-9.203012905479881,0 31.60689806726282,-9.203063654212976,0 31.60699625697368,-9.203251373209801,0 31.60710753263638,-9.203308405910859,0 31.60713411448309,-9.203508948963361,0 31.60723604442042,-9.203491762372023,0 31.60718703822014,-9.203301590300949,0 31.60719976232271,-9.203227086077989,0 31.6072075050901,-9.203150487772168,0 31.60716917760474,-9.203010019599779,0 31.60707448799127,-9.202848566217707,0 31.60694823168026,-9.202882828397474,0 31.60695991226966,-9.202975150660086,0 31.60689345453482,-9.203012905479881,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_15_6.4.2017</name>
+			<description>2
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.01619737304028,-13.50785649398203,0 28.01654137855845,-13.50784410749344,0 28.01651365286904,-13.50750034811862,0 28.01670477100031,-13.50750292502359,0 28.01673527210797,-13.50638479305189,0 28.01605425932238,-13.50642640659598,0 28.01595145079331,-13.50643572912919,0 28.01603891824379,-13.50667276269721,0 28.01608285612473,-13.50675087914092,0 28.01612160818357,-13.50716312737187,0 28.01619737304028,-13.50785649398203,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_15_6.4.2017</name>
+			<description>1
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.01569900081767,-13.50788614693903,0 28.01617463617733,-13.50785096622466,0 28.01613494498817,-13.50752543067385,0 28.01596669024521,-13.50748364613471,0 28.01593524422438,-13.50718999677076,0 28.01580877932135,-13.50716468456952,0 28.0158155844911,-13.50698565452498,0 28.01604263913968,-13.50695434765,0 28.01603749111774,-13.50687799659406,0 28.01571478037247,-13.50688613019417,0 28.01556090693002,-13.50691732668222,0 28.01550220753444,-13.50693453497911,0 28.01550714960373,-13.50711917470443,0 28.01560169163699,-13.5071485022974,0 28.01567987781848,-13.50720952558933,0 28.01560047112444,-13.50731581043192,0 28.01551351413337,-13.50733724086527,0 28.0155312627822,-13.50753218763499,0 28.01553734582621,-13.50775572236895,0 28.01569900081767,-13.50788614693903,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_15_6.4.2017</name>
+			<description>1
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.01634403662597,-13.50919985358981,0 28.01631321278431,-13.50932786224574,0 28.01629342179421,-13.50954694409821,0 28.01643074312639,-13.50947713149231,0 28.01649056529607,-13.50924216903356,0 28.0166050648178,-13.50916694831336,0 28.01669958837226,-13.50885006434216,0 28.01621098374156,-13.50879814935164,0 28.01634403662597,-13.50919985358981,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_17_7.16.2023</name>
+			<description>5</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.3194273000766,-13.01209904027409,0 27.31945426966546,-13.01206545136364,0 27.31917872475545,-13.01176110231832,0 27.31915314808935,-13.01178268661591,0 27.3194273000766,-13.01209904027409,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_17_7.16.2023</name>
+			<description>4
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.31949770738756,-13.01220012795294,0 27.31979498812794,-13.01222968319825,0 27.31981740411365,-13.01209089312679,0 27.31947693479743,-13.01210569996215,0 27.31949770738756,-13.01220012795294,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_17_7.16.2023</name>
+			<description>5</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.31887616375364,-13.01267645467955,0 27.31895192355179,-13.01264042919556,0 27.31887878467116,-13.0125043748813,0 27.3188140223578,-13.01253552120276,0 27.31887616375364,-13.01267645467955,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_17_7.16.2023</name>
+			<description>4
+Unclear isgns of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.31982592759799,-13.01285946030524,0 27.31998184572594,-13.01275414221265,0 27.31991007293021,-13.01262463839967,0 27.31974332831048,-13.01271623307568,0 27.31982592759799,-13.01285946030524,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_17_7.16.2023</name>
+			<description>4
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.31952962958396,-13.01244820069175,0 27.3196164264454,-13.01244012933799,0 27.31966305542888,-13.01236393795465,0 27.31953857309514,-13.01235395917564,0 27.31952962958396,-13.01244820069175,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_18_7.12.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							24.96054592923075,-12.49896360196322,0 24.96062516532204,-12.49914881889822,0 24.96065163861859,-12.49922866592723,0 24.96051329368627,-12.49929045856956,0 24.96064544036446,-12.49947295836645,0 24.96077604530266,-12.49954789269027,0 24.96086053742483,-12.49963364531256,0 24.96096197209352,-12.49969391563423,0 24.96108090302553,-12.49971164875558,0 24.96123806132495,-12.49967552178997,0 24.96130899443865,-12.49960891219959,0 24.96146026255159,-12.49962691098767,0 24.96159240270704,-12.49958401976255,0 24.96168300696224,-12.4994539465709,0 24.96175662538726,-12.49936235741804,0 24.96179664627388,-12.49912337778883,0 24.9617998715605,-12.49903214497379,0 24.96173407129838,-12.49896959950015,0 24.96181567908545,-12.49887455833036,0 24.96181751908546,-12.49876625782445,0 24.96178543338854,-12.49859888614147,0 24.96188978358133,-12.49864465641914,0 24.96189824433635,-12.49854639035343,0 24.96183951719605,-12.49844566987406,0 24.9617165330605,-12.49847982416176,0 24.96150051804479,-12.49855229721214,0 24.96133462827652,-12.49856373866847,0 24.96120523178296,-12.49851396905417,0 24.96083868973713,-12.49873534137139,0 24.96054592923075,-12.49896360196322,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_18_7.12.2024</name>
+			<description>4
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							24.96420536646353,-12.50320119580398,0 24.96459102326363,-12.50321149366291,0 24.96455507446998,-12.5028626701196,0 24.9645365661365,-12.50276080397857,0 24.96454645622561,-12.50264590264492,0 24.96425698055783,-12.50261555146524,0 24.96424160822254,-12.50275056927848,0 24.96419706713474,-12.50283420165288,0 24.96417415896481,-12.50291527699651,0 24.96433237870967,-12.50308345554669,0 24.96418048620739,-12.50312971234704,0 24.96420536646353,-12.50320119580398,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_18_7.12.2024</name>
+			<description>2
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							24.96380188600147,-12.50276747331385,0 24.96386854908844,-12.50282736804837,0 24.96400679365201,-12.50283471780133,0 24.96400091240537,-12.5026933041319,0 24.96381006128512,-12.50268841499538,0 24.96380188600147,-12.50276747331385,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_18_7.12.2024</name>
+			<description>5
+Agroforestry</description>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							24.96232227902095,-12.50487014762266,0 24.9623512882076,-12.5049060398173,0 24.96250467076938,-12.5049841464784,0 24.96259968833501,-12.50501838293639,0 24.96263760193547,-12.50501872216289,0 24.96270702693776,-12.50498606030718,0 24.9628079248074,-12.50494363486631,0 24.96293402078436,-12.50493344286467,0 24.96294966926155,-12.50488897377005,0 24.9628877268621,-12.50477478851951,0 24.96291428790353,-12.50473288871311,0 24.96293625119579,-12.50462564408103,0 24.96287101136571,-12.50463816976557,0 24.96282230589008,-12.50470365655024,0 24.96276299740568,-12.50483498375313,0 24.96265429064727,-12.50493056319505,0 24.96260661313912,-12.50488718058519,0 24.96245160581537,-12.50481085094915,0 24.96233552964509,-12.50477407543251,0 24.96232227902095,-12.50487014762266,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.16.2018</name>
+			<description>3
+May be naturally green</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53754123581759,-13.89688251094592,0 28.53773808275324,-13.89684289214898,0 28.53760258236844,-13.89648828605678,0 28.53746368365687,-13.89655782963614,0 28.53754123581759,-13.89688251094592,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.16.2018</name>
+			<description>3
+May be naturally green</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53693723689209,-13.8947765130939,0 28.53699273591902,-13.89476504733893,0 28.53704836777065,-13.89468006761787,0 28.53714695991997,-13.89462355815716,0 28.53709435372395,-13.89452450701188,0 28.53695002481913,-13.89459400947346,0 28.53685183654174,-13.89452475295619,0 28.53676526934737,-13.89460661760695,0 28.53693723689209,-13.8947765130939,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.16.2018</name>
+			<description>2
+May be naturally green</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53704256224581,-13.895786959601,0 28.53708351691173,-13.89577635634772,0 28.5370926830594,-13.89573283065231,0 28.53716790719343,-13.89572813492849,0 28.53723281727162,-13.89572317447756,0 28.53722274837333,-13.89558046111753,0 28.53717173175716,-13.89550453961993,0 28.53714211013332,-13.89547098493392,0 28.53701192721248,-13.8954786681529,0 28.53704256224581,-13.895786959601,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.16.2018</name>
+			<description>3
+Unclear signs of irrigation</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53731727599796,-13.89739701143992,0 28.5375274676193,-13.8974145426482,0 28.53751806914854,-13.89729953087737,0 28.53731386665068,-13.89728074699349,0 28.53731727599796,-13.89739701143992,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.16.2018</name>
+			<description>1
+Unclear signs of irrigation</description>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53623028589917,-13.89239113367452,0 28.53624680931452,-13.89244003539269,0 28.53626604200524,-13.89250737113324,0 28.53626876501236,-13.892543220872,0 28.53634568991529,-13.89252177804102,0 28.53631785934676,-13.89240868709248,0 28.5363176340141,-13.89233515683492,0 28.53616053712431,-13.89234142287601,0 28.53623028589917,-13.89239113367452,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.1.2016</name>
+			<description>2
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53714365070184,-13.8956892610198,0 28.53725497220543,-13.89562982599279,0 28.53715811599806,-13.89548185162744,0 28.53704865533177,-13.89551495365104,0 28.53714365070184,-13.8956892610198,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.1.2016</name>
+			<description>2
+Unclear signs of irrigation</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53751120809434,-13.89668478312056,0 28.53759856482802,-13.89665146884611,0 28.53759733448961,-13.89659280387352,0 28.53762642614222,-13.89656677869087,0 28.53758929452244,-13.89647505389345,0 28.537463395714,-13.89651169918191,0 28.53751120809434,-13.89668478312056,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_12_9.1.2016</name>
+			<description>1
+Only slightly green</description>
+			<styleUrl>#msn_ylw-pushpin3</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							28.53686874748728,-13.89539852939497,0 28.53716118140103,-13.89536292146848,0 28.53710346707645,-13.89527882534878,0 28.53684132330116,-13.89532851261762,0 28.53686874748728,-13.89539852939497,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_6_6.22.2023</name>
+			<description>5</description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.60878673526636,-16.10057158006215,0 27.60890622797741,-16.10057157652635,0 27.60891000839944,-16.10047402555294,0 27.60880494847092,-16.10044463061693,0 27.60878673526636,-16.10057158006215,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_6_6.22.2023</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.60891253975559,-16.1006944798176,0 27.60902453537976,-16.10070416414567,0 27.60901747362067,-16.10061728555559,0 27.60891591368866,-16.10060843467371,0 27.60891253975559,-16.1006944798176,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_6_6.22.2023</name>
+			<description>4
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin2</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.60847887108542,-16.09987216661395,0 27.60845011069093,-16.09990648026651,0 27.60851521251114,-16.09998197482939,0 27.60855667675213,-16.09992473191189,0 27.60853663805317,-16.09988983737574,0 27.60850466523375,-16.09986801202145,0 27.60847887108542,-16.09987216661395,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2023</name>
+			<description>4
+Unclear signs of agriculture</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69534705840779,-16.28390705891089,0 27.69540373870307,-16.28394143400583,0 27.69546388603095,-16.28389546486124,0 27.69542671083986,-16.28377954277488,0 27.69537198723769,-16.28377782048505,0 27.69534705840779,-16.28390705891089,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2023</name>
+			<description>4
+Unclear signs of agriculture</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69516803559722,-16.28388880357992,0 27.69521660420537,-16.28386532341434,0 27.69523242739102,-16.28381404078597,0 27.69520132654723,-16.2837760952851,0 27.69511103801968,-16.28383107661167,0 27.69516803559722,-16.28388880357992,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2023</name>
+			<description>5</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69647661590863,-16.28344763973804,0 27.69651580102172,-16.28349474913904,0 27.69656640215463,-16.28351683573482,0 27.6965723427991,-16.28355397327194,0 27.6966111441748,-16.28358218559869,0 27.69666321896625,-16.28353292433798,0 27.69664142428489,-16.28340054476528,0 27.69661274566863,-16.28339190971512,0 27.69657101890617,-16.28341123396197,0 27.69656632797584,-16.28336510640221,0 27.69653600580729,-16.28334238443137,0 27.69649142201996,-16.28338458464205,0 27.69647661590863,-16.28344763973804,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2023</name>
+			<description>3
+Unclear signs of agriculture</description>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69594287620599,-16.28339290085919,0 27.69591275480844,-16.28341124741073,0 27.69608334216574,-16.28340759798455,0 27.69605455125706,-16.28337681642397,0 27.69601477760591,-16.28338054338618,0 27.69601011326631,-16.28335425395121,0 27.6959635165288,-16.28334665690614,0 27.69594287620599,-16.28339290085919,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_9.5.2021</name>
+			<description>2
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69514631407615,-16.28382900048056,0 27.695196101522,-16.28386423397231,0 27.69522083694705,-16.2838439657602,0 27.69517804612834,-16.28380648807468,0 27.69514631407615,-16.28382900048056,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_9.5.2021</name>
+			<description>2
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin00</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69595188603857,-16.28341395462665,0 27.69608776769006,-16.28341841105594,0 27.69608083768935,-16.28336202786115,0 27.6959630205757,-16.28335744832207,0 27.69595188603857,-16.28341395462665,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2021</name>
+			<description>4
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69515288159137,-16.28391754268172,0 27.69524188499344,-16.28384816259995,0 27.69519324170901,-16.28381231948522,0 27.69509540470937,-16.28386546750218,0 27.69515288159137,-16.28391754268172,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_6.17.2021</name>
+			<description>5</description>
+			<styleUrl>#msn_ylw-pushpin11</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69528448881864,-16.28382707822464,0 27.69525209780805,-16.28390361841399,0 27.6953620335254,-16.28392374513286,0 27.6953635433578,-16.28378272838589,0 27.6952700172259,-16.28372941703758,0 27.69528448881864,-16.28382707822464,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>KL_5_7.27.2019</name>
+			<description>1
+Unclear signs of agriculture</description>
+			<styleUrl>#msn_ylw-pushpin10</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							27.69593147007242,-16.29153569025781,0 27.69607978685869,-16.29136226093091,0 27.69589628685078,-16.29128741046498,0 27.69576311901262,-16.29143998528908,0 27.69593147007242,-16.29153569025781,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.6.10201"></atom:link>
+	</Folder>
+</Document>
+</kml>

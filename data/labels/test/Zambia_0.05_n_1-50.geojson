@@ -1,0 +1,647 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.11644179922727,
+              -17.11411661839513
+            ],
+            [
+              25.11653308077012,
+              -17.11398134725257
+            ],
+            [
+              25.11642822503001,
+              -17.11395334607922
+            ],
+            [
+              25.11636810587384,
+              -17.11411222896144
+            ],
+            [
+              25.11644179922727,
+              -17.11411661839513
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.11656603579261,
+              -17.11374238015516
+            ],
+            [
+              25.11654946863248,
+              -17.11382308778886
+            ],
+            [
+              25.11659890750998,
+              -17.11386496009888
+            ],
+            [
+              25.11662051439576,
+              -17.11376304915747
+            ],
+            [
+              25.11656603579261,
+              -17.11374238015516
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.11810215713154,
+              -17.10993476849325
+            ],
+            [
+              25.11809037876797,
+              -17.10998357240328
+            ],
+            [
+              25.11813727898866,
+              -17.1100046235469
+            ],
+            [
+              25.1181477486458,
+              -17.10996723543827
+            ],
+            [
+              25.11810215713154,
+              -17.10993476849325
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 3,
+        "uncertainty_explanation": "Hard to tell if it's active",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.11733837169382,
+              -17.11014278960438
+            ],
+            [
+              25.11743193305178,
+              -17.11023540775255
+            ],
+            [
+              25.1174774720467,
+              -17.11020152462243
+            ],
+            [
+              25.11739091286889,
+              -17.11009329340717
+            ],
+            [
+              25.11733837169382,
+              -17.11014278960438
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              25.11562511913572,
+              -17.10920116537855
+            ],
+            [
+              25.11567020783519,
+              -17.10921999172942
+            ],
+            [
+              25.11569820117164,
+              -17.10917465601854
+            ],
+            [
+              25.11565990783041,
+              -17.10915178923495
+            ],
+            [
+              25.11562511913572,
+              -17.10920116537855
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_6.18.2023",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 6,
+        "day": 18,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99742725390532,
+              -16.15741911615459
+            ],
+            [
+              26.99742994094095,
+              -16.15755832112643
+            ],
+            [
+              26.99795351661333,
+              -16.15759243577559
+            ],
+            [
+              26.99795470936733,
+              -16.15752558393127
+            ],
+            [
+              26.99779049212628,
+              -16.15751609385508
+            ],
+            [
+              26.99774656745782,
+              -16.15740973220626
+            ],
+            [
+              26.99742725390532,
+              -16.15741911615459
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_2_7.10.2023",
+        "operator_initials": "AB",
+        "internal_id": 2,
+        "month": 7,
+        "day": 10,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99580233312691,
+              -16.16160025362948
+            ],
+            [
+              26.99589930021639,
+              -16.16172319359624
+            ],
+            [
+              26.99589633804422,
+              -16.16159117661308
+            ],
+            [
+              26.99580233312691,
+              -16.16160025362948
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_6.18.2023",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 6,
+        "day": 18,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99522103048549,
+              -16.16474343601388
+            ],
+            [
+              26.99520647057133,
+              -16.16480134655741
+            ],
+            [
+              26.9952623697996,
+              -16.16481136718785
+            ],
+            [
+              26.99527180378343,
+              -16.16475162864904
+            ],
+            [
+              26.99522103048549,
+              -16.16474343601388
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_6.18.2023",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 6,
+        "day": 18,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99610635518082,
+              -16.1641350124697
+            ],
+            [
+              26.99609454736903,
+              -16.16417755368917
+            ],
+            [
+              26.99614538636968,
+              -16.16418756924437
+            ],
+            [
+              26.99614241949498,
+              -16.16422326946561
+            ],
+            [
+              26.99618831577197,
+              -16.16422523659234
+            ],
+            [
+              26.99621243251777,
+              -16.16415333973408
+            ],
+            [
+              26.99610635518082,
+              -16.1641350124697
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_6.18.2023",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 6,
+        "day": 18,
+        "year": 2023,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "ff0affff",
+        "image_number": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99409712020099,
+              -16.16456057227671
+            ],
+            [
+              26.99409264981556,
+              -16.16464253811054
+            ],
+            [
+              26.99413278887896,
+              -16.16466033543006
+            ],
+            [
+              26.99414360092777,
+              -16.16457185541332
+            ],
+            [
+              26.99409712020099,
+              -16.16456057227671
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_9.6.2021",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 9,
+        "day": 6,
+        "year": 2021,
+        "certainty": 3,
+        "uncertainty_explanation": "Not very green; Unclear beds",
+        "color": "ff0affff",
+        "image_number": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99477963871911,
+              -16.16473439934449
+            ],
+            [
+              26.99471941149826,
+              -16.16487844073137
+            ],
+            [
+              26.99481399180201,
+              -16.16492279077038
+            ],
+            [
+              26.99487180342382,
+              -16.16475836558534
+            ],
+            [
+              26.99477963871911,
+              -16.16473439934449
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_9.6.2021",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 9,
+        "day": 6,
+        "year": 2021,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "ff0affff",
+        "image_number": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99180634287404,
+              -16.16558563156254
+            ],
+            [
+              26.99177520943273,
+              -16.1656642512236
+            ],
+            [
+              26.99192765088018,
+              -16.16572737766211
+            ],
+            [
+              26.99197113231557,
+              -16.16564881992994
+            ],
+            [
+              26.99180634287404,
+              -16.16558563156254
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_9.6.2021",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 9,
+        "day": 6,
+        "year": 2021,
+        "certainty": 3,
+        "uncertainty_explanation": "Not very green",
+        "color": "ff0affff",
+        "image_number": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99321456673824,
+              -16.15864528068092
+            ],
+            [
+              26.99319894695779,
+              -16.15870296094648
+            ],
+            [
+              26.99325930342753,
+              -16.15870559005705
+            ],
+            [
+              26.99326723077123,
+              -16.15865209880717
+            ],
+            [
+              26.99321456673824,
+              -16.15864528068092
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_3_9.6.2021",
+        "operator_initials": "AB",
+        "internal_id": 3,
+        "month": 9,
+        "day": 6,
+        "year": 2021,
+        "certainty": 5,
+        "uncertainty_explanation": "",
+        "color": "ff0affff",
+        "image_number": 2
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              26.99779749183605,
+              -16.15742797700463
+            ],
+            [
+              26.99780083461537,
+              -16.15748951617865
+            ],
+            [
+              26.99787797424681,
+              -16.15749319525839
+            ],
+            [
+              26.99787667146389,
+              -16.15742194078339
+            ],
+            [
+              26.99779749183605,
+              -16.15742797700463
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "AB_4_6.5.23",
+        "operator_initials": "AB",
+        "internal_id": 4,
+        "month": 6,
+        "day": 5,
+        "year": 2023,
+        "certainty": 2,
+        "uncertainty_explanation": "May naturally be green",
+        "color": "00ffffff",
+        "image_number": 1
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              28.17871305437509,
+              -16.15389873411294
+            ],
+            [
+              28.17872240646248,
+              -16.15385903660083
+            ],
+            [
+              28.17857687830105,
+              -16.15382188779277
+            ],
+            [
+              28.17851681486739,
+              -16.1538442707797
+            ],
+            [
+              28.17871305437509,
+              -16.15389873411294
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

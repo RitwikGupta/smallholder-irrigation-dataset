@@ -114,5 +114,5 @@ if __name__ == '__main__':
     # samples = sampler.sample(50, country="Zambia", ag_thresh=0.05)
     # sampler.sample(25, country="Zambia", ag_thresh=0.05)
     # sampler.sample(50, country="All", ag_thresh=0.05)
-    for i in range(4):
+    for i in range(8):
         sampler.sample(25, country="Zambia", ag_thresh=0.05)
