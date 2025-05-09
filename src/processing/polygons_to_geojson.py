@@ -278,7 +278,7 @@ def kml_to_geojson(kml_file):
     }
 
     # Write the GeoJSON to a file
-    processed_folder = os.path.dirname(kml_file).replace("/raw/", "/processed/")
+    processed_folder = os.path.dirname(kml_file).replace("/raw", "/processed")
     os.makedirs(processed_folder, exist_ok=True)
     geojson_file = os.path.join(processed_folder, os.path.basename(kml_file).replace(".kml", ".geojson"))
 
@@ -294,9 +294,9 @@ if __name__ == "__main__":
 
     # Example usage/test code
 
-    # kml = "data/labels/labeled_surveys/random_sample/raw/AB_JL_101-125.kml"
-    # gdf = kml_to_geojson(kml)
-    # print(gdf.head)
+    kml = "data/labels/labeled_surveys/random_sample/raw/AB_JL_101-125.kml"
+    gdf = kml_to_geojson(kml)
+    print(gdf.head)
 
     import argparse
 

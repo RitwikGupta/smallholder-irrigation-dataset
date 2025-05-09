@@ -35,7 +35,7 @@ def process_and_merge_folder(folder_path):
             process_xml_zip(file_path)
 
     # Merge the processed files
-    processed_path = os.path.join(folder_path, "processed")
+    processed_path = folder_path.replace("/raw", "/processed")
     merged_result = [merge_and_check(os.path.join(processed_path, file)) for file in os.listdir(processed_path) if file.endswith('.csv')]
     merged_result = pd.concat(merged_result, ignore_index=True)
     return merged_result

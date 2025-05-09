@@ -58,14 +58,14 @@ Run each of the following commands in sequence for your `.zip` and `.kml` file:
 
 ```bash
 # Convert survey ZIP to CSV
-python survey_to_csv.py data/labels/labeled_surveys/random_sample/raw/JL_26-50.zip
+python src/processing/survey_to_csv.py data/labels/labeled_surveys/random_sample/raw/JL_26-50.zip
 
 # Convert KML polygons to GeoJSON
-python polygons_to_geojson.py data/labels/labeled_surveys/random_sample/raw/JL_26-50.kml
+python src/processing/polygons_to_geojson.py data/labels/labeled_surveys/random_sample/raw/JL_26-50.kml
 
 # Merge survey and polygon data. 
 # This assumes the previous two steps were successful and there is a geojson with a matching name in the same folder as the csv to match it with. 
-python merge_survey_and_polygons.py data/labels/labeled_surveys/random_sample/processed/JL_26-50.csv
+python src/processing/merge_survey_and_polygons.py data/labels/labeled_surveys/random_sample/processed/JL_26-50.csv
 ```
 
 #### ✅ Option 2: Batch process an entire folder
@@ -73,7 +73,7 @@ python merge_survey_and_polygons.py data/labels/labeled_surveys/random_sample/pr
 This command runs all three steps on everything inside the `raw/` folder:
 
 ```bash
-python process_folder.py data/labels/labeled_surveys/random_sample/raw/
+python src/processing/batch_process.py data/labels/labeled_surveys/random_sample/raw/
 ```
 
 ---

@@ -1,10 +1,12 @@
 import pandas as pd
 import geopandas as gpd
 from shapely.ops import unary_union
-from utils.geometries import survey_polygon
 from typing import Optional
 from shapely.validation import make_valid
 import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) # Add src to the path so utils can be found
+from utils.geometries import survey_polygon
 
 def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     """

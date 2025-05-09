@@ -123,7 +123,7 @@ def process_xml_zip(xml_zip, original_location_file=None):
 
     # Automatically generate the original_location_file path based on the xml_zip name
     if original_location_file is None:
-        group_name = xml_zip.split("/")[-2]
+        group_name = xml_zip.split("/")[-3]
         sample_range = os.path.basename(xml_zip).split("_")[-1].replace(".zip", "")
         original_location_file = f"data/sampling/samples/{group_name}/Zambia_0.05_n_{sample_range}.csv"
 
