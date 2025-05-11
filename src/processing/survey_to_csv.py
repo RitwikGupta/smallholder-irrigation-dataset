@@ -1,4 +1,5 @@
 # This script takes in a survey response file that you download from Earth Collect and turns it into a usable csv. 
+# It expects the file name to start with the operator initials and end with the range of survey locations, separated by underscores. There can be anything else in between. @
 
 import os
 import xml.etree.ElementTree as ET
