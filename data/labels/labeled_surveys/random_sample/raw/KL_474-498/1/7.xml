@@ -1,5 +1,5 @@
 <?xml version='1.0' standalone='yes' ?>
-<plot step="1" created="2025-05-06T12:09:58.749-07:00" modified="2025-05-07T11:07:32.975-07:00">
+<plot step="1" created="2025-05-06T12:09:58.749-07:00" modified="2025-05-12T11:38:35.544-07:00">
   <id>
     <value>id_5176033</value>
   </id>
@@ -15,7 +15,7 @@
   <actively_saved_on>
     <year>2025</year>
     <month>5</month>
-    <day>7</day>
+    <day>12</day>
   </actively_saved_on>
   <plot_file>
     <value>Zambia_0.05_n_474-498.csv</value>
@@ -83,7 +83,7 @@
     <value>27</value>
   </day5>
   <irrigation5>
-    <code>5</code>
+    <code>4</code>
   </irrigation5>
   <uncertainty_reason5 />
   <year6 />
