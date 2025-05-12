@@ -37,7 +37,7 @@ Before using any scripts, follow these steps:
 | 1    | `survey_to_csv.py`             | Converts Earth Collect `.zip` survey files into usable `.csv` files               |
 | 2    | `polygons_to_geojson.py`       | Converts Google Earth Pro `.kml` files into `.geojson` format                     |
 | 3    | `merge_survey_and_polygons.py` | Merges processed survey data with labeled polygons and computes coverage stats    |
-| 4    | `process_folder.py`            | Batch processes a folder of `.zip` and `.kml` files and merges them automatically |
+| 4    | `batch_process.py`            | Batch processes a folder of `.zip` and `.kml` files and merges them automatically |
 
 ---
 
@@ -106,9 +106,9 @@ These naming conventions ensure that:
 
 #### 🔁 If you revise your own survey responses:
 
-* Add a version number to the filename: `<INITIALS>_<ID-RANGE>_v2.<ext>`, `_v3`, etc.
+* Add a version number to the filename: `<INITIALS>_v2_<ID-RANGE>.<ext>`, `_v3`, etc.
 
-  * Example: `AB_1-25_v2.kml`, `AB_1-25_v3.zip`
+  * Example: `AB_v2_1-25.kml`, `AB_v3_1-2.zip`
 
 ---
 

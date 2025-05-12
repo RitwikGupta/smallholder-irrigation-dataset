@@ -165,6 +165,9 @@ cython_debug/
 data/*
 
 !data/labels/
-!data/labels/labeled_surveys/
-!data/labels/labeled_surveys/random_sample/
-!data/labels/labeled_surveys/random_sample/*
+!data/sampling/
+data/sampling/*
+!data/sampling/samples/
+data/sampling/samples/*
+!data/sampling/samples/random_sample/
+!data/sampling/samples/random_sample/*
