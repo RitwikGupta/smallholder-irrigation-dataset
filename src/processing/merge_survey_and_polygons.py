@@ -57,6 +57,7 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
 
     # Add new columns for percent coverage and polygon average size
     survey["percent_coverage"] = 0.0
+    survey["coverage_outlier"] = 0.0
     survey["percent_coverage_high_certainty"] = 0.0
     survey["poly_avg_size"] = None
     survey["poly_avg_size_high_certainty"] = None
@@ -146,9 +147,13 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
             avg_size_high = None
 
         survey_gdf.at[idx, "percent_coverage"] = percent_total
+        survey_gdf.at[idx, "coverage_outlier"] = percent_total > .35
         survey_gdf.at[idx, "percent_coverage_high_certainty"] = percent_high
         survey_gdf.at[idx, "poly_avg_size"] = avg_size
         survey_gdf.at[idx, "poly_avg_size_high_certainty"] = avg_size_high
+
+        if survey_gdf.at[idx, "coverage_outlier"]:
+            report.append(f"Outlier Warning: Row {idx} (internal_id {row['internal_id']}, site_id {row['site_id']}, {row['day']}/{row['month']}/{row['year']}): coverage outlier (> 0.35 %) with {percent_total:.2f}% coverage.")
 
     # After processing all survey rows, check for any polygons that were not matched.
     unmatched_polys = polygons[~polygons["site_id"].notnull()]
