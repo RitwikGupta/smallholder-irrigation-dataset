@@ -171,3 +171,5 @@ data/sampling/*
 data/sampling/samples/*
 !data/sampling/samples/random_sample/
 !data/sampling/samples/random_sample/*
+
+*.sh
