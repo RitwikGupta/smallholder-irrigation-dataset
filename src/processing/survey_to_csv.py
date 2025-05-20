@@ -5,7 +5,6 @@ import os
 import xml.etree.ElementTree as ET
 import pandas as pd
 import shutil
-import zipfile
 
 def parse_xml(file_path, original_location_file=None):
     """
@@ -127,29 +126,13 @@ def process_xml_zip(xml_zip, original_location_file=None):
     if original_location_file is None:
         group_name = xml_zip.split("/")[-3]
         sample_range = os.path.basename(xml_zip).split("_")[-1].replace(".zip", "")
-        file_name = f"Zambia_0.05_n_{sample_range}.csv"
-        zip_path = f"data/labels/unlabeled_surveys/{group_name}/Zambia_0.05_n_{sample_range}.zip"
-        output_path = f"data/labels/unlabeled_surveys/{group_name}"
-        csv_path = output_path + "/" + file_name
-
-        if os.path.exists(csv_path):
-            # csv already extracted from zip file.
-            csv_path = output_path + "/" + file_name
-            print(f"File already exists: {csv_path}")
-        else:
-            # csv not extracted => unzip the zip file to retrieve the .csv file
-            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-                if file_name in zip_ref.namelist():
-                    zip_ref.extract(file_name, path=output_path)
-                    print(f"Extracted: {file_name}")
-                else:
-                    print(f"{file_name} not found in the ZIP.")
+        original_location_file = f"data/sampling/samples/{group_name}/Zambia_0.05_n_{sample_range}.csv"
 
     all_records = []
     for filename in os.listdir(xml_folder):
         if filename.endswith(".xml"):
             file_path = os.path.join(xml_folder, filename)
-            all_records.extend(parse_xml(file_path, csv_path))
+            all_records.extend(parse_xml(file_path, original_location_file))
 
     # Create a DataFrame and export to CSV
     df = pd.DataFrame(all_records)
