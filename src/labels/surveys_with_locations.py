@@ -110,7 +110,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Generate surveys for a sample group.")
-    parser.add_argument("survey_name", type=str, help="Name of the survey template zip file.")
-    parser.add_argument("sample_group", type=str, help="Name of the sample group directory.")
+    parser.add_argument("--survey_name", type=str, help="Name of the survey template zip file.")
+    parser.add_argument("--sample_group", type=str, help="Name of the sample group directory.")
     args = parser.parse_args()
     generate_surveys(args.survey_name, args.sample_group)

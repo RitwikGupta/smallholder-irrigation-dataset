@@ -28,9 +28,11 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     Returns:
         gpd.GeoDataFrame: A GeoDataFrame containing the survey data with additional columns:
             - percent_coverage: Percentage of the survey area covered by polygons.
-            - percent_coverage_high_certainty: Percentage of the survey area covered by polygons with certainty >= 4.
+            - percent_coverage_high_certainty: Percentage of the survey area covered by polygons with certainty >=3.
             - poly_avg_size: Average size of the polygons covering the survey area.
-            - poly_avg_size_high_certainty: Average size of the polygons with certainty >= 4.
+            - poly_avg_size_high_certainty: Average size of the polygons with certainty >=3.
+            - poly_min_size: Minimum size of the polygons covering the survey area.
+            - poly_min_size_high_certainty: Minimum size of the polygons with certainty >=3.
     Raises:
         ValueError: If the input data does not meet the expected format or contains invalid values.
     Notes:
@@ -61,6 +63,8 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
     survey["percent_coverage_high_certainty"] = 0.0
     survey["poly_avg_size"] = None
     survey["poly_avg_size_high_certainty"] = None
+    survey["poly_min_size"] = None
+    survey["poly_min_size_high_certainty"] = None
 
     # For area calculations we need a geometry for each survey row.
     # The survey CSV includes columns: internal_id, year, month, day, irrigation, x (lon), and y (lat).
@@ -121,17 +125,19 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
             
             # Calculate the average size of the polygons in square meters (use local CRS)
             avg_size = matching_polys.to_crs("EPSG:32735").geometry.area.mean() if not matching_polys.empty else None
+            min_size = matching_polys.to_crs("EPSG:32735").geometry.area.min() if not matching_polys.empty else None
             
             # Calculate the overlap
             union_all = unary_union(matching_polys.geometry)
             intersection_all = row["geometry"].intersection(union_all)
             percent_total = (intersection_all.area / survey_area) * 100 if survey_area > 0 else 0.0
 
-            # For high-certainty coverage, filter for certainty >= 4.
-            high_polys = matching_polys[matching_polys["certainty"] >= 4]
+            # For high-certainty coverage, filter for certainty >=3.
+            high_polys = matching_polys[matching_polys["certainty"] >=3]
 
             # Calculate the average size of the high-certainty polygonss in square meters (use local CRS)
             avg_size_high = high_polys.to_crs("EPSG:32735").geometry.area.mean() if not high_polys.empty else None
+            min_size_high = high_polys.to_crs("EPSG:32735").geometry.area.min() if not high_polys.empty else None
 
             # Calculate the coverage/overlap for high-certainty polygons
             if not high_polys.empty:
@@ -145,12 +151,17 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None):
             percent_high = 0.0
             avg_size = None
             avg_size_high = None
+            min_size = None
+            min_size_high = None
+
 
         survey_gdf.at[idx, "percent_coverage"] = percent_total
         survey_gdf.at[idx, "coverage_outlier"] = percent_total > .35
         survey_gdf.at[idx, "percent_coverage_high_certainty"] = percent_high
         survey_gdf.at[idx, "poly_avg_size"] = avg_size
         survey_gdf.at[idx, "poly_avg_size_high_certainty"] = avg_size_high
+        survey_gdf.at[idx, "poly_min_size"] = min_size
+        survey_gdf.at[idx, "poly_min_size_high_certainty"] = min_size_high
 
         if survey_gdf.at[idx, "coverage_outlier"]:
             report.append(f"Outlier Warning: Row {idx} (internal_id {row['internal_id']}, site_id {row['site_id']}, {row['day']}/{row['month']}/{row['year']}): coverage outlier (> 0.35 %) with {percent_total:.2f}% coverage.")
