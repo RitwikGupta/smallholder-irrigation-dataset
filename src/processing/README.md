@@ -70,17 +70,17 @@ python src/processing/merge_survey_and_polygons.py data/labels/labeled_surveys/r
 
 Alternatively, to run all of this in one command, you can instead run `process_file_pair.sh`. To set this up on a Mac, run the following to make it an executable file
 ```bash
-chmod +x process_file_pair.sh
+chmod +x src/processing/process_file_pair.sh
 ```
 
 Then, run the following script, replacing "JL_26-50" with whichever set you want.
 ```bash
-./process_file_pair.sh JL_26-50
+./src/processing/process_file_pair.sh JL_26-50
 ```
 
 On Windows, open Git Bash and run 
 ```bash
-./process_file_pair.sh JL_26-50
+./src/processing/process_file_pair.sh JL_26-50
 ```
 
 #### ✅ Option 2: Batch process an entire folder
@@ -139,3 +139,4 @@ To help everyone work smoothly together on this project:
 
 These habits will help keep the project organized, make collaboration easier, and ensure that we don't lose or overwrite each other's work.
 
+---
