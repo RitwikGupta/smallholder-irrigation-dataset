@@ -175,3 +175,4 @@ data/sampling/samples/*
 *.sh
 
 irr-venv/*
+!src/processing/process_file_pair.sh

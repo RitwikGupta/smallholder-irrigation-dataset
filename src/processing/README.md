@@ -68,6 +68,21 @@ python src/processing/polygons_to_geojson.py data/labels/labeled_surveys/random_
 python src/processing/merge_survey_and_polygons.py data/labels/labeled_surveys/random_sample/processed/JL_26-50.csv
 ```
 
+Alternatively, to run all of this in one command, you can instead run `process_file_pair.sh`. To set this up on a Mac, run the following to make it an executable file
+```bash
+chmod +x src/processing/process_file_pair.sh
+```
+
+Then, run the following script, replacing "JL_26-50" with whichever set you want.
+```bash
+./src/processing/process_file_pair.sh JL_26-50
+```
+
+On Windows, open Git Bash and run 
+```bash
+./src/processing/process_file_pair.sh JL_26-50
+```
+
 #### ✅ Option 2: Batch process an entire folder
 
 This command runs all three steps on everything inside the `raw/` folder:
