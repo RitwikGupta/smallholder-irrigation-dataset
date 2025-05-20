@@ -139,4 +139,3 @@ To help everyone work smoothly together on this project:
 
 These habits will help keep the project organized, make collaboration easier, and ensure that we don't lose or overwrite each other's work.
 
----
