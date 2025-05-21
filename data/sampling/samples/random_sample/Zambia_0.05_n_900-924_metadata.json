@@ -1,0 +1,1 @@
+{"date": "2025-05-16T23:02:47.361222", "file": "Zambia_0.05_n_900-924.csv", "description": "25 sampled grid points from Zambia in areas with at least 0.05 agriculture. Total samples in this sample group to date: 924", "file_format": "csv", "source": "src/sampling/sample_grid.py"}
