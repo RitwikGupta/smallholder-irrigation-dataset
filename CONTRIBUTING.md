@@ -2,6 +2,10 @@
 
 Thank you for your interest in contributing to this project! This document outlines the key guidelines for managing data and metadata to ensure consistency and reproducibility.
 
+## General Contribution Notes
+- Commit frequently with detailed commit messages and descriptions, especially when actively collaborating with others. 
+- Update README.md files obsessively as changes to the repository and sub-repositories happen. 
+
 ## Data and Metadata Storage Guidelines
 
 ### **1. Data Storage:**
@@ -25,8 +29,5 @@ Thank you for your interest in contributing to this project! This document outli
 
 ### **4. Data in the .gitignore:**
 - By default, data should be listed in the `.gitignore`. However, if the file is small enough and it is useful to add it to the repository, it can be removed. 
-
-## General Contribution Notes
-- Commit frequently with detailed commit messages and descriptions, especially when actively collaborating with others. 
 
 Thank you for maintaining the quality and consistency of this project!
