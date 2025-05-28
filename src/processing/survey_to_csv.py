@@ -149,16 +149,16 @@ if __name__ == '__main__':
 
     # Example usage/test code
 
-    xml_zip = "data/labels/labeled_surveys/random_sample/raw/JL_400-424.zip"
-    df = process_xml_zip(xml_zip)
+    # xml_zip = "data/labels/labeled_surveys/random_sample/raw/JL_400-424.zip"
+    # df = process_xml_zip(xml_zip)
 
     # CLI argument parsing
-    # import argparse
+    import argparse
 
-    # parser = argparse.ArgumentParser(description="Process a survey ZIP file exported from Earth Collect into a CSV.")
-    # parser.add_argument("zip_path", help="Path to the .zip file containing the XML survey export")
+    parser = argparse.ArgumentParser(description="Process a survey ZIP file exported from Earth Collect into a CSV.")
+    parser.add_argument("zip_path", help="Path to the .zip file containing the XML survey export")
 
-    # args = parser.parse_args()
+    args = parser.parse_args()
 
-    # df = process_xml_zip(args.zip_path)
-    # print(f"Parsed {len(df)} records from {args.zip_path}")
+    df = process_xml_zip(args.zip_path)
+    print(f"Parsed {len(df)} records from {args.zip_path}")

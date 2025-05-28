@@ -294,9 +294,9 @@ if __name__ == "__main__":
 
     # Example usage/test code
 
-    kml = "data/labels/labeled_surveys/random_sample/raw/AB_JL_101-125.kml"
-    gdf = kml_to_geojson(kml)
-    print(gdf.head)
+    # kml = "data/labels/labeled_surveys/random_sample/raw/AB_JL_101-125.kml"
+    # gdf = kml_to_geojson(kml)
+    # print(gdf.head)
 
     import argparse
 
