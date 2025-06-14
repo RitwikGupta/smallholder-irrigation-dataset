@@ -178,3 +178,4 @@ data/targeting/features/
 
 irr-venv/*
 !src/processing/process_file_pair.sh
+.Rproj.user
