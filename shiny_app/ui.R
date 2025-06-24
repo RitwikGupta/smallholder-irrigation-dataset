@@ -30,12 +30,16 @@ ui <- dashboardPage(
       tabItem(tabName = "map",
               fluidRow(
                 column(3,
-                       sliderInput("year_range", "Year Range:",
+                       h3("Filter Images"),
+                       sliderInput("year_range_filter", "Year Range:",
                                    min = 2016, max = 2025,
                                    value = c(2016, 2025), sep = ""),
-                       selectInput("irrigation_filter", "Irrigation Status:",
-                                   choices = c("All", "Yes", "No"), selected = "All"),
-                       sliderInput("certainty_filter", "Min Certainty Score:", min = 1, max = 4, value = 3)
+                       sliderInput("certainty_filter", "Min Certainty Score:", min = 1, max = 5, value = 4),
+                       selectInput("water_source_filter", "Water Source?",
+                                   choices = c("All", "TRUE", "FALSE"), selected = "All"),
+                       br(),
+                       h3("Selected Site Details"),
+                       uiOutput("site_table")
                 ),
                 column(9,
                        leafletOutput("irrigation_map", height = 600)
