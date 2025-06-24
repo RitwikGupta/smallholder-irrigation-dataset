@@ -178,3 +178,4 @@ data/targeting/features/
 
 irr-venv/*
 !src/processing/process_file_pair.sh
+data/labels/unlabeled_surveys/random_sample/Zambia_0.05_n_*.csv
