@@ -1,33 +1,38 @@
 # shiny_app/ui.R
+# UI side logic of the app
 
-library(shinydashboard)
+# This script defines a simplified version of the UI layout for the Zambia Irrigation Explorer Shiny app.
+# For now, it includes only a single tab for the interactive map, using shinydashboard to allow expansion later.
+
 library(shiny)
+library(shinydashboard)
 library(shinyjs)
+library(leaflet)
 
 ui <- dashboardPage(
   skin = "blue",
+  
+  ##### --- Header --- #####
   dashboardHeader(title = "Zambia Irrigation Explorer"),
+  
+  ##### --- Sidebar Navigation Menu (Single Tab for Now) --- #####
   dashboardSidebar(
     sidebarMenu(
       id = "tabs",
-      menuItem("Home", tabName = "home", icon = icon("info-circle")),
-      menuItem("Map Viewer", tabName = "map", icon = icon("map")),
-      menuItem("Data Explorer", tabName = "data", icon = icon("table")),
-      menuItem("Sample Images", tabName = "images", icon = icon("image"))
+      menuItem("Map Viewer", tabName = "map", icon = icon("map"))
     )
   ),
+  
+  ##### --- Main Body Content (Single Map Tab) --- #####
   dashboardBody(
     useShinyjs(),
     tabItems(
-      tabItem(tabName = "home", uiOutput("home_html")),
       tabItem(tabName = "map",
               fluidRow(
                 column(3,
                        sliderInput("year_range", "Year Range:",
-                                   min = min(merged_data$year, na.rm = TRUE),
-                                   max = max(merged_data$year, na.rm = TRUE),
-                                   value = range(merged_data$year, na.rm = TRUE),
-                                   sep = ""),
+                                   min = 2016, max = 2025,
+                                   value = c(2016, 2025), sep = ""),
                        selectInput("irrigation_filter", "Irrigation Status:",
                                    choices = c("All", "Yes", "No"), selected = "All"),
                        sliderInput("certainty_filter", "Min Certainty Score:", min = 1, max = 4, value = 3)
@@ -36,18 +41,6 @@ ui <- dashboardPage(
                        leafletOutput("irrigation_map", height = 600)
                 )
               )
-      ),
-      tabItem(tabName = "data",
-              fluidRow(
-                column(12,
-                       DT::DTOutput("irrigation_table"),
-                       downloadButton("download_csv", "Download CSV")
-                )
-              )
-      ),
-      tabItem(tabName = "images",
-              h3("Example Annotated Sites"),
-              uiOutput("image_gallery")
       )
     )
   )

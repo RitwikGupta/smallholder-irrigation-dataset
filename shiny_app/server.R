@@ -1,11 +1,22 @@
 # shiny_app/server.R
+# Server-side logic of the app
 
+# This server script renders a single interactive leaflet map
+# displaying irrigation points filtered by user inputs. Clicking a point
+# shows metadata like ID and certainty score.
+
+##### --- Load Libraries and Data --- #####
+library(tidyverse)
+library(sf)
+library(leaflet)
+
+# Load merged irrigation dataset
+merged_data <- read_csv("data/merged_dataset.csv")
+
+##### --- Define Server Logic --- #####
 server <- function(input, output, session) {
   
-  output$home_html <- renderUI({
-    includeHTML("www/home.html")
-  })
-  
+  ##### --- Reactive Data Filter --- #####
   filtered_data <- reactive({
     df <- merged_data
     if (input$irrigation_filter != "All") {
@@ -18,34 +29,22 @@ server <- function(input, output, session) {
     )
   })
   
+  ##### --- Render Leaflet Map --- #####
   output$irrigation_map <- renderLeaflet({
-    leaflet() |> addTiles() |>
+    leaflet(data = filtered_data()) |> 
+      addProviderTiles(providers$CartoDB.Positron) |> 
       addCircleMarkers(
-        data = filtered_data(),
-        lng = ~longitude, lat = ~latitude,
+        lng = ~longitude,
+        lat = ~latitude,
         color = ~ifelse(irrigation_present == "Yes", "green", "gray"),
         radius = ~certainty_score * 2,
-        label = ~paste("ID:", label_id, "<br>Certainty:", certainty_score)
+        stroke = FALSE, fillOpacity = 0.8,
+        label = ~paste0("Label ID: ", label_id, "<br>",
+                        "Year: ", year, "<br>",
+                        "Certainty: ", certainty_score, "<br>",
+                        "Irrigation: ", irrigation_present),
+        labelOptions = labelOptions(direction = "auto")
       )
   })
   
-  output$irrigation_table <- renderDT({
-    DT::datatable(filtered_data(), options = list(pageLength = 10))
-  })
-  
-  output$download_csv <- downloadHandler(
-    filename = function() { "irrigation_data.csv" },
-    content = function(file) {
-      write_csv(filtered_data(), file)
-    }
-  )
-  
-  output$image_gallery <- renderUI({
-    image_files <- list.files("www/images", full.names = TRUE)
-    tagList(
-      lapply(image_files, function(img) {
-        tags$img(src = paste0("images/", basename(img)), height = "300px", style = "margin:10px;")
-      })
-    )
-  })
 }
