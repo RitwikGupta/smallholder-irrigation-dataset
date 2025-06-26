@@ -19,6 +19,7 @@ server <- function(input, output, session) {
   ##### --- Reactive Data Filter --- #####
   filtered_data <- reactive({
     df <- merged_data 
+    
     # Filter water source status if selected
     if (input$water_source_filter != "All") {
       df <- df |> filter(as.character(water_source) == input$water_source_filter)
@@ -37,11 +38,16 @@ server <- function(input, output, session) {
     leaflet(data = filtered_data()) |> 
       addProviderTiles(providers$CartoDB.Positron) |> 
       addCircleMarkers(
+        # Use coordinates from the data
         lng = ~x,
         lat = ~y,
+        
+        # Adjust the aesthetics of each point
         color = "steelblue",
         radius = ~sqrt(percent_coverage_high_certainty) * 5,
         stroke = FALSE, fillOpacity = 0.8,
+        
+        # Add popups with site ID and certainty score
         layerId = ~site_id
       )
   })
@@ -49,6 +55,7 @@ server <- function(input, output, session) {
   ##### --- Reactive: Store Selected Point --- #####
   selected_point <- reactiveVal(NULL)
   
+  # Add in clicking functionality
   observeEvent(input$irrigation_map_marker_click, {
     click <- input$irrigation_map_marker_click
     if (!is.null(click$id)) {
@@ -62,6 +69,7 @@ server <- function(input, output, session) {
     req(selected_point())
     info <- selected_point()
     
+    # Display information from the data on the table
     tags$table(class = "table table-sm",
                tags$tbody(
                  tags$tr(tags$th("Image Date"), tags$td(paste(info$year[[1]], info$month[[1]], info$day[[1]], sep = "-"))),
@@ -74,8 +82,10 @@ server <- function(input, output, session) {
     )
   })
   
-  
-  
+  ##### --- Output: Render Context qmd --- #####
+  output$context_html <- renderUI({
+    includeHTML("www/context.html")
+  })
   
   
 }
