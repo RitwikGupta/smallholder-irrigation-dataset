@@ -71,10 +71,18 @@ ui <- dashboardPage(
                        # Add the water source selection
                        selectInput("water_source_filter", "Water Source?",
                                    choices = c("All", "TRUE", "FALSE"), selected = "All"),
-                       br(),
+                      
+                       # Add option to toggle off unirrigated plots
+                        checkboxInput(
+                         inputId = "show_zero_coverage",
+                         label = "Show 0% Coverage Points (Unirrigated)",
+                         value = TRUE
+                       ),
+                       
+                        br(),
                        
                        # Header for point table info
-                       h3("Selected Site Details"),
+                       h3("Selected Site"),
                        uiOutput("site_table")
                 ),
                 
@@ -85,10 +93,26 @@ ui <- dashboardPage(
               )
       ),
       
-      ## Context Tab ##
+     ## Time Series Tab ##
+     tabPanel("Coverage Time Series",
+              sidebarLayout(
+                sidebarPanel(
+                  selectInput("province_filter", "Select Province:",
+                              choices = NULL, selected = NULL, multiple = FALSE)
+                ),
+                mainPanel(
+                  plotOutput("coverage_time_series_plot", height = "500px"),
+                  br(),
+                  p("Shows monthly average percent coverage of high-certainty irrigation (certainty ≥ 3), with 95% confidence intervals.")
+                )
+              )
+     ),
+     
+     ## Context Tab ##
       tabItem(tabName = "context",
               uiOutput("context_html")
       )
+      
     )
   )
 )
