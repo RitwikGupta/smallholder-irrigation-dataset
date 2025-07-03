@@ -42,6 +42,9 @@ ui <- dashboardPage(
       # Map Viewer Tab shows up first
       menuItem("Map Viewer", tabName = "map", icon = icon("map")),
       
+      # Time Series Tab shows up second
+      menuItem("Coverage Time Series", tabName = "timeseries", icon = icon("chart-line")),
+      
       # Context tab is below
       menuItem("About the Data", tabName = "context", icon = icon("book"))
     )
@@ -94,11 +97,14 @@ ui <- dashboardPage(
       ),
       
      ## Time Series Tab ##
-     tabPanel("Coverage Time Series",
+     tabItem(tabName = "timeseries",
+        fluidPage(
               sidebarLayout(
                 sidebarPanel(
                   selectInput("province_filter", "Select Province:",
-                              choices = NULL, selected = NULL, multiple = FALSE)
+                              choices = c("All Provinces"),
+                              selected = "All Provinces",
+                              multiple = FALSE)
                 ),
                 mainPanel(
                   plotOutput("coverage_time_series_plot", height = "500px"),
@@ -106,6 +112,7 @@ ui <- dashboardPage(
                   p("Shows monthly average percent coverage of high-certainty irrigation (certainty ≥ 3), with 95% confidence intervals.")
                 )
               )
+     )
      ),
      
      ## Context Tab ##

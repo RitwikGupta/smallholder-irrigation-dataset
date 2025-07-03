@@ -102,6 +102,10 @@ server <- function(input, output, session) {
     # Render the information table safely
     tags$table(class = "table table-sm",
                tags$tbody(
+                 tags$tr(tags$th("District"),
+                         tags$td(paste(info$district[[1]]))),
+                 tags$tr(tags$th("Province"),
+                         tags$td(paste(info$province[[1]]))),
                  tags$tr(tags$th("Number of Images"),
                          tags$td(paste(info$images[[1]]))),
                  tags$tr(tags$th("Average Certainty"),
@@ -122,8 +126,8 @@ server <- function(input, output, session) {
   observe({
     updateSelectInput(
       inputId = "province_filter",
-      choices = unique(labels_df$province),
-      selected = unique(labels_df$province)[1]
+      choices = c("All Provinces", sort(unique(join_clean$province))),
+      selected = "All Provinces"
     )
   })
   
@@ -132,16 +136,19 @@ server <- function(input, output, session) {
     req(input$province_filter)
     
     # Filter to selected province and high certainty labels
-    df <- labels_df %>%
-      filter(province == input$province_filter, irrigation_certainty >= 3) %>%
-      mutate(month = floor_date(as.Date(date), "month"))
+    time_df <- join_clean |>
+      filter(
+        (input$province_filter == "All Provinces" | province == input$province_filter),
+        irrigation >= 3
+      ) |>
+      mutate(year_month = as.Date(paste(year, month, day, sep = "-")))
     
     # Summarize coverage
-    summary_df <- df %>%
-      group_by(month) %>%
+    time_summary_df <- time_df |>
+      group_by(year) |>
       summarise(
-        mean_coverage = mean(coverage_percent, na.rm = TRUE),
-        se = sd(coverage_percent, na.rm = TRUE) / sqrt(n()),
+        mean_coverage = mean(percent_coverage_high_certainty, na.rm = TRUE),
+        se = sd(percent_coverage_high_certainty, na.rm = TRUE) / sqrt(n()),
         .groups = "drop"
       ) %>%
       mutate(
@@ -150,18 +157,20 @@ server <- function(input, output, session) {
       )
     
     # Plot
-    ggplot(summary_df, aes(x = month, y = mean_coverage)) +
+    ggplot(time_summary_df, aes(x = year, y = mean_coverage)) +
       geom_line(color = "darkgreen", size = 1) +
+      geom_point(color = "darkgreen", size = 2) +  # optional: show year points
       geom_ribbon(aes(ymin = lower, ymax = upper), fill = "palegreen", alpha = 0.4) +
       labs(
-        x = "Month",
+        x = "Year",
         y = "Avg. % High Certainty Coverage",
-        title = paste("High Certainty Irrigation Coverage in", input$province_filter),
-        caption = "Shaded area = 95% CI"
+        title = paste("Annual High Certainty Irrigation Coverage in", input$province_filter),
+        caption = "Shaded area = 95% confidence interval"
       ) +
       theme_minimal() +
-      scale_x_date(date_labels = "%b %Y", date_breaks = "2 months") +
+      scale_x_continuous(breaks = unique(time_summary_df$year)) +
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    
   })
   
   

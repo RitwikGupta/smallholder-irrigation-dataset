@@ -5,6 +5,7 @@ library(dplyr)
 
 ### --- Map Data --- ###
 
+##### RAW DATA #####
 # Load the map data
 raw <- read_csv("shiny_app/data/merged_dataset.csv")
 
@@ -23,9 +24,38 @@ raw_clean <- raw |>
   # Drop ID name
   select(-site_id)
 
+#### DISTRICTS ####
+# Add in district boundaries 
+library(sf)
+
+# Read district boundaries shapefile
+districts <- st_read("shiny_app/data/ZambiaDistricts/Zambia_-_Administrative_District_Boundaries_2022.shp")
+
+# Match the CRS to the lat / lon
+districts <- st_transform(districts, crs = 4326)
+
+# Convert the raw data to an sf object
+raw_sf <- st_as_sf(raw_clean, coords = c("x", "y"), crs = 4326)
+
+# Perform a spatial join to add district information
+joined <- st_join(raw_sf, districts)
+
+# Convert geometry back to x, y
+join_clean <- joined |>  # your sf object after spatial join
+  mutate(
+    x = st_coordinates(geometry)[, 1],
+    y = st_coordinates(geometry)[, 2]
+  ) |>
+  st_drop_geometry() |>
+  rename(
+    district = DISTRICT,
+    province = PROVINCE
+  )
+
+#### GROUP BY LOCATION ####
 # Group by location and average the percent cover values
-summary_data <- raw_clean |>
-  group_by(location_num, x, y) |>
+summary_data <- join_clean |>
+  group_by(location_num, x, y, district, province) |>
   summarise(
     images = max(image_number, na.rm = TRUE),
     year = first(year),
@@ -49,5 +79,7 @@ summary_data <- summary_data |>
 
 # Save the cleaned summary data to a CSV file for use in the Shiny app
 write_csv(summary_data, "shiny_app/data/summary_data.csv")
+
+### --- Time Series Data --- ###
 
 
