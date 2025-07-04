@@ -18,7 +18,7 @@ group_name = "random_sample"
 latest_irrigation_data = generate_latest_irrigation_data(group_name)
 
 # Save the pandas df as a csv in the labels folder as "latest_irrigation_table.csv"
-csv_path = f"labels/labeled_surveys/{group_name}/merged/latest_irrigation_table.csv"
+csv_path = f"labels/labeled_surveys/{group_name}/latest_irrigation_table.csv"
 description = "The latest labeled irrigation data"
 save_data(latest_irrigation_data, csv_path, description=description, file_format="csv")
 
@@ -31,6 +31,6 @@ latest_irrigation_data['geometry'] = latest_irrigation_data.apply(
 latest_irrigation_data_gdf = gpd.GeoDataFrame(latest_irrigation_data, geometry='geometry', crs="EPSG:4326")
 
 # Save the GeoDataFrame to a GeoJSON file
-geojson_path = f"labels/labeled_surveys/{group_name}/merged/latest_irrigation_data.geojson"
+geojson_path = f"labels/labeled_surveys/{group_name}/latest_irrigation_data.geojson"
 description = "The latest labeled irrigation data with a bounding box"
 save_data(latest_irrigation_data_gdf, geojson_path, description=description, file_format="json")
