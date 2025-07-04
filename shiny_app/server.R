@@ -12,8 +12,11 @@ library(leaflet)
 library(viridisLite)
 
 
-# Load merged irrigation dataset
-# merged_data <- read_csv("data/merged_dataset.csv")
+# Load the cleaned map dataset
+summary_data_clean <- read_csv("shiny_data/cleaned_shiny_map_data.csv")
+
+# Load the cleaned time series dataset
+time_clean <- read_csv("shiny_data/cleaned_shiny_timeseries_data.csv")
 
 ##### --- Define Server Logic --- #####
 server <- function(input, output, session) {
@@ -23,7 +26,7 @@ server <- function(input, output, session) {
   
   ##### --- Reactive Data Filter --- #####
   filtered_data <- reactive({
-    df <- summary_data 
+    df <- summary_data_clean 
     
     # Filter based on toggle
     if (!input$show_zero_coverage) {
@@ -136,7 +139,7 @@ server <- function(input, output, session) {
     req(input$province_filter)
     
     # Filter to selected province and high certainty labels
-    time_df <- join_clean |>
+    time_df <- time_clean |>
       filter(
         (input$province_filter == "All Provinces" | province == input$province_filter),
         irrigation >= 3

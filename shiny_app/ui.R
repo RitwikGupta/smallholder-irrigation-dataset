@@ -78,7 +78,7 @@ ui <- dashboardPage(
                        # Add option to toggle off unirrigated plots
                         checkboxInput(
                          inputId = "show_zero_coverage",
-                         label = "Show 0% Coverage Points (Unirrigated)",
+                         label = "Show Unirrigated Sites",
                          value = TRUE
                        ),
                        

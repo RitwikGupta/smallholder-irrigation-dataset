@@ -1,1 +1,0 @@
-Outlier Warning: Row 13 (internal_id 12, site_id id_5133803, 1/9/2016): coverage outlier (> 0.35 %) with 0.36% coverage.
