@@ -75,87 +75,6 @@ def parse_description(desc_text): # Note you will need to update to handle speci
 
     return {"certainty": certainty, "uncertainty_explanation": explanation, "plantation": plantation, "commercial": commercial}
 
-def get_color_for_placemark(placemark, root):
-    """
-    Extracts the color associated with a given KML Placemark element.
-    This function navigates through the KML structure to find the color
-    defined in the corresponding Style or StyleMap for the provided Placemark.
-    It first resolves the styleUrl of the Placemark, then looks up the
-    associated StyleMap or Style element, and finally retrieves the color
-    from either the LineStyle or PolyStyle.
-    Args:
-        placemark (xml.etree.ElementTree.Element): The Placemark element from which
-            the color is to be extracted.
-        root (xml.etree.ElementTree.Element): The root element of the KML document,
-            used to search for StyleMap and Style elements.
-    Returns:
-        str or None: The color value as a string (in KML color format, e.g., "ff0000ff"),
-        or None if no color is found.
-    """
-
-    # Get the styleUrl from the Placemark
-    styleUrl_elem = placemark.find("kml:styleUrl", ns)
-    if styleUrl_elem is None or not styleUrl_elem.text:
-        return None
-    style_id = styleUrl_elem.text.strip().lstrip('#')
-    
-    # Find the StyleMap element with the corresponding id
-    styleMap = root.find(".//kml:StyleMap[@id='" + style_id + "']", ns)
-    if styleMap is not None:
-        # Look for the <Pair> with key 'normal'
-        pair = styleMap.find("kml:Pair[kml:key='normal']", ns)
-        if pair is not None:
-            normal_styleUrl_elem = pair.find("kml:styleUrl", ns)
-            if normal_styleUrl_elem is not None and normal_styleUrl_elem.text:
-                normal_style_id = normal_styleUrl_elem.text.strip().lstrip('#')
-                # Find the actual Style element with this id
-                style_elem = root.find(".//kml:Style[@id='" + normal_style_id + "']", ns)
-                if style_elem is not None:
-                    # Try to get the color from the LineStyle first; if not available, try PolyStyle
-                    color_elem = style_elem.find("kml:LineStyle/kml:color", ns)
-                    if color_elem is None or not color_elem.text:
-                        color_elem = style_elem.find("kml:PolyStyle/kml:color", ns)
-                    if color_elem is not None and color_elem.text:
-                        return color_elem.text.strip()
-    return None
-
-def convert_color_to_im_num(color):
-    """
-    Converts a hexadecimal color code from the format 'aabbggrr' to 'bbggrr' 
-    and maps it to a corresponding integer identifier representing which number image is being mapped.
-    Parameters:
-    color (str): A hexadecimal color code in the format 'aabbggrr'.
-    Returns:
-    int: The integer identifier corresponding to the color if it matches 
-         one of the predefined colors in the mapping.
-    None: If the color does not match any of the predefined colors.
-    Notes:
-    - The function assumes the input color is in the format 'aabbggrr' 
-      and strips the first two characters to convert it to 'bbggrr'.
-    - If the color is not found in the predefined mapping, a message is 
-      printed, and the function returns None.
-    """
-
-    # turn color from aabbggrr to bbggrr
-    color = color[2:]
-
-    color_convert = {1: 'ffffff', 
-                     2: '0affff', 
-                     3: '0701fc',
-                     4: '800080', 
-                     5: '0880fd', 
-                     6: 'ff02fc', 
-                     7: '06ff21', 
-                     8: 'ffff20', 
-                     9: '336699', 
-                     10: 'ff0000'}
-    
-    if color in color_convert.values():
-        return list(color_convert.keys())[list(color_convert.values()).index(color)]
-    else:
-        # print("Warning: Not one of the main colors used. Returning None for the color value.")
-        return None
-
 def convert_geometry(placemark):
     """
     Converts a KML geometry element (Point, LineString, or Polygon) to a GeoJSON geometry dict.
@@ -208,8 +127,6 @@ def kml_to_geojson(kml_file):
         - The <name> element is parsed to extract properties using the `parse_name` function.
         - The <description> element is parsed to extract additional properties using 
           the `parse_description` function.
-        - The color of the placemark is extracted and converted to an image number 
-          using `get_color_for_placemark` and `convert_color_to_im_num`.
         - If a placemark lacks a supported geometry, it is skipped.
         - The resulting GeoJSON file is saved in the same directory as the input KML file, 
           with the same name but a `.geojson` extension.
@@ -246,16 +163,8 @@ def kml_to_geojson(kml_file):
         else:
             desc_props = {"certainty": 5, "uncertainty_explanation": ""}
 
-        # Extract and convert color to image number
-        color = get_color_for_placemark(placemark, root)
-        if color is not None:
-            color_im_num = convert_color_to_im_num(color)
-        else: 
-            color_im_num = None
-        color_props = {"color": color,"color_im_num": color_im_num}
-
         # Merge properties
-        properties = {"name": name_elem.text, **props, **desc_props, **color_props}
+        properties = {"name": name_elem.text, **props, **desc_props}
 
         # Convert the geometry
         geometry = convert_geometry(placemark)
