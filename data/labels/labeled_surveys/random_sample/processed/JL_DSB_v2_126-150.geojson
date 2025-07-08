@@ -11,11 +11,7 @@
         "day": 5,
         "year": 2018,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0000ff",
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -63,11 +59,7 @@
         "day": 4,
         "year": 2019,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of agriculture",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of agriculture"
       },
       "geometry": {
         "type": "Polygon",
@@ -119,11 +111,7 @@
         "day": 9,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of agriculture",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of agriculture"
       },
       "geometry": {
         "type": "Polygon",
@@ -163,11 +151,7 @@
         "day": 4,
         "year": 2019,
         "certainty": 4,
-        "uncertainty_explanation": "unclear signs of agriculture",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of agriculture"
       },
       "geometry": {
         "type": "Polygon",
@@ -231,11 +215,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 5,
-        "uncertainty_explanation": "",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": ""
       },
       "geometry": {
         "type": "Polygon",
@@ -303,11 +283,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -367,11 +343,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -435,11 +407,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -523,11 +491,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -603,11 +567,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 4,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -655,11 +615,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -727,11 +683,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -787,11 +739,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -867,11 +815,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 4,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -911,11 +855,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1015,11 +955,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1063,11 +999,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1155,11 +1087,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag; only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -1207,11 +1135,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -1283,11 +1207,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 4,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1363,11 +1283,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 4,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1407,11 +1323,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1463,11 +1375,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -1519,11 +1427,7 @@
         "day": 4,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1571,11 +1475,7 @@
         "day": 22,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -1615,11 +1515,7 @@
         "day": 22,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1659,11 +1555,7 @@
         "day": 22,
         "year": 2022,
         "certainty": 2,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1703,11 +1595,7 @@
         "day": 22,
         "year": 2022,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven; only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -1751,11 +1639,7 @@
         "day": 22,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1807,11 +1691,7 @@
         "day": 26,
         "year": 2019,
         "certainty": 2,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -1863,11 +1743,7 @@
         "day": 26,
         "year": 2019,
         "certainty": 2,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1907,11 +1783,7 @@
         "day": 26,
         "year": 2019,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1955,11 +1827,7 @@
         "day": 26,
         "year": 2019,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -1999,11 +1867,7 @@
         "day": 26,
         "year": 2019,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -2043,11 +1907,7 @@
         "day": 20,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -2103,11 +1963,7 @@
         "day": 23,
         "year": 2016,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -2147,11 +2003,7 @@
         "day": 23,
         "year": 2016,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -2203,11 +2055,7 @@
         "day": 22,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2291,11 +2139,7 @@
         "day": 22,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -2335,11 +2179,7 @@
         "day": 22,
         "year": 2023,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -2379,11 +2219,7 @@
         "day": 22,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "only slightly green; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -2471,11 +2307,7 @@
         "day": 17,
         "year": 2017,
         "certainty": 4,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -2547,11 +2379,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven; only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2607,11 +2435,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2651,11 +2475,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -2719,11 +2539,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2783,11 +2599,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of agriculture",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of agriculture; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2835,11 +2647,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2879,11 +2687,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven; only slightly green"
       },
       "geometry": {
         "type": "Polygon",
@@ -2943,11 +2747,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -3003,11 +2803,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -3059,11 +2855,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -3115,11 +2907,7 @@
         "day": 14,
         "year": 2024,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -3167,11 +2955,7 @@
         "day": 14,
         "year": 2024,
         "certainty": 2,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -3227,11 +3011,7 @@
         "day": 12,
         "year": 2021,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "uneven; unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -3379,11 +3159,7 @@
         "day": 12,
         "year": 2021,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -3427,11 +3203,7 @@
         "day": 12,
         "year": 2021,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -3471,11 +3243,7 @@
         "day": 19,
         "year": 2018,
         "certainty": 3,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff800080",
-        "color_im_num": 4
+        "uncertainty_explanation": "unclear signs of ag; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -3627,11 +3395,7 @@
         "day": 6,
         "year": 2018,
         "certainty": 1,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0880fd",
-        "color_im_num": 5
+        "uncertainty_explanation": "may naturally be green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -3699,11 +3463,7 @@
         "day": 6,
         "year": 2018,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0880fd",
-        "color_im_num": 5
+        "uncertainty_explanation": "unclear signs of ag; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -3819,11 +3579,7 @@
         "day": 6,
         "year": 2018,
         "certainty": 1,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0880fd",
-        "color_im_num": 5
+        "uncertainty_explanation": "only slightly green; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -3915,11 +3671,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -3975,11 +3727,7 @@
         "day": 16,
         "year": 2022,
         "certainty": 3,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4019,11 +3767,7 @@
         "day": 12,
         "year": 2022,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "unclear signs of ag; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -4075,11 +3819,7 @@
         "day": 4,
         "year": 2019,
         "certainty": 2,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4139,11 +3879,7 @@
         "day": 9,
         "year": 2023,
         "certainty": 4,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -4187,11 +3923,7 @@
         "day": 9,
         "year": 2023,
         "certainty": 1,
-        "uncertainty_explanation": "unclear signs of ag",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "unclear signs of ag; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4231,11 +3963,7 @@
         "day": 18,
         "year": 2017,
         "certainty": 3,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "may naturally be green; uneven"
       },
       "geometry": {
         "type": "Polygon",
@@ -4299,11 +4027,7 @@
         "day": 18,
         "year": 2017,
         "certainty": 2,
-        "uncertainty_explanation": "only slightly green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "only slightly green; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4355,11 +4079,7 @@
         "day": 18,
         "year": 2017,
         "certainty": 2,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "may naturally be green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -4399,11 +4119,7 @@
         "day": 6,
         "year": 2023,
         "certainty": 1,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "may naturally be green; unclear signs of ag"
       },
       "geometry": {
         "type": "Polygon",
@@ -4443,11 +4159,7 @@
         "day": 10,
         "year": 2019,
         "certainty": 2,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0affff",
-        "color_im_num": 2
+        "uncertainty_explanation": "may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4487,11 +4199,7 @@
         "day": 6,
         "year": 2017,
         "certainty": 3,
-        "uncertainty_explanation": "may naturally be green",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4531,11 +4239,7 @@
         "day": 6,
         "year": 2017,
         "certainty": 2,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": "ff0701fc",
-        "color_im_num": 3
+        "uncertainty_explanation": "uneven; may naturally be green"
       },
       "geometry": {
         "type": "Polygon",
@@ -4583,11 +4287,7 @@
         "day": 22,
         "year": 2023,
         "certainty": 3,
-        "uncertainty_explanation": "uneven",
-        "plantation": 0,
-        "commercial": 0,
-        "color": null,
-        "color_im_num": null
+        "uncertainty_explanation": "uneven"
       },
       "geometry": {
         "type": "Polygon",
