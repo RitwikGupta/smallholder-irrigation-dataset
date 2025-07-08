@@ -60,21 +60,37 @@ def parse_description(desc_text): # Note you will need to update to handle speci
         # If conversion fails, default to 5
         certainty = 5
 
-    # Add the certainty explanation. If it is absent, set to empty string.
-    # Start by assuming the explanation is on the second line
-    explanation = lines[1] if len(lines) > 1 else "" 
-    # If this line was actually special classes try the third line
-    plantation_flags = ["agroforestry", "plantation"]
-    commercial_flags = ["commercial", "commercial irrigation"]
-    if any(flag in explanation for flag in plantation_flags + commercial_flags):
-        explanation = lines[2] if len(lines) > 2 else ""
+    # Add the certainty explanation. 
+    flag_groups = {
+        "plantation": ["agroforestry", "plantation"],
+        "industrial": ["industrial", "commercial"],
+        "lawn": ["lawn"],
+        "covered": ["covered"]
+    }
+    all_flag_keywords = [
+        keyword 
+        for flag_list in flag_groups.values() 
+        for keyword in flag_list
+        ]
+
+    # For lines 2 and onward, any line that does not contain a special class flag is added to the explanation
+    explanation_lines = [
+        line for line in lines[1:]
+        if not any(keyword in line for keyword in all_flag_keywords)
+    ]
+    explanation = "; ".join(explanation_lines)
 
     # Check for special classes on any line
-    plantation = 1 if any(plantation_flag in lines for plantation_flag in plantation_flags) else 0
-    commercial = 1 if any(commercial_flag in lines for commercial_flag in commercial_flags) else 0
+    flags = {}
+    for flag_name, flag_keywords in flag_groups.items():
+        if any(keyword in line for keyword in flag_keywords for line in lines):
+            flags[flag_name] = 1
 
-    return {"certainty": certainty, "uncertainty_explanation": explanation, "plantation": plantation, "commercial": commercial}
-
+    return {
+        "certainty": certainty,
+        "uncertainty_explanation": explanation,
+        **flags
+    }
 def convert_geometry(placemark):
     """
     Converts a KML geometry element (Point, LineString, or Polygon) to a GeoJSON geometry dict.
