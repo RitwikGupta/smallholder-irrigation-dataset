@@ -17,6 +17,9 @@ from shapely.geometry import box
 group_name = "random_sample"
 latest_irrigation_data = generate_latest_irrigation_data(group_name)
 
+# Add a unique_id as the first column
+latest_irrigation_data.insert(0, 'unique_id', range(1, len(latest_irrigation_data) + 1))
+
 # Save the pandas df as a csv in the labels folder as "latest_irrigation_table.csv"
 csv_path = f"labels/labeled_surveys/{group_name}/latest_irrigation_table.csv"
 description = "The latest labeled irrigation data"
