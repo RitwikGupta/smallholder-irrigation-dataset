@@ -184,3 +184,7 @@ secrets/earthengine-key.json
 
 .RData
 .Rhistory
+
+# Planet related
+planet_api_key
+planet_search_results.json

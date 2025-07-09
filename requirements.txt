@@ -7,3 +7,5 @@ ipykernel
 geopy>=2.4.1
 matplotlib
 seaborn
+planet>=2.22.1
+tqdm>=4.67.1
