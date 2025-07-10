@@ -33,16 +33,30 @@ def check_irrigation_polygon_consistency(row, matching_polys, irrigation, idx):
 def process_survey_row(row, polygons, certainty_cutoff, idx):
     """
     Processes a single survey row: matches polygons, computes coverage and stats, and returns results and report lines.
-    Returns (result_dict, report_lines)
+    Returns (result_dict, report_lines), where the results include: 
+        - percent_coverage: Percentage of the survey area covered by polygons.
+        - percent_coverage_hc: Percentage of the survey area covered by polygons with certainty >= certainty_cutoff.
+        - poly_avg_size: Average size of the polygons covering the survey area.
+        - poly_avg_size_hc: Average size of the polygons with certainty >= the certainty_cutoff.
+        - poly_min_size: Minimum size of the polygons covering the survey area.
+        - poly_min_size_hc: Minimum size of the polygons with certainty >= the certainty_cutoff.
+        - percent_coverage_hc_plantation: Percent coverage of high-certainty polygons with special_category containing 'plantation'.
+        - percent_coverage_hc_industrial: ... 'industrial'.
+        - percent_coverage_hc_lawn: ... 'lawn'.
+        - percent_coverage_hc_covered: ... 'covered'.
     """
     # Initialize result dict with default values and consistent names
     result = {
         "percent_coverage": 0.0,
-        "percent_coverage_high_certainty": 0.0,
+        "percent_coverage_hc": 0.0,
         "poly_avg_size": None,
-        "poly_avg_size_high_certainty": None,
+        "poly_avg_size_hc": None,
         "poly_min_size": None,
-        "poly_min_size_high_certainty": None,
+        "poly_min_size_hc": None,
+        "percent_coverage_hc_plantation": 0.0,
+        "percent_coverage_hc_industrial": 0.0,
+        "percent_coverage_hc_lawn": 0.0,
+        "percent_coverage_hc_covered": 0.0,
     }
 
     # Find polygons that match by internal_id (or site_id if the labeler accidentally used that), year, month, and day.
@@ -90,12 +104,20 @@ def process_survey_row(row, polygons, certainty_cutoff, idx):
 
         # Calculate the average and min size of the high-certainty polygons in square meters (use local CRS)
         if not high_polys.empty:
-            result["poly_avg_size_high_certainty"] = high_polys.to_crs("EPSG:32735").geometry.area.mean()
-            result["poly_min_size_high_certainty"] = high_polys.to_crs("EPSG:32735").geometry.area.min()
+            result["poly_avg_size_hc"] = high_polys.to_crs("EPSG:32735").geometry.area.mean()
+            result["poly_min_size_hc"] = high_polys.to_crs("EPSG:32735").geometry.area.min()
             # Calculate the coverage/overlap for high-certainty polygons
             union_high = unary_union(high_polys.geometry.tolist())
             intersection_high = row["geometry"].intersection(union_high)
-            result["percent_coverage_high_certainty"] = (intersection_high.area / survey_area) * 100 if survey_area > 0 else 0.0
+            result["percent_coverage_hc"] = (intersection_high.area / survey_area) * 100 if survey_area > 0 else 0.0
+
+            # For each special category, calculate percent coverage
+            for special in ["plantation", "industrial", "lawn", "covered"]:
+                special_polys = high_polys[high_polys["special_category"].astype(str).str.contains(special, case=False, na=False)]
+                if not special_polys.empty:
+                    union_special = unary_union(special_polys.geometry.tolist())
+                    intersection_special = row["geometry"].intersection(union_special)
+                    result[f"percent_coverage_hc_{special}"] = (intersection_special.area / survey_area) * 100 if survey_area > 0 else 0.0
 
     return result, report_lines
 
@@ -118,13 +140,7 @@ def merge_and_check(survey_path: str, polygons_path: Optional[str] = None, certa
             - certainty: Certainty level of the polygon (1-5).
         certainty_cutoff (int): How high does an irrigation certainty need to be to be considered "high certainty"?
     Returns:
-        gpd.GeoDataFrame: A GeoDataFrame containing the survey data with additional columns:
-            - percent_coverage: Percentage of the survey area covered by polygons.
-            - percent_coverage_high_certainty: Percentage of the survey area covered by polygons with certainty >= certainty_cutoff.
-            - poly_avg_size: Average size of the polygons covering the survey area.
-            - poly_avg_size_high_certainty: Average size of the polygons with certainty >= the certainty_cutoff.
-            - poly_min_size: Minimum size of the polygons covering the survey area.
-            - poly_min_size_high_certainty: Minimum size of the polygons with certainty >= the certainty_cutoff.
+        gpd.GeoDataFrame: A GeoDataFrame containing the survey data with additional columns added using process_survey_row
     Raises:
         ValueError: If the input data does not meet the expected format or contains invalid values.
     Notes:
