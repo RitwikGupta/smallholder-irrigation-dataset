@@ -42,16 +42,17 @@ def parse_name(name_text):
 
 def parse_description(desc_text): # Note you will need to update to handle special classes (agroforestry etc.)
     """
-    Parse the description text into certainty and uncertainty_explanation.
+    Parse the description text into certainty, uncertainty_explanation, and special_category.
     Expects the first line to be certainty (default to 5 if empty)
     and the second line to be uncertainty_explanation.
+    Adds a special_category field containing one or more flag group names separated by semicolons.
     """
     # Split lines and remove empty lines
     lines = [line.strip().lower() for line in desc_text.strip().splitlines() if line.strip()]
 
     # If there is nothing in the description, assume certainty 5
     if not lines:
-        return {"certainty": 5, "uncertainty_explanation": ""}
+        return {"certainty": 5, "uncertainty_explanation": "", "special_category": ""}
     
     # If the first line is not an integer, assume certainty 5
     try:
@@ -60,18 +61,18 @@ def parse_description(desc_text): # Note you will need to update to handle speci
         # If conversion fails, default to 5
         certainty = 5
 
-    # Add the certainty explanation. 
     flag_groups = {
         "plantation": ["agroforestry", "plantation"],
         "industrial": ["industrial", "commercial"],
         "lawn": ["lawn"],
         "covered": ["covered"]
     }
+
     all_flag_keywords = [
         keyword 
         for flag_list in flag_groups.values() 
         for keyword in flag_list
-        ]
+    ]
 
     # For lines 2 and onward, any line that does not contain a special class flag is added to the explanation
     explanation_lines = [
@@ -80,17 +81,19 @@ def parse_description(desc_text): # Note you will need to update to handle speci
     ]
     explanation = "; ".join(explanation_lines)
 
-    # Check for special classes on any line
-    flags = {}
+    # Collect special categories present in any line
+    special_categories = []
     for flag_name, flag_keywords in flag_groups.items():
         if any(keyword in line for keyword in flag_keywords for line in lines):
-            flags[flag_name] = 1
+            special_categories.append(flag_name)
+    special_category_str = ";".join(special_categories)
 
     return {
         "certainty": certainty,
         "uncertainty_explanation": explanation,
-        **flags
+        "special_category": special_category_str
     }
+
 def convert_geometry(placemark):
     """
     Converts a KML geometry element (Point, LineString, or Polygon) to a GeoJSON geometry dict.
@@ -231,5 +234,3 @@ if __name__ == "__main__":
     
     kml_file = args.kml_file
     gdf = kml_to_geojson(kml_file)
-    
-    print(f"GeoJSON written to {os.path.splitext(kml_file)[0]}.geojson")
