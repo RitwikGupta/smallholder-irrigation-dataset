@@ -187,4 +187,4 @@ secrets/earthengine-key.json
 
 # Planet related
 planet_api_key
-planet_search_results.json
+planet_search_results.jsonl

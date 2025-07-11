@@ -5,6 +5,10 @@ import geopandas as gpd
 from shapely.geometry import mapping, shape
 from tqdm.asyncio import tqdm
 import tqdm.asyncio
+import numpy as np
+import argparse
+import os
+import json
 
 # Read API key
 with open('planet_api_key', 'r') as f:
@@ -45,7 +49,25 @@ def filter_by_coverage(items, aoi_geometry, min_coverage=100):
     
     return filtered_items
 
-async def search_single_feature(client, feature_idx, row, total_features, pbar):
+def select_evenly_spaced_images(items, n_desired=36):
+    """
+    Select up to n_desired images that are as evenly spaced as possible across the time range.
+    """
+    if not items:
+        return []
+    
+    items = sorted(items, key=lambda x: x['properties']['acquired'])
+
+    if len(items) <= n_desired:
+        return items
+    
+    spacing = (len(items) - 1) / (n_desired - 1)
+    indices = [int(round(i * spacing)) for i in range(n_desired)]
+    indices = sorted(list(set(indices)))
+    
+    return [items[i] for i in indices]
+
+async def search_single_feature(client, feature_idx, row, total_features, pbar, n_desired):
     """Search Planet imagery for a single feature"""
     geometry = fix_geometry_coordinates(mapping(row.geometry))
     
@@ -56,18 +78,14 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar):
         hour=12
     )
     
-    # Create combined date string
-    date_str = f"{row['year']}-{row['month']:02d}-{row['day']:02d}"
-    
     try:
-        # Create filters
         geom_filter = data_filter.geometry_filter(geometry)
         
-        # Filter for +/- 15 days around the label date
+        # Filter for +/- 182 days around the label date
         date_range_filter = data_filter.date_range_filter(
             "acquired",
-            feature_date - timedelta(days=15),
-            feature_date + timedelta(days=15)
+            feature_date - timedelta(days=182),
+            feature_date + timedelta(days=182)
         )
 
         # Filter for 0% cloud cover
@@ -90,7 +108,7 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar):
         ])
         
         search_results = client.search(
-            name=f"search_{row['site_id']}",
+            name=f"search_{row['unique_id']}",
             search_filter=combined_filter,
             item_types=["PSScene"]
         )
@@ -98,30 +116,29 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar):
         items = []
         async for item in search_results:
             item['feature_metadata'] = {
-                'site_id': row['site_id'],
+                'unique_id': row['unique_id'],
                 'internal_id': row['internal_id'],
                 'date': feature_date.isoformat() + 'Z',
                 'irrigation': row['irrigation'],
                 'percent_coverage': row['percent_coverage']
             }
 
-            item['site_id'] = row['site_id']
-            item['feature_date'] = date_str
+            item['unique_id'] = row['unique_id']
             items.append(item)
         
         filtered_items = filter_by_coverage(items, geometry, min_coverage=100)
+        selected_items = select_evenly_spaced_images(filtered_items, n_desired=n_desired)
 
         pbar.set_postfix(
             {
-                'Total Found': len(items),
-                'Full Coverage': len(filtered_items),
+                'Selected': len(selected_items),
                 'Feature': f"{feature_idx + 1}/{total_features}"
             },
             refresh=True
         )
         pbar.update(1)
             
-        return filtered_items
+        return selected_items
         
     except Exception as e:
         pbar.write(f"Error processing feature {feature_idx + 1}: {str(e)}")
@@ -130,52 +147,86 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar):
         pbar.update(1)
         return []
 
-async def search_planet_imagery():
-    gdf = gpd.read_file('../data/labels/labeled_surveys/random_sample/latest_irrigation_data.geojson')
+async def search_planet_imagery(input_geojson, output_json, batch_size, n_desired):
+    if not os.path.exists(input_geojson):
+        raise FileNotFoundError(f"Input GeoJSON file not found: {input_geojson}")
+        
+    # Create output directory if it doesn't exist
+    output_dir = os.path.dirname(output_json)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # Ensure output file has .jsonl extension
+    if not output_json.endswith('.jsonl'):
+        output_json = output_json.rsplit('.', 1)[0] + '.jsonl'
+    
+    gdf = gpd.read_file(input_geojson)
     
     auth = Auth.from_key(api_key)
     
+    total_images = 0
+    total_features_with_images = 0
+    
     async with Session(auth=auth) as sess:
         client = DataClient(sess)
-        
-        # Process in batches of 10 to avoid overwhelming the API
-        BATCH_SIZE = 10
-        all_results = []
 
-        n_batches = (len(gdf) + BATCH_SIZE - 1) // BATCH_SIZE
+        n_batches = (len(gdf) + batch_size - 1) // batch_size
         with tqdm.tqdm(total=n_batches, desc="Processing batches", position=0) as batch_pbar:
-            for batch_start in range(0, len(gdf), BATCH_SIZE):
-                batch_end = min(batch_start + BATCH_SIZE, len(gdf))
-                batch_size = batch_end - batch_start
+            for batch_start in range(0, len(gdf), batch_size):
+                batch_end = min(batch_start + batch_size, len(gdf))
+                current_batch_size = batch_end - batch_start
 
-                with tqdm.tqdm(total=batch_size, 
-                             desc=f"Batch {batch_start//BATCH_SIZE + 1}/{n_batches}",
+                with tqdm.tqdm(total=current_batch_size, 
+                             desc=f"Batch {batch_start//batch_size + 1}/{n_batches}",
                              position=1, 
                              leave=False) as feature_pbar:
 
                     tasks = [
                         search_single_feature(
-                            client, idx, row, len(gdf), feature_pbar
+                            client, idx, row, len(gdf), feature_pbar, n_desired
                         )
                         for idx, row in gdf.iloc[batch_start:batch_end].iterrows()
                     ]
                     
                     batch_results = await asyncio.gather(*tasks)
-                    
-                    for results in batch_results:
-                        all_results.extend(results)
+
+                    with open(output_json, 'a') as f:
+                        for results in batch_results:
+                            if results:  # If we found any images for this feature
+                                total_features_with_images += 1
+                            for item in results:
+                                json.dump(item, f)
+                                f.write('\n')
+                                total_images += 1
                     
                     batch_pbar.set_postfix(
-                        {'Full Coverage Images': len(all_results)},
+                        {'Images': total_images, 'Features': total_features_with_images},
                         refresh=True
                     )
                     batch_pbar.update(1)
 
-        with open('planet_search_results.json', 'w') as f:
-            import json
-            json.dump(all_results, f, indent=2)
-        
-        print(f"\nSearch complete. Found {len(all_results)} images with full coverage")
+        print(f"\nSearch complete:")
+        print(f"- Found {total_images} total images")
+        print(f"- {total_features_with_images} out of {len(gdf)} features ({(total_features_with_images/len(gdf)*100):.1f}%) had images")
+        print(f"- Average of {(total_images/total_features_with_images):.1f} images per feature with images")
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Search Planet imagery for labeled features')
+    parser.add_argument('--input', '-i',
+                      default='../../data/labels/labeled_surveys/random_sample/latest_irrigation_data.geojson',
+                      help='Path to input GeoJSON file containing labeled features')
+    parser.add_argument('--output', '-o',
+                      default='planet_search_results.jsonl',
+                      help='Path to output JSONL file for search results (will be converted to .jsonl extension)')
+    parser.add_argument('--batch-size', '-b',
+                      type=int,
+                      default=10,
+                      help='Number of features to process in each batch')
+    parser.add_argument('--n-desired', '-n',
+                      type=int,
+                      default=36,
+                      help='Number of desired images per feature')
+    return parser.parse_args()
 
 if __name__ == "__main__":
     # Enable asyncio for jupyter if we're in a notebook
@@ -185,4 +236,10 @@ if __name__ == "__main__":
     except ImportError:
         pass
     
-    asyncio.run(search_planet_imagery())
+    args = parse_args()
+    asyncio.run(search_planet_imagery(
+        input_geojson=args.input,
+        output_json=args.output,
+        batch_size=args.batch_size,
+        n_desired=args.n_desired
+    ))
