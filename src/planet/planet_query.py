@@ -67,7 +67,7 @@ def select_evenly_spaced_images(items, n_desired=36):
     
     return [items[i] for i in indices]
 
-async def search_single_feature(client, feature_idx, row, total_features, pbar, n_desired):
+async def search_single_feature(client, feature_idx, row, total_features, pbar, n_desired, max_cloud_cover):
     """Search Planet imagery for a single feature"""
     geometry = fix_geometry_coordinates(mapping(row.geometry))
     
@@ -88,11 +88,11 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar, 
             feature_date + timedelta(days=182)
         )
 
-        # Filter for 0% cloud cover
+        # Filter for cloud cover
         cloud_filter = data_filter.range_filter(
             "cloud_cover",
             gte=0,
-            lte=0
+            lte=max_cloud_cover
         )
         
         instrument_filter = data_filter.string_in_filter(
@@ -147,7 +147,7 @@ async def search_single_feature(client, feature_idx, row, total_features, pbar, 
         pbar.update(1)
         return []
 
-async def search_planet_imagery(input_geojson, output_json, batch_size, n_desired):
+async def search_planet_imagery(input_geojson, output_json, batch_size, n_desired, max_cloud_cover):
     if not os.path.exists(input_geojson):
         raise FileNotFoundError(f"Input GeoJSON file not found: {input_geojson}")
         
@@ -183,7 +183,7 @@ async def search_planet_imagery(input_geojson, output_json, batch_size, n_desire
 
                     tasks = [
                         search_single_feature(
-                            client, idx, row, len(gdf), feature_pbar, n_desired
+                            client, idx, row, len(gdf), feature_pbar, n_desired, max_cloud_cover
                         )
                         for idx, row in gdf.iloc[batch_start:batch_end].iterrows()
                     ]
@@ -226,6 +226,10 @@ def parse_args():
                       type=int,
                       default=36,
                       help='Number of desired images per feature')
+    parser.add_argument('--max-cloud-cover', '-c',
+                      type=float,
+                      default=0.0,
+                      help='Maximum allowed cloud cover percentage (0-1)')
     return parser.parse_args()
 
 if __name__ == "__main__":
@@ -241,5 +245,6 @@ if __name__ == "__main__":
         input_geojson=args.input,
         output_json=args.output,
         batch_size=args.batch_size,
-        n_desired=args.n_desired
+        n_desired=args.n_desired,
+        max_cloud_cover=args.max_cloud_cover
     ))
